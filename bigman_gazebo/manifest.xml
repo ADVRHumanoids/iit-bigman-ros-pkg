@@ -1,0 +1,19 @@
+<package>
+  <description brief="bigman_gazebo">
+
+     bigman_gazebo contains files needed to simulate BIGMAN in Gazebo.
+
+  </description>
+  <author>Enrico Mingo Hoffman</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>https://gitlab.robotology.eu/walkman-drc/iit-bigman-ros-pkg</url>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+  <depend package="coman_urdf"/>
+  <depend package="xacro"/>
+  
+
+</package>
+
+

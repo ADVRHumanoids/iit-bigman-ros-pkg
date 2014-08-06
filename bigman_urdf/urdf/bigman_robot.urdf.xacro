@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="bigman">
+  <!--
+  ROS urdf definition of the BIGMAN humanoid robot by Istituto Italiano di Tecnologia
+  
+  Author: Enrico Mingo
+  
+  This file groups files to use BIGMAN in GAZEBO
+  
+  -->
+  <xacro:include filename="$(find bigman_urdf)/urdf/bigman.urdf.xacro" />
+
+  <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/microstrain_3dmgx2_imu.gazebo.xacro" />
+
+  <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/bigman.gazebo.xacro" />
+
+  <xacro:if value="${GAZEBO_BIGMAN_USES_XTION}">
+	<xacro:include filename="$(find bigman_urdf)/urdf/gazebo/openni_kinect.gazebo.xacro" />
+  </xacro:if>
+
+<!-- YARP PLUGINS for GAZEBO SIMULATION -->
+  <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/yarp_control.gazebo.xacro" />
+
+  <origin xyz="0.0 0.0 0.521" rpy="0 0 0" />
+</robot>
+
