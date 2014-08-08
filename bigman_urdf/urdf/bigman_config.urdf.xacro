@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro" name="bigman">
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="BIGMAN">
 
 <xacro:property name="model_name" value="IIT Bigman w/ Softhand" />
 <xacro:property name="model_version" value="0.1" />
