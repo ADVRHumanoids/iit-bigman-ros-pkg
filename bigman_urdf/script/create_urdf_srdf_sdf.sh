@@ -5,6 +5,10 @@ SCRIPT_ROOT=$(dirname $(readlink --canonicalize --no-newline $BASH_SOURCE))
 cd $SCRIPT_ROOT
 cd ../urdf
 
+# check for Gazebo4 gz
+IS_GZSDF_GAZEBO4=true;
+type gz >/dev/null 2>&1 || { IS_GZSDF_GAZEBO4=false; }
+
 if [ -d config ]; then
 
     echo "Regenerating database.config for bigman_gazebo"
@@ -61,7 +65,11 @@ EOF
 
             echo "Creating sdf of bigman_robot.urdf.xacro"
             rosrun xacro xacro.py bigman_robot.urdf.xacro > bigman_robot.urdf
-            gzsdf print bigman_robot.urdf > bigman.sdf
+            if [ $IS_GZSDF_GAZEBO4 == true ]; then
+            	gz sdf --print bigman_robot.urdf > bigman.sdf
+	    else
+                gzsdf print bigman_robot.urdf > bigman.sdf
+            fi
             python ../script/gazebowtf.py wtf/bigman.gazebo.wtf bigman_config.urdf.xacro > bigman2.sdf
             mv bigman2.sdf bigman.sdf
             rm bigman_robot.urdf
