@@ -14,10 +14,6 @@
 
   <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/bigman.gazebo.xacro" />
 
-  <xacro:if value="${GAZEBO_BIGMAN_USES_XTION}">
-	<xacro:include filename="$(find bigman_urdf)/urdf/gazebo/openni_kinect.gazebo.xacro" />
-  </xacro:if>
-
 <!-- YARP PLUGINS for GAZEBO SIMULATION -->
   <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/yarp_control.gazebo.xacro" />
 

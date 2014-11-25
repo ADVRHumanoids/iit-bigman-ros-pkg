@@ -23,17 +23,11 @@ and to define the end effectors of the robot.
 The coordinate frame called gaze defines the head position and orientation. The orientation indicates in which direction the head appears to be looking regardless of any sensors (camera for instance). -->
 <link name="gaze"/>
 
-<xacro:if value="${GAZEBO_BIGMAN_USES_XTION}">
-	<xacro:include filename="$(find bigman_urdf)/urdf/sensors/xtion.urdf.xacro" />
-</xacro:if>
-
-<xacro:unless value="${GAZEBO_BIGMAN_USES_XTION}">
-	<joint name="gaze_joint" type="fixed">
-		<parent link="torso"/>
-		<child link="gaze"/>
-		<origin xyz="0 0 0.1" rpy="0 0 0" />
-	</joint>
-</xacro:unless>
+<joint name="gaze_joint" type="fixed">
+	<parent link="torso"/>
+	<child link="gaze"/>
+	<origin xyz="0 0 0.1" rpy="0 0 0" />
+</joint>
 
   
 
