@@ -56,7 +56,6 @@
 
 <!-- 3) 7DOFS_FOREARMS + SOFT_HANDS -->
 
-<xacro:property name="GAZEBO_BIGMAN_USES_NO_FOREARMS" value="false" />
 <xacro:property name="GAZEBO_BIGMAN_USES_7DOF_FOREARMS_DRC_14" value="true" />
 <xacro:property name="GAZEBO_BIGMAN_USES_SOFTHANDS_DRC_sw1_14" value="true" />
 
