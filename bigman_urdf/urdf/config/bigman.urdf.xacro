@@ -1,29 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="BIGMAN">
 
-<xacro:property name="model_name" value="IIT Bigman w/ Softhand" />
+<xacro:property name="model_name" value="IIT Bigman" />
 <xacro:property name="model_version" value="0.1" />
-
-<!--
-####################################################
-##
-##  FEET SELECTION
-##
-##
-## options:
-## 1) round feet
-## 2) simple feet
-##
-####################################################
-# TODO checks (must be mutually exclusive)
--->
-
-<!-- 1) round feet -->
-<xacro:property name="GAZEBO_BIGMAN_USES_ROUND_FEET_13" value="false" />
-
-<!-- 2) simple feet -->
-<xacro:property name="GAZEBO_BIGMAN_USES_SIMPLE_FEET_DRC_sw1_14" value="true" />
-
 
 <!--
 ####################################################

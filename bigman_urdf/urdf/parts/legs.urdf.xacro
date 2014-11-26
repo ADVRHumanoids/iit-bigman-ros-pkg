@@ -110,15 +110,10 @@
   </link>
 
 <xacro:unless value="${GAZEBO_BIGMAN_USES_ACCURATE_FT}">
-    <xacro:if value="${GAZEBO_BIGMAN_USES_ROUND_FEET_13}">
-      <xacro:include filename="$(find bigman_urdf)/urdf/parts/subparts/round_feet_13/round_foot_R_13.urdf.xacro" />
-    </xacro:if>
-    <xacro:if value="${GAZEBO_BIGMAN_USES_SIMPLE_FEET_DRC_sw1_14}">
       <xacro:include filename="$(find bigman_urdf)/urdf/parts/subparts/simple_feet_DRC_sw1_14/simple_foot_R_DRC_sw1_14.urdf.xacro" />
-    </xacro:if>
-  </xacro:unless>
+</xacro:unless>
 
-  <xacro:if value="${GAZEBO_BIGMAN_USES_ACCURATE_FT}">
+<xacro:if value="${GAZEBO_BIGMAN_USES_ACCURATE_FT}">
     <link name ="RFootFTSensor">
       <inertial>
         <origin xyz="0.0 -0.0 -0.0325" rpy="0 0 0"/>
@@ -127,13 +122,9 @@
       </inertial>
     </link>
 
-    <xacro:if value="${GAZEBO_BIGMAN_USES_ROUND_FEET_13}">
-      <xacro:include filename="$(find bigman_urdf)/urdf/parts/subparts/round_feet_13/accurate_FT_round_foot_R_13.urdf.xacro" />
-    </xacro:if>
-    <xacro:if value="${GAZEBO_BIGMAN_USES_SIMPLE_FEET_DRC_sw1_14}">
+    
       <xacro:include filename="$(find bigman_urdf)/urdf/parts/subparts/simple_feet_DRC_sw1_14/accurate_FT_simple_foot_R_DRC_sw1_14.urdf.xacro" />
-    </xacro:if>
-  </xacro:if>
+ </xacro:if>
 
 <!-- ********************LEFT LEG******************** -->
   <link name ="LHipMot">
@@ -237,12 +228,7 @@
   </link>
 
   <xacro:unless value="${GAZEBO_BIGMAN_USES_ACCURATE_FT}">  
-    <xacro:if value="${GAZEBO_BIGMAN_USES_ROUND_FEET_13}">
-      <xacro:include filename="$(find bigman_urdf)/urdf/parts/subparts/round_feet_13/round_foot_L_13.urdf.xacro" />
-    </xacro:if>
-    <xacro:if value="${GAZEBO_BIGMAN_USES_SIMPLE_FEET_DRC_sw1_14}">
       <xacro:include filename="$(find bigman_urdf)/urdf/parts/subparts/simple_feet_DRC_sw1_14/simple_foot_L_DRC_sw1_14.urdf.xacro" />
-    </xacro:if>
   </xacro:unless>
 
   <xacro:if value="${GAZEBO_BIGMAN_USES_ACCURATE_FT}">
@@ -254,12 +240,7 @@
       </inertial>
     </link>
 
-    <xacro:if value="${GAZEBO_BIGMAN_USES_ROUND_FEET_13}">
-      <xacro:include filename="$(find bigman_urdf)/urdf/parts/subparts/round_feet_13/accurate_FT_round_foot_L_13.urdf.xacro" />
-    </xacro:if>
-    <xacro:if value="${GAZEBO_BIGMAN_USES_SIMPLE_FEET_DRC_sw1_14}">
       <xacro:include filename="$(find bigman_urdf)/urdf/parts/subparts/simple_feet_DRC_sw1_14/accurate_FT_simple_foot_L_DRC_sw1_14.urdf.xacro" />
-    </xacro:if>
   </xacro:if>
 
 
