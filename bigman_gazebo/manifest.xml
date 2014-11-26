@@ -10,7 +10,7 @@
   <url>https://gitlab.robotology.eu/walkman-drc/iit-bigman-ros-pkg</url>
   <depend package="rospy"/>
   <depend package="roscpp"/>
-  <depend package="coman_urdf"/>
+  <depend package="bigman_urdf"/>
   <depend package="xacro"/>
   
 
