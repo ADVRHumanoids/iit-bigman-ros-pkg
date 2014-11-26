@@ -70,8 +70,9 @@ EOF
 	    else
                 gzsdf print bigman_robot.urdf > bigman.sdf
             fi
-            python ../script/gazebowtf.py wtf/bigman.gazebo.wtf bigman_config.urdf.xacro > bigman2.sdf
-            mv bigman2.sdf bigman.sdf
+            
+	    #python ../script/gazebowtf.py wtf/bigman.gazebo.wtf bigman_config.urdf.xacro > bigman2.sdf
+            #mv bigman2.sdf bigman.sdf
             rm bigman_robot.urdf
             echo "...sdf correctly created!"
 
