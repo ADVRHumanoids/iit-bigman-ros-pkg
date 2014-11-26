@@ -42,15 +42,11 @@ and to define the end effectors of the robot -->
 <link name="l_wrist"/>
 <link name="r_wrist"/>
 
-<xacro:if value="${GAZEBO_BIGMAN_USES_7DOF_FOREARMS_DRC_14}">
-    <xacro:include filename="$(find bigman_urdf)/urdf/parts/7DOF_forearms_DRC_14.urdf.xacro" />
-</xacro:if>
+<xacro:include filename="$(find bigman_urdf)/urdf/parts/7DOF_forearms_DRC_14.urdf.xacro" />
 
 <!-- ************ HANDS ************ -->
 
-<xacro:if value="${GAZEBO_BIGMAN_USES_7DOF_FOREARMS_DRC_14}">
-    <xacro:include filename="$(find bigman_urdf)/urdf/parts/soft_hand.urdf.xacro" />	
-</xacro:if>
+<xacro:include filename="$(find bigman_urdf)/urdf/parts/soft_hand.urdf.xacro" />	
 
 <!-- IMU -->
 <xacro:include filename="$(find bigman_urdf)/urdf/sensors/imu.urdf.xacro"/>
