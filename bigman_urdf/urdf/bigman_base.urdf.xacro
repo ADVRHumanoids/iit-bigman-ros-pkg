@@ -52,25 +52,25 @@ and to define the end effectors of the robot -->
   <joint name="l_sole_joint" type="fixed">
     <parent link="LFoot"/>
     <child link="l_sole"/>
-    <origin xyz="0 0 -0.09" rpy="0 0 0" />
+    <origin xyz="0 0 -0.1435" rpy="0 0 0" />
   </joint>
 
   <joint name="r_sole_joint" type="fixed">
     <parent link="RFoot"/>
     <child link="r_sole"/>
-    <origin xyz="0 0 -0.09" rpy="0 0 0" />
+    <origin xyz="0 0 -0.1435" rpy="0 0 0" />
   </joint>
 
   <joint name="l_toe_joint" type="fixed">
     <parent link="l_sole"/>
     <child link="l_toe"/>
-    <origin xyz="0.13 0 0" rpy="0 0 0" />
+    <origin xyz="0.195 0 0" rpy="0 0 0" />
   </joint>
 
   <joint name="r_toe_joint" type="fixed">
     <parent link="r_sole"/>
     <child link="r_toe"/>
-    <origin xyz="0.13 0 0" rpy="0 0 0" />
+    <origin xyz="0.195 0 0" rpy="0 0 0" />
   </joint>
 
 <!-- Reference frames in feet -->
