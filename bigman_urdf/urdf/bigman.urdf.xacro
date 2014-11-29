@@ -29,8 +29,6 @@ The coordinate frame called gaze defines the head position and orientation. The 
 	<origin xyz="0 0 0.1" rpy="0 0 0" />
 </joint>
 
-  
-
 <!-- ************ COMAN BASE ************** -->
 <xacro:include filename="$(find bigman_urdf)/urdf/bigman_base.urdf.xacro"/>
 
@@ -52,6 +50,14 @@ and to define the end effectors of the robot -->
 
 <!-- IMU -->
 <xacro:include filename="$(find bigman_urdf)/urdf/sensors/imu.urdf.xacro"/>
+
+<!-- multisense_sl_v4 -->
+<xacro:include filename="$(find bigman_urdf)/urdf/sensors/multisense_sl.urdf.xacro"/>
+<joint name="neck_joint" type="fixed">
+    <parent link="DWYTorso"/>
+    <child link="head"/>
+    <origin xyz="0.05 0 0.3" rpy="0 0 0" /> 
+</joint>
   
 </robot>
 
