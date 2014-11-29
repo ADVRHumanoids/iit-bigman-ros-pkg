@@ -2,6 +2,8 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
 <xacro:property name="PI" value="3.14159265359" />
+<xacro:property name="cos_42" value="0.743144825" />
+<xacro:property name="sin_42" value="0.669130606" />
 <xacro:property name="SF" value="0.03937" /> <!-- Scale factor for meshes -->
 
 
@@ -15,15 +17,15 @@
       <inertia ixx="7.8337456E-4"  ixy="1.9035768E-4"  ixz="-3.0037676E-6" iyy="6.3399921E-4" iyz="4.3840774E-6" izz="0.001008054" />
     </inertial>
     <visual>
-      <origin xyz="-0.005305 0.0825 -0.844329" rpy="0 0 ${PI}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="RShp_visual">
-        <mesh filename="package://bigman_urdf/meshes/collada/asm0001_collada_24_prt.dae" scale="${SF} ${SF} ${SF}" />
+        <mesh filename="package://bigman_urdf/meshes/ShoulderPitch.STL" scale="0.001 0.001 0.001" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-0.005305 0.0825 -0.844329" rpy="0 0 ${PI}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="RShp_collision">
-        <mesh filename="package://bigman_urdf/meshes/collada/simple/simple_asm0001_collada_24_prt.stl" scale="${SF} ${SF} ${SF}" />
+        <mesh filename="package://bigman_urdf/meshes/simple/ShoulderPitch.STL" scale="0.001 0.001 0.001" />
       </geometry>             
     </collision>
 </link>
@@ -96,15 +98,15 @@
       <inertia ixx="7.8337456E-4"  ixy="-1.9035768E-4"  ixz="-3.0037676E-6" iyy="6.3399921E-4" iyz="-4.3840774E-6" izz="0.001008054" />
     </inertial>
     <visual>
-      <origin xyz="-0.005305 -0.0825 -0.844329" rpy="0 0 ${PI}"/>
-      <geometry name="LShp_visual">
-        <mesh filename="package://bigman_urdf/meshes/collada/asm0001_collada_14_prt.dae" scale="${SF} ${SF} ${SF}" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="RShp_visual">
+        <mesh filename="package://bigman_urdf/meshes/ShoulderPitch.STL" scale="0.001 -0.001 0.001" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-0.005305 -0.0825 -0.844329" rpy="0 0 ${PI}"/>
-      <geometry name="LShp_collision">
-        <mesh filename="package://bigman_urdf/meshes/collada/simple/simple_asm0001_collada_14_prt.stl" scale="${SF} ${SF} ${SF}" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="RShp_collision">
+        <mesh filename="package://bigman_urdf/meshes/simple/ShoulderPitch.STL" scale="0.001 -0.001 0.001" />
       </geometry>             
     </collision>
 </link>
@@ -176,7 +178,7 @@
     <parent link="DWYTorso"/>
     <child link="RShp"/>
     <origin xyz="0.0 -0.2 0.0" rpy="0 0 0" />
-    <axis xyz="0 1 0" />
+    <axis xyz="0 ${cos_42} ${-sin_42}" />
     <limit velocity="4.0" effort="50" lower="-3.4034" upper="1.6581" />
     <dynamics friction="0" damping="3.0"/>
 </joint>
@@ -184,7 +186,7 @@
 <joint name="RShLat" type="revolute">
     <parent link="RShp"/>
     <child link="RShr"/>
-    <origin xyz="0.0 -0.07329999999999999 0.0" rpy="0 0 0" />
+    <origin xyz="0.0 -0.116568264 0.03364" rpy="0 0 0" />
     <axis xyz="1 0 0" />
     <limit velocity="4.0" effort="50" lower="-2.094" upper="0.31415" />
     <dynamics friction="0" damping="3.0"/>
@@ -213,7 +215,7 @@
     <parent link="DWYTorso"/>
     <child link="LShp"/>
     <origin xyz="0.0 0.2 0.0" rpy="0 0 0" />
-    <axis xyz="0 1 0" />
+    <axis xyz="0 ${cos_42} ${sin_42}" />
     <limit velocity="4.0" effort="50" lower="-3.4034" upper="1.6581" />
     <dynamics friction="0" damping="3.0"/>
 </joint>
@@ -221,7 +223,7 @@
 <joint name="LShLat" type="revolute">
     <parent link="LShp"/>
     <child link="LShr"/>
-    <origin xyz="0.0 0.07329999999999999 0.0" rpy="0 0 0" />
+    <origin xyz="0.0 0.116568264 0.03364" rpy="0 0 0" />
     <axis xyz="1 0 0" />
     <limit velocity="4.0" effort="50" lower="-0.31415" upper="2.094" />
     <dynamics friction="0" damping="3.0"/>
