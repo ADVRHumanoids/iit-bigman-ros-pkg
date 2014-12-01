@@ -61,20 +61,20 @@ The coordinate frame called base_link is rigidly attached to the robot root body
 
   <link name ="DWS">
     <inertial>
-      <origin xyz="-0.0021273416 0.0033575235 -0.0010076896" rpy="0 0 0"/>
-      <mass value="0.75398402"/>
-      <inertia ixx="3.4093348E-4"  ixy="-6.2120042E-6"  ixz="-1.3863473E-6" iyy="3.9581916E-4" iyz="1.443019E-6" izz="3.7449753E-4" />
+      <origin xyz="0.00010203 0.00928164 0.08113610" rpy="0 0 0"/>
+      <mass value="5.28825567"/>
+      <inertia ixx="0.01628069"  ixy="-0.00000323"  ixz="0.00001424" iyy="0.01424286" iyz="0.00075458" izz="0.00994169" />
     </inertial>
     <visual>
-      <origin xyz="-0.020281504 0 -0.63912053" rpy="0 0 ${PI}"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry name="DWS_visual">
-        <mesh filename="package://bigman_urdf/meshes/collada/asm0001_collada_08_prt.dae" scale="${SF} ${SF} ${SF}" />
+        <mesh filename="package://bigman_urdf/meshes/TorsoYawPitch.STL" scale="0.001 0.001 0.001" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-0.020281504 0 -0.63912053" rpy="0 0 ${PI}"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry name="DWS_collision">
-        <mesh filename="package://bigman_urdf/meshes/collada/simple/simple_asm0001_collada_08_prt.stl" scale="${SF} ${SF} ${SF}" />
+        <mesh filename="package://bigman_urdf/meshes/simple/TorsoYawPitch.STL" scale="0.001 0.001 0.001" />
       </geometry>             
     </collision>
   </link>
@@ -134,7 +134,7 @@ The coordinate frame called base_link is rigidly attached to the robot root body
   <joint name="WaistYaw" type="revolute">
     <parent link="DWS"/>
     <child link="DWYTorso"/>
-    <origin xyz="0 0 0.22222" rpy="0 0 0" />
+    <origin xyz="0 0 0.22275" rpy="0 0 0" />
     <axis xyz="0 0 1" />
     <limit velocity="4.0" effort="50" lower="-1.3963" upper="1.3962" />
     <dynamics friction="0" damping="3.0"/>
