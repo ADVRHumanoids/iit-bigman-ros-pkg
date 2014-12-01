@@ -12,9 +12,9 @@
 <!-- RIGHT ARM -->
 <link name ="RShp">
     <inertial>
-      <origin xyz="0.0099500565 -0.038682024 1.6446924E-4" rpy="0 0 0"/>
-      <mass value="0.56782202"/>
-      <inertia ixx="7.8337456E-4"  ixy="1.9035768E-4"  ixz="-3.0037676E-6" iyy="6.3399921E-4" iyz="4.3840774E-6" izz="0.001008054" />
+      <origin xyz="-0.00543349 -0.04480023 0.01581062" rpy="0 0 0"/>
+      <mass value="1.81745527"/>
+      <inertia ixx="0.00571053"  ixy="0.00041083"  ixz="-0.00005130" iyy="0.01126908" iyz="-0.00003461" izz="0.01371197" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -93,9 +93,9 @@
 <!-- LEFT ARM -->
 <link name ="LShp">
     <inertial>
-      <origin xyz="0.0099500565 0.038682024 1.6446924E-4" rpy="0 0 0"/>
-      <mass value="0.56782202"/>
-      <inertia ixx="7.8337456E-4"  ixy="-1.9035768E-4"  ixz="-3.0037676E-6" iyy="6.3399921E-4" iyz="-4.3840774E-6" izz="0.001008054" />
+      <origin xyz="-0.00543349 0.04480023 0.01581062" rpy="0 0 0"/>
+      <mass value="1.81745527"/>
+      <inertia ixx="0.00571053"  ixy="-0.00041083"  ixz="-0.00005130" iyy="0.01126908" iyz="0.00003461" izz="0.01371197" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
