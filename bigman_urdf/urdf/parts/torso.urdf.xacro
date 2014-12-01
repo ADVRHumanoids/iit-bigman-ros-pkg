@@ -81,9 +81,9 @@ The coordinate frame called base_link is rigidly attached to the robot root body
 
   <link name ="DWYTorso">
     <inertial>
-      <origin xyz="-0.0358501 1.8286043E-5 0.117557148" rpy="0 0 0"/>
-      <mass value="6.3617175"/>
-      <inertia ixx="0.034089342"  ixy="-9.8308572E-6"  ixz="-7.5649290E-4" iyy="0.030117357" iyz="6.2443771E-6" izz="0.025296582" />
+      <origin xyz="-0.10981228 -0.00551229 -0.06272896" rpy="0 0 0"/>
+      <mass value="22.38913469"/>
+      <inertia ixx="0.15989993"  ixy="0.00087514"  ixz="0.01598045" iyy="0.11274359" iyz="0.00019540" izz="0.21318148" />
     </inertial>
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
