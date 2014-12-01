@@ -32,20 +32,20 @@
 
 <link name ="RShr">
     <inertial>
-      <origin xyz="-0.0038936743 2.2022151E-6 -0.0048616005" rpy="0 0 0"/>
-      <mass value="0.77683752"/>
-      <inertia ixx="4.5812904E-4"  ixy="-2.4111086E-7"  ixz="9.2521185E-6" iyy="4.3089204E-4" iyz="-4.7216950E-7" izz="3.4174855E-4" />
+      <origin xyz="0.00729315 0.00002698 -0.07529696" rpy="0 0 0"/>
+      <mass value="5.00486460"/>
+      <inertia ixx="0.01644345"  ixy="-0.00001187"  ixz="-0.00010546" iyy="0.01804804" iyz="-0.00000565" izz="0.00802420" />
     </inertial>
     <visual>
-      <origin xyz="-0.005305 0.1558 -0.844329" rpy="0 0 ${PI}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="RShr_visual">
-        <mesh filename="package://bigman_urdf/meshes/collada/asm0001_collada_23_prt.dae" scale="${SF} ${SF} ${SF}" />
+        <mesh filename="package://bigman_urdf/meshes/TopUpperArm.STL" scale="0.001 0.001 0.001" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-0.005305 0.1558 -0.844329" rpy="0 0 ${PI}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="RShr_collision">
-        <mesh filename="package://bigman_urdf/meshes/collada/simple/simple_asm0001_collada_23_prt.stl" scale="${SF} ${SF} ${SF}" />
+        <mesh filename="package://bigman_urdf/meshes/simple/TopUpperArm.STL" scale="0.001 0.001 0.001" />
       </geometry>             
     </collision>
 </link>
@@ -113,20 +113,20 @@
 
 <link name ="LShr">
     <inertial>
-      <origin xyz="-0.0038936743 -2.2022151E-6 -0.0048616005" rpy="0 0 0"/>
-      <mass value="0.77683752"/>
-      <inertia ixx="4.5812904E-4"  ixy="2.4111086E-7"  ixz="9.2521185E-6" iyy="4.3089204E-4" iyz="4.721695E-7" izz="3.4174855E-4" />
+      <origin xyz="0.00729315 -0.00002698 -0.07529696" rpy="0 0 0"/>
+      <mass value="5.00486460"/>
+      <inertia ixx="0.01644345"  ixy="0.00001187"  ixz="-0.00010546" iyy="0.01804804" iyz="0.00000565" izz="0.00802420" />
     </inertial>
     <visual>
-      <origin xyz="-0.005305 -0.1558 -0.844329" rpy="0 0 ${PI}"/>
-      <geometry name="LShr_visual">
-        <mesh filename="package://bigman_urdf/meshes/collada/asm0001_collada_13_prt.dae" scale="${SF} ${SF} ${SF}" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="RShr_visual">
+        <mesh filename="package://bigman_urdf/meshes/TopUpperArm.STL" scale="0.001 -0.001 0.001" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-0.005305 -0.1558 -0.844329" rpy="0 0 ${PI}"/>
-      <geometry name="LShr_collision">
-        <mesh filename="package://bigman_urdf/meshes/collada/simple/simple_asm0001_collada_13_prt.stl" scale="${SF} ${SF} ${SF}" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="RShr_collision">
+        <mesh filename="package://bigman_urdf/meshes/simple/TopUpperArm.STL" scale="0.001 -0.001 0.001" />
       </geometry>             
     </collision>
 </link>
