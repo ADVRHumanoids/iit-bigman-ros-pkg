@@ -41,20 +41,20 @@ The coordinate frame called base_link is rigidly attached to the robot root body
 
   <link name ="DWL">
     <inertial>
-      <origin xyz="4.2999707E-4 -0.0097650317 0.033011157" rpy="0 0 0"/>
-      <mass value="0.54588774"/>
-      <inertia ixx="9.7126578E-4"  ixy="-7.2101244E-7"  ixz="1.1440119E-6" iyy="7.4686706E-4" iyz="-1.7450917E-4" izz="6.2196235E-4" />
+      <origin xyz="-0.04610869 0.02232230 -0.02249514" rpy="0 0 0"/>
+      <mass value="1.44965471"/>
+      <inertia ixx="0.01096760"  ixy="0.00111556"  ixz="0.00030030" iyy="0.00409572" iyz="0.00054456" izz="0.01143795" />
     </inertial>
     <visual>
-      <origin xyz="-0.020281504 0 -0.63912053" rpy="0 0 ${PI}"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry name="DWL_visual">
-        <mesh filename="package://bigman_urdf/meshes/collada/asm0001_collada_09_prt.dae" scale="${SF} ${SF} ${SF}" />
+        <mesh filename="package://bigman_urdf/meshes/TorsoRoll.STL" scale="0.001 0.001 0.001" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-0.020281504 0 -0.63912053" rpy="0 0 ${PI}"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry name="DWL_collision">
-        <mesh filename="package://bigman_urdf/meshes/collada/simple/simple_asm0001_collada_09_prt.stl" scale="${SF} ${SF} ${SF}" />
+        <mesh filename="package://bigman_urdf/meshes/simple/TorsoRoll.STL" scale="0.001 0.001 0.001" />
       </geometry>             
     </collision>
   </link>
