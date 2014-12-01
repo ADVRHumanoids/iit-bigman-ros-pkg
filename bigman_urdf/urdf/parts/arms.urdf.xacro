@@ -52,20 +52,20 @@
 
 <link name ="RShy">
     <inertial>
-      <origin xyz="0.0022714213 -0.0071091517 -0.057455221" rpy="0 0 0"/>
-      <mass value="1.0462304"/>
-      <inertia ixx="0.0030934574"  ixy="6.6702837E-5"  ixz="3.0222291E-4" iyy="0.0029181573" iyz="-5.2663661E-4" izz="8.0830389E-4" />
+      <origin xyz="0.02765373 -0.03258647 -0.12698781" rpy="0 0 0"/>
+      <mass value="3.20289133"/>
+      <inertia ixx="0.01129046"  ixy="0.00013518"  ixz="-0.00134760" iyy="0.00984951" iyz="-0.00026836" izz="0.00728549" />
     </inertial>
     <visual>
-      <origin xyz="-0.005305 0.1558 -0.79952053" rpy="0 0 ${PI}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="RShy_visual">
-        <mesh filename="package://bigman_urdf/meshes/collada/asm0001_collada_22_prt.dae" scale="${SF} ${SF} ${SF}" />
+        <mesh filename="package://bigman_urdf/meshes/BottomUpperArm.STL" scale="0.001 0.001 0.001" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-0.005305 0.1558 -0.79952053" rpy="0 0 ${PI}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="RShy_collision">
-        <mesh filename="package://bigman_urdf/meshes/collada/simple/simple_asm0001_collada_22_prt.stl" scale="${SF} ${SF} ${SF}" />
+        <mesh filename="package://bigman_urdf/meshes/simple/BottomUpperArm.STL" scale="0.001 0.001 0.001" />
       </geometry>             
     </collision>
 </link>
@@ -133,20 +133,20 @@
 
   <link name ="LShy">
     <inertial>
-      <origin xyz="0.0022714213 0.0071091517 -0.057455221" rpy="0 0 0"/>
-      <mass value="1.0462304"/>
-      <inertia ixx="0.0030934574"  ixy="-6.6702837E-5"  ixz="3.0222291E-4" iyy="0.0029181573" iyz="5.2663661E-4" izz="8.0830389E-4" />
+      <origin xyz="0.02765373 0.03258647 -0.12698781" rpy="0 0 0"/>
+      <mass value="3.20289133"/>
+      <inertia ixx="0.01129046"  ixy="-0.00013518"  ixz="-0.00134760" iyy="0.00984951" iyz="0.00026836" izz="0.00728549" />
     </inertial>
     <visual>
-      <origin xyz="-0.005305 -0.1558 -0.79952053" rpy="0 0 ${PI}"/>
-      <geometry name="LShy_visual">
-        <mesh filename="package://bigman_urdf/meshes/collada/asm0001_collada_12_prt.dae" scale="${SF} ${SF} ${SF}" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="RShy_visual">
+        <mesh filename="package://bigman_urdf/meshes/BottomUpperArm.STL" scale="0.001 -0.001 0.001" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-0.005305 -0.1558 -0.79952053" rpy="0 0 ${PI}"/>
-      <geometry name="LShy_collision">
-        <mesh filename="package://bigman_urdf/meshes/collada/simple/simple_asm0001_collada_12_prt.stl" scale="${SF} ${SF} ${SF}" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="RShy_collision">
+        <mesh filename="package://bigman_urdf/meshes/simple/BottomUpperArm.STL" scale="0.001 -0.001 0.001" />
       </geometry>             
     </collision>
   </link>
@@ -195,7 +195,7 @@
 <joint name="RShYaw" type="revolute">
     <parent link="RShr"/>
     <child link="RShy"/>
-    <origin xyz="0.0 0.0 -0.04480846999999999" rpy="0 0 0" />
+    <origin xyz="0.0 0.0 -0.222" rpy="0 0 0" />
     <axis xyz="0 0 1" />
     <limit velocity="4.0" effort="50" lower="-1.5708" upper="1.5708" />
     <dynamics friction="0" damping="3.0"/> 
@@ -232,7 +232,7 @@
 <joint name="LShYaw" type="revolute">
     <parent link="LShr"/>
     <child link="LShy"/>
-    <origin xyz="0.0 0.0 -0.04480846999999999" rpy="0 0 0" />
+    <origin xyz="0.0 0.0 -0.222" rpy="0 0 0" />
     <axis xyz="0 0 1" />
     <limit velocity="4.0" effort="50" lower="-1.5708" upper="1.5708" />
     <dynamics friction="0" damping="3.0"/>
