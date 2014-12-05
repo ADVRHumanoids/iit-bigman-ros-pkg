@@ -266,7 +266,7 @@
     <child link="RHipMot"/>
     <origin xyz="0.1059 -0.06 0.0" rpy="0 0 0" />
     <axis xyz="1 0 0" />
-    <limit velocity="4.0" effort="50" lower="-1.9199" upper="0.7854" />
+    <limit velocity="6.283" effort="220" lower="-0.87222" upper="0.697778" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
@@ -275,7 +275,7 @@
     <child link="RThighUpLeg"/>
     <origin xyz="-0.0889 -0.121032 -0.217872" rpy="0 0 0" />
     <axis xyz="0 0 1" />
-    <limit velocity="4.0" effort="50" lower="-1.0472" upper="0.4363" />
+    <limit velocity="6.283" effort="120" lower="-1.57" upper="0.872222" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
@@ -284,7 +284,7 @@
     <child link="RThighLowLeg"/>
     <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="4.0" effort="50" lower="-0.8727" upper="0.8727" />
+    <limit velocity="6.283" effort="220" lower="-2.09333" upper="1.046667" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
@@ -293,7 +293,7 @@
     <child link="RLowLeg"/>
     <origin xyz="0.0 0.0 -0.356" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="4.0" effort="50" lower="-0.1745" upper="1.9199" />
+    <limit velocity="6.283" effort="220" lower="0.0" upper="2.442222" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
@@ -302,7 +302,7 @@
     <child link="RFootmot"/>
     <origin xyz="0.0 0.0 -0.4" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="4.0" effort="50" lower="-0.6109" upper="0.6109" />
+    <limit velocity="6.283" effort="220" lower="-1.39556" upper="0.697778" />
     <dynamics friction="0" damping="3.0"/> 
   </joint>
 
@@ -311,7 +311,7 @@
       <child link="RFoot"/>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
       <axis xyz="1 0 0" />
-      <limit velocity="4.0" effort="50" lower="-1.2217" upper="1.2217" />
+      <limit velocity="6.283" effort="120" lower="-0.785" upper="0.785" />
       <dynamics friction="0" damping="3.0"/>
     </joint>
 
@@ -323,7 +323,7 @@
     <child link="LHipMot"/>
     <origin xyz="0.1059 0.06 0.0" rpy="0 0 0" />
     <axis xyz="1 0 0" />
-    <limit velocity="4.0" effort="50" lower="-1.9199" upper="0.7854" />
+    <limit velocity="6.283" effort="220" lower="-0.697778" upper="0.87222" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
@@ -332,7 +332,7 @@
     <child link="LThighUpLeg"/>
     <origin xyz="-0.0889 0.121032 -0.217872" rpy="0 0 0" />
     <axis xyz="0 0 1" />
-    <limit velocity="4.0" effort="50" lower="-0.4363" upper="1.0472" />
+    <limit velocity="6.283" effort="120" lower="-0.872222" upper="1.57" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
@@ -341,7 +341,7 @@
     <child link="LThighLowLeg"/>
     <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="4.0" effort="50" lower="-0.8727" upper="0.8727" />
+    <limit velocity="6.283" effort="220" lower="-2.09333" upper="1.046667" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
@@ -350,7 +350,7 @@
     <child link="LLowLeg"/>
     <origin xyz="0.0 0.0 -0.356" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="4.0" effort="50" lower="-0.1745" upper="1.9199" />
+    <limit velocity="6.283" effort="220" lower="0.0" upper="2.442222" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
@@ -359,7 +359,7 @@
     <child link="LFootmot"/>
     <origin xyz="0.0 0.0 -0.4" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="4.0" effort="50" lower="-0.6109" upper="0.6109" />
+    <limit velocity="6.283" effort="220" lower="-1.39556" upper="0.697778" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
@@ -368,7 +368,7 @@
     <child link="LFoot"/>
     <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
     <axis xyz="1 0 0" />
-    <limit velocity="4.0" effort="50" lower="-1.2217" upper="1.2217" />
+    <limit velocity="6.283" effort="120" lower="-0.785" upper="0.785" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
