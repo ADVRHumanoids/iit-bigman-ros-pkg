@@ -75,20 +75,20 @@
 
   <link name ="RLowLeg">
     <inertial>
-      <origin xyz="0.0024612666 -0.0053099614 -0.08598948" rpy="0 0 0"/>
-      <mass value="1.4098179"/>
-      <inertia ixx="0.0040604004"  ixy="1.1227206E-5"  ixz="1.2260973E-5" iyy="0.004005652855" iyz="5.1899176E-4" izz="0.0012414054" />
+      <origin xyz="${-5.0828668*mmTom} ${3.7732093*mmTom} ${-7.2605017e+01*mmTom}" rpy="0 0 0"/>
+      <mass value="5.6495309"/>
+      <inertia ixx="${1.0535542e+05*mm2Tom2}"  ixy="${-5.8199221e+02*mm2Tom2}"  ixz="${1.6743598e+03*mm2Tom2}" iyy="${9.7857796e+04*mm2Tom2}" iyz="${-3.3770181e+03*mm2Tom2}" izz="${2.0854086e+04*mm2Tom2}" />
     </inertial>
     <visual>
-      <origin xyz="0.0 0.0726 -0.2942" rpy="0 0 ${PI}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="RLowLeg_visual">
-        <mesh filename="package://bigman_urdf/meshes/collada/asm0001_collada_17_prt.dae" scale="${SF} ${SF} ${SF}" />
+        <mesh filename="package://bigman_urdf/meshes/KneePitch.STL" scale="0.001 0.001 0.001" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0.0 0.0726 -0.2942" rpy="0 0 ${PI}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="RLowLeg_collision">
-        <mesh filename="package://bigman_urdf/meshes/collada/simple/simple_asm0001_collada_17_prt.stl" scale="${SF} ${SF} ${SF}" />
+        <mesh filename="package://bigman_urdf/meshes/simple/KneePitch.STL" scale="0.001 0.001 0.001" />
       </geometry>             
     </collision>
   </link>
@@ -197,20 +197,20 @@
 
   <link name ="LLowLeg">
     <inertial>
-      <origin xyz="0.0024612666 0.0053099614 -0.085989484" rpy="0 0 0"/>
-      <mass value="1.4098179"/>
-      <inertia ixx="0.0040604004"  ixy="-1.1227206E-5"  ixz="1.2260973E-5" iyy="0.004005652855" iyz="-5.1899176E-4" izz="0.0012414054" />
+      <origin xyz="${-5.0828668*mmTom} ${-3.7732093*mmTom} ${-7.2605017e+01*mmTom}" rpy="0 0 0"/>
+      <mass value="5.6495309"/>
+      <inertia ixx="${1.0535542e+05*mm2Tom2}"  ixy="${5.8199221e+02*mm2Tom2}"  ixz="${1.6743598e+03*mm2Tom2}" iyy="${9.7857796e+04*mm2Tom2}" iyz="${3.3770181e+03*mm2Tom2}" izz="${2.0854086e+04*mm2Tom2}" />
     </inertial>
     <visual>
-      <origin xyz="0.0 -0.0726 -0.2942" rpy="0 0 ${PI}"/>
-      <geometry name="LLowLeg_visual">
-        <mesh filename="package://bigman_urdf/meshes/collada/asm0001_collada_03_prt.dae" scale="${SF} ${SF} ${SF}" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="RLowLeg_visual">
+        <mesh filename="package://bigman_urdf/meshes/KneePitch.STL" scale="0.001 0.001 0.001" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0.0 -0.0726 -0.2942" rpy="0 0 ${PI}"/>
-      <geometry name="LLowLeg_collision">
-        <mesh filename="package://bigman_urdf/meshes/collada/simple/simple_asm0001_collada_03_prt.stl" scale="${SF} ${SF} ${SF}" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="RLowLeg_collision">
+        <mesh filename="package://bigman_urdf/meshes/simple/KneePitch.STL" scale="0.001 0.001 0.001" />
       </geometry>             
     </collision>
   </link>
@@ -300,8 +300,8 @@
   <joint name="RAnkLat" type="revolute">
     <parent link="RLowLeg"/>
     <child link="RFootmot"/>
-    <origin xyz="0.0 0.0 -0.201" rpy="0 0 0" />
-    <axis xyz="1 0 0" />
+    <origin xyz="0.0 0.0 -0.4" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
     <limit velocity="4.0" effort="50" lower="-0.6109" upper="0.6109" />
     <dynamics friction="0" damping="3.0"/> 
   </joint>
@@ -357,8 +357,8 @@
   <joint name="LAnkLat" type="revolute">
     <parent link="LLowLeg"/>
     <child link="LFootmot"/>
-    <origin xyz="0.0 0.0 -0.201" rpy="0 0 0" />
-    <axis xyz="1 0 0" />
+    <origin xyz="0.0 0.0 -0.4" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
     <limit velocity="4.0" effort="50" lower="-0.6109" upper="0.6109" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
