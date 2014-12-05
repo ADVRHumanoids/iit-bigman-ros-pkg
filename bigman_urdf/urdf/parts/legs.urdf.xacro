@@ -95,20 +95,20 @@
 
   <link name ="RFootmot">
     <inertial>
-      <origin xyz="8.8067281E-4 -9.2224881E-4 2.3038476E-4" rpy="0 0 0"/>
-      <mass value="0.72992131"/>
-      <inertia ixx="3.2034425E-4"  ixy="7.6346303E-6"  ixz="2.5430158E-7" iyy="3.6584358E-4" iyz="-3.6889276E-6" izz="3.6065156E-4" />
+      <origin xyz="${-2.2024173e+01*mmTom} ${2.5677238*mmTom} ${9.4588455e-01*mmTom}" rpy="0 0 0"/>
+      <mass value="3.2844159"/>
+      <inertia ixx="${7.5550679e+03*mm2Tom2}"  ixy="${6.7488292e+02*mm2Tom2}"  ixz="${5.8332889e+01*mm2Tom2}" iyy="${1.1241163e+04*mm2Tom2}" iyz="${-1.4552081e+02*mm2Tom2}" izz="${1.3391865e+04*mm2Tom2}" />
     </inertial>
     <visual>
-      <origin xyz="0.0 0.0726 -0.0932" rpy="0 0 ${PI}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="RFootmot_visual">
-        <mesh filename="package://bigman_urdf/meshes/collada/asm0001_collada_16_prt.dae" scale="${SF} ${SF} ${SF}" />
+        <mesh filename="package://bigman_urdf/meshes/AnklePitch.STL" scale="0.001 0.001 0.001" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0.0 0.0726 -0.0932" rpy="0 0 ${PI}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="RFootmot_collision">
-        <mesh filename="package://bigman_urdf/meshes/collada/simple/simple_asm0001_collada_16_prt.stl" scale="${SF} ${SF} ${SF}" />
+        <mesh filename="package://bigman_urdf/meshes/simple/AnklePitch.STL" scale="0.001 0.001 0.001" />
       </geometry>             
     </collision>
   </link>
@@ -217,20 +217,20 @@
 
   <link name ="LFootmot">
     <inertial>
-      <origin xyz="8.8067281E-4 9.2224881E-4 2.3038476E-4" rpy="0 0 0"/>
-      <mass value="0.72992131"/>
-      <inertia ixx="3.2034425E-4"  ixy="-7.6346303E-6"  ixz="2.5430158E-7" iyy="3.6584358E-4" iyz="3.6889276E-6" izz="3.6065156E-4" />
+      <origin xyz="${-2.2024173e+01*mmTom} ${-2.5677238*mmTom} ${9.4588455e-01*mmTom}" rpy="0 0 0"/>
+      <mass value="3.2844159"/>
+      <inertia ixx="${7.5550679e+03*mm2Tom2}"  ixy="${-6.7488292e+02*mm2Tom2}"  ixz="${5.8332889e+01*mm2Tom2}" iyy="${1.1241163e+04*mm2Tom2}" iyz="${1.4552081e+02*mm2Tom2}" izz="${1.3391865e+04*mm2Tom2}" />
     </inertial>
     <visual>
-      <origin xyz="0.0 -0.0726 -0.0932" rpy="0 0 ${PI}"/>
-      <geometry name="LFootmot_visual">
-        <mesh filename="package://bigman_urdf/meshes/collada/asm0001_collada_02_prt.dae" scale="${SF} ${SF} ${SF}" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="RFootmot_visual">
+        <mesh filename="package://bigman_urdf/meshes/AnklePitch.STL" scale="0.001 -0.001 0.001" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0.0 -0.0726 -0.0932" rpy="0 0 ${PI}"/>
-      <geometry name="LFootmot_collision">
-        <mesh filename="package://bigman_urdf/meshes/collada/simple/simple_asm0001_collada_02_prt.stl" scale="${SF} ${SF} ${SF}" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="RFootmot_collision">
+        <mesh filename="package://bigman_urdf/meshes/simple/AnklePitch.STL" scale="0.001 -0.001 0.001" />
       </geometry>             
     </collision>
   </link>
@@ -310,7 +310,7 @@
       <parent link="RFootmot"/>
       <child link="RFoot"/>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
-      <axis xyz="0 1 0" />
+      <axis xyz="1 0 0" />
       <limit velocity="4.0" effort="50" lower="-1.2217" upper="1.2217" />
       <dynamics friction="0" damping="3.0"/>
     </joint>
@@ -367,7 +367,7 @@
     <parent link="LFootmot"/>
     <child link="LFoot"/>
     <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
-    <axis xyz="0 1 0" />
+    <axis xyz="1 0 0" />
     <limit velocity="4.0" effort="50" lower="-1.2217" upper="1.2217" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
