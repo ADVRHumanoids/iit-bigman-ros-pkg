@@ -7,7 +7,7 @@
      <param name="use_gui" value="$(arg gui)"/>
         
      <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
-       <param name="zeros" value="{LShLat, 0.06}" />
+       <!-- param name="zeros" value="{LShLat, 0.06}" / -->
      </node>
 
     <!-- start robot state publisher -->
