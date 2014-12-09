@@ -76,7 +76,7 @@
   </gazebo>
 -->
 
-
+<!--
   <joint name="hokuyo_joint" type="continuous">
     <origin xyz="-0.0446 0 0.0880" rpy="0 0 0" />
     <parent link="head" />
@@ -84,6 +84,14 @@
     <axis xyz="1 0 0" />
     <dynamics damping="0.01" friction="0"/>
   </joint>
+-->
+
+  <joint name="hokuyo_joint" type="fixed">
+    <origin xyz="-0.0446 0 0.0880" rpy="0 0 0" />
+    <parent link="head" />
+    <child link="hokuyo_link" />
+  </joint>
+
 
 <!-- Remove frome here!
   <gazebo reference="hokuyo_joint">

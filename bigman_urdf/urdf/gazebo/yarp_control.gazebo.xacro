@@ -73,7 +73,7 @@
 
 
 	<!-- HANDS -->
-	<xacro:unless value="${GAZEBO_BIGMAN_USES_SOFTHANDS_DRC_sw1_14}">
+	<xacro:unless value="${BIGMAN_FIXED_HANDS}">
 		<plugin name="bigman_yarp_gazebo_plugin_left_hand" filename="libgazebo_yarp_controlboard.so">
 			<yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_left_hand.ini</yarpConfigurationFile>
 			<initialConfiguration>0.0</initialConfiguration>

@@ -145,7 +145,7 @@
     <cfmDamping>1</cfmDamping>
     <provideFeedback>true</provideFeedback>
    </gazebo>
-    <xacro:unless value="${GAZEBO_BIGMAN_USES_SOFTHANDS_DRC_sw1_14}">
+    <xacro:unless value="${BIGMAN_FIXED_HANDS}">
       <gazebo reference="r_handj">
         <cfmDamping>1</cfmDamping>
         <provideFeedback>true</provideFeedback>
@@ -181,7 +181,7 @@
     <cfmDamping>1</cfmDamping>
     <provideFeedback>true</provideFeedback>
    </gazebo>
-    <xacro:unless value="${GAZEBO_BIGMAN_USES_SOFTHANDS_DRC_sw1_14}">
+    <xacro:unless value="${BIGMAN_FIXED_HANDS}">
       <gazebo reference="l_handj">
         <cfmDamping>1</cfmDamping>
         <provideFeedback>true</provideFeedback>

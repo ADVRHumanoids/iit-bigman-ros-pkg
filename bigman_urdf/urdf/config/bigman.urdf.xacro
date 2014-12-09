@@ -1,41 +1,18 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="BIGMAN">
 
-<xacro:property name="model_name" value="IIT Bigman" />
+<xacro:property name="model_name" value="IIT Bigman Ctrl" />
 <xacro:property name="model_version" value="0.1" />
 
 <!--
 ####################################################
 ##
-##  FOREARMS & HANDS SELECTION
+##  HAND SELECTION
 ##
 ####################################################
 --> 
-<!-- 7DOFS_FOREARMS + SOFT_HANDS -->
-<xacro:property name="GAZEBO_BIGMAN_USES_SOFTHANDS_DRC_sw1_14" value="true" />
+<xacro:property name="BIGMAN_FIXED_HANDS" value="true" />
 
 
-
-<!--
-####################################################
-##
-##  F/T SELECTION
-##
-##
-## options:
-## 1) accurate (ft sensors located at exact spot)
-#	FT sensors are defined as children of 
-#	underactuated joints, added specifically 
-#	to create a frame for accurate reading, 
-#	and to take into account the bias given
-#	by the sensor's inertia. 
-## 2) non-accurate (ft sensors at the nearest joint)
-##
-####################################################
-#
-# 1/2 (true/false) 
-#
--->
-<xacro:property name="GAZEBO_BIGMAN_USES_ACCURATE_FT" value="false" />
 
 </robot>
