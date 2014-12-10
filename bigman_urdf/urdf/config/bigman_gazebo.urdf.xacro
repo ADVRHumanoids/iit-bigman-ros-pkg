@@ -7,12 +7,28 @@
 <!--
 ####################################################
 ##
-##  HAND SELECTION
+##  BIGMAN_FIXED_HANDS
+##  if "true" a fixed joint between wrist and hand 
+##  will be used otherwise a rotative joints will
+##  be used.
+##  
 ##
 ####################################################
 --> 
 <xacro:property name="BIGMAN_FIXED_HANDS" value="false" />
 
+<!--
+####################################################
+##
+##  BIGMAN_FIXED_MULTISENSE
+##  if "true" a fixed joint between "head" and 
+##  "hokuyo_link" will be used otherwise a continuous 
+##  joints will be used.
+##  
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_FIXED_MULTISENSE" value="false" />
 
 
 </robot>
