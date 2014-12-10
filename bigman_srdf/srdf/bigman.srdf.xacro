@@ -16,8 +16,8 @@
         <link name="Waist"/>
     </group>
     <group name="sensors">
-        <joint name="l_ankle_joint"/>
-        <joint name="r_ankle_joint"/>
+        <joint name="l_leg_ft_joint"/>
+        <joint name="r_leg_ft_joint"/>
     </group>
 
     <group name="left_arm">

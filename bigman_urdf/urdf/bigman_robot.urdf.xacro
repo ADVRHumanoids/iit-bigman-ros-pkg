@@ -8,6 +8,22 @@
   This file groups files to use BIGMAN in GAZEBO
   
   -->
+
+  <!-- Uncomment this to have the robot rigidly connected to the world -->
+<!--
+  <link name="world"/>
+  
+   <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+  
+  <origin xyz="0.0 0.0 1.5" rpy="0 0 0" /> -->
+
+  <origin xyz="0.0 0.0 1.12" rpy="0 0 0" />
+
+  <!-- ROBOT -->
+
   <xacro:include filename="$(find bigman_urdf)/urdf/bigman.urdf.xacro" />
 
   <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/microstrain_3dmgx2_imu.gazebo.xacro" />
@@ -18,7 +34,6 @@
 
 <!-- YARP PLUGINS for GAZEBO SIMULATION -->
   <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/yarp_control.gazebo.xacro" />
-
-  <origin xyz="0.0 0.0 1.12" rpy="0 0 0" />
+  
 </robot>
 
