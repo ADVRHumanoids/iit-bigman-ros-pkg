@@ -32,6 +32,22 @@ The coordinate frame called gaze defines the head position and orientation. The 
 <!-- ************ BIGMAN BASE ************** -->
 <xacro:include filename="$(find bigman_urdf)/urdf/bigman_base.urdf.xacro"/>
 
+<!-- ***** LEGS F/T SENSOR REF FRAMES *******-->
+<link name="l_leg_ft"/>
+<link name="r_leg_ft"/>
+
+<joint name="l_leg_ft_joint" type="fixed">
+    <parent link="LFootmot"/>
+    <child link="l_leg_ft"/>
+    <origin xyz="0.005 0 -0.107" rpy="0 0 0" /> 
+</joint>
+
+<joint name="r_leg_ft_joint" type="fixed">
+    <parent link="RFootmot"/>
+    <child link="r_leg_ft"/>
+    <origin xyz="0.005 0 -0.107" rpy="0 0 0" /> 
+</joint>
+
 <!-- ************ FOREARMS ************ -->
 <!-- This links are defined in order to be compliant with http://www.ros.org/reps/rep-0120.html#coordinate-frames
 and to define the end effectors of the robot -->
