@@ -8,8 +8,8 @@
 <xacro:property name="PI_2" value="1.57079632679" />
 <xacro:property name="SF" value="0.03937" /> <!-- Scale factor for meshes -->
 
-<xacro:property name="cos_20" value="0.93969262078" />
-<xacro:property name="sin_20" value="0.34202014332" />
+<xacro:property name="cos_26" value="0.89879991307" />
+<xacro:property name="sin_26" value="0.43835911792" />
 
 
 <!-- LINKS -->
@@ -119,7 +119,7 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <parent link="Waist"/>
     <child link="DWL"/>
     <origin xyz="0.020281504 0 0.11912053" rpy="0 0 0" />
-    <axis xyz="${cos_20} 0 ${sin_20}" />
+    <axis xyz="${cos_26} 0 ${sin_26}" />
     <limit velocity="6.283" effort="120" lower="-0.610" upper="0.610" />
     <!-- dynamics friction="0" damping="0.3"/ -->
     <dynamics friction="0" damping="3.0"/> 
