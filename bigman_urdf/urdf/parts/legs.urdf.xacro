@@ -7,7 +7,7 @@
 
 <xacro:property name="PI" value="3.14159265359" />
 <xacro:property name="PI_2" value="1.57079632679" />
-<xacro:property name="SF" value="0.03937" /> <!-- Scale factor for meshes -->
+
 
 <!-- LINKS -->
 
@@ -143,13 +143,13 @@
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RHipMot_visual">
+      <geometry name="LHipMot_visual">
         <mesh filename="package://bigman_urdf/meshes/HipRoll.STL" scale="0.001 -0.001 0.001" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RHipMot_collision">
+      <geometry name="LHipMot_collision">
         <mesh filename="package://bigman_urdf/meshes/simple/HipRoll.STL" scale="0.001 -0.001 0.001" />
       </geometry>             
     </collision>
@@ -163,13 +163,13 @@
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RThighUpLeg_visual">
+      <geometry name="LThighUpLeg_visual">
         <mesh filename="package://bigman_urdf/meshes/HipYaw.STL" scale="0.001 -0.001 0.001" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RThighUpLeg_collision">
+      <geometry name="LThighUpLeg_collision">
         <mesh filename="package://bigman_urdf/meshes/simple/HipYaw.STL" scale="0.001 -0.001 0.001" />
       </geometry>             
     </collision>
@@ -183,13 +183,13 @@
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RThighLowLeg_visual">
+      <geometry name="LThighLowLeg_visual">
         <mesh filename="package://bigman_urdf/meshes/HipPitch.STL" scale="0.001 -0.001 0.001" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RThighLowLeg_collision">
+      <geometry name="LThighLowLeg_collision">
         <mesh filename="package://bigman_urdf/meshes/simple/HipPitch.STL" scale="0.001 -0.001 0.001" />
       </geometry>             
     </collision>
@@ -203,13 +203,13 @@
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RLowLeg_visual">
+      <geometry name="LLowLeg_visual">
         <mesh filename="package://bigman_urdf/meshes/KneePitch.STL" scale="0.001 0.001 0.001" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RLowLeg_collision">
+      <geometry name="LLowLeg_collision">
         <mesh filename="package://bigman_urdf/meshes/simple/KneePitch.STL" scale="0.001 0.001 0.001" />
       </geometry>             
     </collision>
@@ -223,13 +223,13 @@
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RFootmot_visual">
+      <geometry name="LFootmot_visual">
         <mesh filename="package://bigman_urdf/meshes/AnklePitch.STL" scale="0.001 -0.001 0.001" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RFootmot_collision">
+      <geometry name="LFootmot_collision">
         <mesh filename="package://bigman_urdf/meshes/simple/AnklePitch.STL" scale="0.001 -0.001 0.001" />
       </geometry>             
     </collision>

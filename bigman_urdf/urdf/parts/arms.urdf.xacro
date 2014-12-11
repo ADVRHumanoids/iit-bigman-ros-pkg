@@ -4,7 +4,8 @@
 <xacro:property name="PI" value="3.14159265359" />
 <xacro:property name="cos_42" value="0.743144825" />
 <xacro:property name="sin_42" value="0.669130606" />
-<xacro:property name="SF" value="0.03937" /> <!-- Scale factor for meshes -->
+<xacro:property name="mmTom" value="0.001" />
+<xacro:property name="mm2Tom2" value="${0.001*0.001}" />
 
 
 <!-- LINKS -->
@@ -72,20 +73,20 @@
 
 <link name ="RElb">
         <inertial>
-          <origin xyz="-6.5553403E-4 -9.3464748E-4 -9.3101289E-4" rpy="0 0 0"/>
-          <mass value="0.63306933"/>
-          <inertia ixx="2.2599075E-4"  ixy="-2.6376470E-7"  ixz="-9.8007285E-6" iyy="2.7781302E-4" iyz="-2.0435288E-6" izz="2.1878992E-4" />
+          <origin xyz="${-5.5754915e+01*mmTom} ${-7.5826040*mmTom} ${-4.3820396e+01*mmTom}" rpy="0 0 0"/>
+          <mass value="8.6765385e-01"/>
+          <inertia ixx="${4.0395238e+03*mm2Tom2}"  ixy="${3.4973136e+02*mm2Tom2}"  ixz="${-6.8400465e+02*mm2Tom2}" iyy="${2.2460561e+03*mm2Tom2}" iyz="${2.8844444e+02*mm2Tom2}" izz="${4.4895027e+03*mm2Tom2}" />
         </inertial>
         <visual>
-          <origin xyz="0 0 0" rpy="-1.570796326795 1.570796326795 0"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="RElb_visual">
-            <mesh filename="package://bigman_urdf/meshes/collada/forearms/elbow.dae" scale="1.0 1.0 1.0" />
+            <mesh filename="package://bigman_urdf/meshes/Elbow.STL" scale="0.001 0.001 0.001" />
           </geometry>
         </visual>
         <collision>
-          <origin xyz="0 0 0" rpy="-1.570796326795 1.570796326795 0"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="RElb_collision">
-            <mesh filename="package://bigman_urdf/meshes/collada/simple/forearms/elbow.stl" scale="1.0 1.0 1.0" />
+            <mesh filename="package://bigman_urdf/meshes/simple/Elbow.STL" scale="0.001 0.001 0.001" />
           </geometry>             
         </collision>
 </link>
@@ -99,13 +100,13 @@
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RShp_visual">
+      <geometry name="LShp_visual">
         <mesh filename="package://bigman_urdf/meshes/ShoulderPitch.STL" scale="0.001 -0.001 0.001" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RShp_collision">
+      <geometry name="LShp_collision">
         <mesh filename="package://bigman_urdf/meshes/simple/ShoulderPitch.STL" scale="0.001 -0.001 0.001" />
       </geometry>             
     </collision>
@@ -119,13 +120,13 @@
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RShr_visual">
+      <geometry name="LShr_visual">
         <mesh filename="package://bigman_urdf/meshes/TopUpperArm.STL" scale="0.001 -0.001 0.001" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RShr_collision">
+      <geometry name="LShr_collision">
         <mesh filename="package://bigman_urdf/meshes/simple/TopUpperArm.STL" scale="0.001 -0.001 0.001" />
       </geometry>             
     </collision>
@@ -139,13 +140,13 @@
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RShy_visual">
+      <geometry name="LShy_visual">
         <mesh filename="package://bigman_urdf/meshes/BottomUpperArm.STL" scale="0.001 -0.001 0.001" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry name="RShy_collision">
+      <geometry name="LShy_collision">
         <mesh filename="package://bigman_urdf/meshes/simple/BottomUpperArm.STL" scale="0.001 -0.001 0.001" />
       </geometry>             
     </collision>
@@ -153,20 +154,20 @@
 
     <link name ="LElb">
         <inertial>
-          <origin xyz="-6.5553403E-4 9.3464748E-4 -9.3101289E-4" rpy="0 0 0"/>
-          <mass value="0.63306933"/>
-          <inertia ixx="2.2599075E-4"  ixy="2.6376470E-7"  ixz="-9.8007285E-6" iyy="2.7781302E-4" iyz="2.0435288E-6" izz="2.1878992E-4" />
+          <origin xyz="${-5.5754915e+01*mmTom} ${7.5826040*mmTom} ${-4.3820396e+01*mmTom}" rpy="0 0 0"/>
+          <mass value="8.6765385e-01"/>
+          <inertia ixx="${4.0395238e+03*mm2Tom2}"  ixy="${-3.4973136e+02*mm2Tom2}"  ixz="${-6.8400465e+02*mm2Tom2}" iyy="${2.2460561e+03*mm2Tom2}" iyz="${-2.8844444e+02*mm2Tom2}" izz="${4.4895027e+03*mm2Tom2}" />
         </inertial>
         <visual>
-          <origin xyz="0 0 0" rpy="-1.570796326795 1.570796326795 0"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="LElb_visual">
-            <mesh filename="package://bigman_urdf/meshes/collada/forearms/elbow.dae" scale="1.0 1.0 1.0" />
+            <mesh filename="package://bigman_urdf/meshes/Elbow.STL" scale="0.001 -0.001 0.001" />
           </geometry>
         </visual>
         <collision>
-          <origin xyz="0 0 0" rpy="-1.570796326795 1.570796326795 0"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="LElb_collision">
-            <mesh filename="package://bigman_urdf/meshes/collada/simple/forearms/elbow.stl" scale="1.0 1.0 1.0" />
+            <mesh filename="package://bigman_urdf/meshes/simple/Elbow.STL" scale="0.001 -0.001 0.001" />
           </geometry>             
         </collision>
       </link>
@@ -206,7 +207,7 @@
     <child link="RElb"/>
     <origin xyz="0.036 0.0 -0.15" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="4.0" effort="50" lower="-2.3562" upper="0.0" />
+    <limit velocity="6.283" effort="60" lower="-2.3562" upper="0.0" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
@@ -243,7 +244,7 @@
     <child link="LElb"/>
     <origin xyz="0.036 0.0 -0.15" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="4.0" effort="50" lower="-2.3562" upper="0.0" />
+    <limit velocity="6.283" effort="60" lower="-2.3562" upper="0.0" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
