@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:property name="mmTom" value="0.001" />
+<xacro:property name="mm2Tom2" value="${0.001*0.001}" />
   
 <!-- distance from last motor to FT sensor 
 		The value needs to be subtracted to the *FOrearmPlate joint z origin,
@@ -7,27 +10,27 @@
 		it neeeds to be added in return to the following joint (*Wrj1) z origin
 		and to the z displacement of mass, visual and collision of *Forearm -->
 <xacro:property name="Wrj1_to_FT" value="0.0568" />
+
+
 <!-- ****************LINKS**************** -->
 <!-- ****************LEFT FOREARM**************** -->
 
-      <!-- ## WRONG NUMBERS FOR INERTIAL!!! FIX THEM!! ## -->
-      <!-- In ROBOTRAN this link is named LFARM -->
       <link name ="LForearm">
         <inertial>
-          <origin xyz="0 0 ${-0.085 + Wrj1_to_FT}" rpy="0 0 0"/>
-          <mass value="0.93351655"/>
-          <inertia ixx="0.001"  ixy="0.0"  ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+          <origin xyz="${1.2625599e-02*mmTom} ${-4.2975381*mmTom} ${4.4717986e+01*mmTom}" rpy="0 0 0"/>
+          <mass value="2.2127686"/>
+          <inertia ixx="${6.5428368e+03*mm2Tom2}"  ixy="${4.1196967e+01*mm2Tom2}"  ixz="${3.2727270*mm2Tom2}" iyy="${5.5878290e+03*mm2Tom2}" iyz="${-4.2088668e+02*mm2Tom2}" izz="${2.4783023e+03*mm2Tom2}" />
         </inertial>
         <visual>
-          <origin xyz="0 0 ${0.015 + Wrj1_to_FT}" rpy="3.14159265359 0 1.570796326795"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="LForearm_visual">
-            <mesh filename="package://bigman_urdf/meshes/collada/forearms/forearm_lowpoly.dae" scale="0.1 0.1 0.1" />
+            <mesh filename="package://bigman_urdf/meshes/Forearm.STL" scale="0.001 0.001 0.001" />
           </geometry>
         </visual>
         <collision>
-          <origin xyz="0 0 ${0.015 + Wrj1_to_FT}" rpy="0 3.14159265359 1.570796326795"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="LForearm_collision">
-            <mesh filename="package://bigman_urdf/meshes/collada/simple/forearms/forearm.stl" scale="1.0 1.0 1.0" />
+            <mesh filename="package://bigman_urdf/meshes/simple/Forearm.STL" scale="0.001 0.001 0.001" />
           </geometry>             
         </collision>
       </link>
@@ -79,24 +82,22 @@
 <!-- ****************RIGHT FOREARM**************** --> 
 
 
-      <!-- ## WRONG NUMBERS FOR INERTIAL!!! FIX THEM!! ## -->
-      <!-- In ROBOTRAN this link is named RFArm -->
       <link name ="RForearm">
         <inertial>
-          <origin xyz="0 0 ${-0.085 + Wrj1_to_FT}" rpy="0 0 0"/>
-          <mass value="0.93351655"/>
-          <inertia ixx="0.001"  ixy="0.0"  ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+          <origin xyz="${1.2625599e-02*mmTom} ${4.2975381*mmTom} ${4.4717986e+01*mmTom}" rpy="0 0 0"/>
+          <mass value="2.2127686"/>
+          <inertia ixx="${6.5428368e+03*mm2Tom2}"  ixy="${-4.1196967e+01*mm2Tom2}"  ixz="${3.2727270*mm2Tom2}" iyy="${5.5878290e+03*mm2Tom2}" iyz="${4.2088668e+02*mm2Tom2}" izz="${2.4783023e+03*mm2Tom2}" />
         </inertial>
         <visual>
-          <origin xyz="0 0 ${0.015 + Wrj1_to_FT}" rpy="3.14159265359 0 1.570796326795"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="RForearm_visual">
-            <mesh filename="package://bigman_urdf/meshes/collada/forearms/forearm_lowpoly.dae" scale="0.1 0.1 0.1" />
+            <mesh filename="package://bigman_urdf/meshes/Forearm.STL" scale="0.001 -0.001 0.001" />
           </geometry>
         </visual>
         <collision>
-          <origin xyz="0 0 ${0.015 + Wrj1_to_FT}" rpy="0 3.14159265359 1.570796326795"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="RForearm_collision">
-            <mesh filename="package://bigman_urdf/meshes/collada/simple/forearms/forearm.stl" scale="1.0 1.0 1.0" />
+            <mesh filename="package://bigman_urdf/meshes/simple/Forearm.STL" scale="0.001 -0.001 0.001" />
           </geometry>             
         </collision>
       </link>
@@ -150,9 +151,9 @@
 <joint name="LForearmPlate" type="revolute">
     <parent link="LElb"/>
     <child link="LForearm"/>
-    <origin xyz="-0.015 0.0 ${-0.051 - Wrj1_to_FT}" rpy="0 0 0"/>
+    <origin xyz="-0.075 0.0 -0.1955" rpy="0 0 0"/>
     <axis xyz="0 0 1" />
-    <limit velocity="4.0" effort="5" lower="-1.5708" upper="1.5708" />
+    <limit velocity="6.283" effort="60" lower="-2.529" upper="2.529" />
     <dynamics friction="0" damping="0.03"/>
   </joint>
 
@@ -184,9 +185,9 @@
 <joint name="RForearmPlate" type="revolute">
     <parent link="RElb"/>
     <child link="RForearm"/>
-    <origin xyz="-0.015 0.0 ${-0.051 - Wrj1_to_FT}" rpy="0 0 0"/>
+    <origin xyz="-0.075 0.0 -0.1955" rpy="0 0 0"/>
     <axis xyz="0 0 1" />
-    <limit velocity="4.0" effort="5" lower="-1.5708" upper="1.5708" />
+    <limit velocity="6.283" effort="60" lower="-2.529" upper="2.529" />
     <dynamics friction="0" damping="0.03"/>
   </joint>
 
