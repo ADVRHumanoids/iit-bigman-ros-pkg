@@ -17,42 +17,40 @@
 
       <link name ="LForearm">
         <inertial>
-          <origin xyz="${1.2625599e-02*mmTom} ${-4.2975381*mmTom} ${4.4717986e+01*mmTom}" rpy="0 0 0"/>
+          <origin xyz="${1.2625599e-02*mmTom} ${4.2975381*mmTom} ${4.4717986e+01*mmTom}" rpy="0 0 0"/>
           <mass value="2.2127686"/>
-          <inertia ixx="${6.5428368e+03*mm2Tom2}"  ixy="${4.1196967e+01*mm2Tom2}"  ixz="${3.2727270*mm2Tom2}" iyy="${5.5878290e+03*mm2Tom2}" iyz="${-4.2088668e+02*mm2Tom2}" izz="${2.4783023e+03*mm2Tom2}" />
+          <inertia ixx="${6.5428368e+03*mm2Tom2}"  ixy="${-4.1196967e+01*mm2Tom2}"  ixz="${3.2727270*mm2Tom2}" iyy="${5.5878290e+03*mm2Tom2}" iyz="${4.2088668e+02*mm2Tom2}" izz="${2.4783023e+03*mm2Tom2}" />
         </inertial>
         <visual>
           <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="LForearm_visual">
-            <mesh filename="package://bigman_urdf/meshes/Forearm.STL" scale="0.001 0.001 0.001" />
+            <mesh filename="package://bigman_urdf/meshes/Forearm.STL" scale="0.001 -0.001 0.001" />
           </geometry>
         </visual>
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="LForearm_collision">
-            <mesh filename="package://bigman_urdf/meshes/simple/Forearm.STL" scale="0.001 0.001 0.001" />
+            <mesh filename="package://bigman_urdf/meshes/simple/Forearm.STL" scale="0.001 -0.001 0.001" />
           </geometry>             
         </collision>
       </link>
 
-      <!-- ## WRONG NUMBERS FOR INERTIAL!!! FIX THEM!! ## -->
-      <!-- Here I have used the inertia of a full cylinder with r = 0.02 [m] and h = 0.07 [m] -->
       <link name="LWrMot2">
         <inertial>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
-          <mass value="0.26070556"/>
-          <inertia ixx="0.000132"  ixy="0"  ixz="0" iyy="0.000132" iyz="0" izz="5.213E-5" />
+          <origin xyz="${9.8193770*mmTom} ${1.3797184*mmTom} ${-8.0380065e+01*mmTom}" rpy="0 0 0"/>
+          <mass value="1.2838072"/>
+          <inertia ixx="${1.9941240e+03*mm2Tom2}"  ixy="${2.5697060e+01*mm2Tom2}"  ixz="${1.7443538e+02*mm2Tom2}" iyy="${2.1755329e+03*mm2Tom2}" iyz="${-1.2100987e+02*mm2Tom2}" izz="${1.8303760e+03*mm2Tom2}" />
         </inertial>
         <visual>
-          <origin xyz="0.025 0 0" rpy="0 1.570796326795 3.14159265359"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="LWrMot2_visual">
-            <mesh filename="package://bigman_urdf/meshes/collada/forearms/fa_asm_3_right_sw0001.dae" scale="0.001 0.001 0.001" />
+            <mesh filename="package://bigman_urdf/meshes/ForearmPitch.STL" scale="0.001 -0.001 0.001" />
           </geometry>
         </visual>
         <collision>
-          <origin xyz="0.025 0 0" rpy="0 1.570796326795 3.14159265359"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="LWrMot2_collision">
-            <mesh filename="package://bigman_urdf/meshes/collada/simple/forearms/simple_fa_asm_3_right_sw0001.stl" scale="0.001 0.001 0.001" />
+            <mesh filename="package://bigman_urdf/meshes/simple/ForearmPitch.STL" scale="0.001 -0.001 0.001" />
           </geometry>             
         </collision>
       </link>
@@ -81,45 +79,42 @@
 
 <!-- ****************RIGHT FOREARM**************** --> 
 
-
       <link name ="RForearm">
         <inertial>
-          <origin xyz="${1.2625599e-02*mmTom} ${4.2975381*mmTom} ${4.4717986e+01*mmTom}" rpy="0 0 0"/>
+          <origin xyz="${1.2625599e-02*mmTom} ${-4.2975381*mmTom} ${4.4717986e+01*mmTom}" rpy="0 0 0"/>
           <mass value="2.2127686"/>
-          <inertia ixx="${6.5428368e+03*mm2Tom2}"  ixy="${-4.1196967e+01*mm2Tom2}"  ixz="${3.2727270*mm2Tom2}" iyy="${5.5878290e+03*mm2Tom2}" iyz="${4.2088668e+02*mm2Tom2}" izz="${2.4783023e+03*mm2Tom2}" />
+          <inertia ixx="${6.5428368e+03*mm2Tom2}"  ixy="${4.1196967e+01*mm2Tom2}"  ixz="${3.2727270*mm2Tom2}" iyy="${5.5878290e+03*mm2Tom2}" iyz="${-4.2088668e+02*mm2Tom2}" izz="${2.4783023e+03*mm2Tom2}" />
         </inertial>
         <visual>
           <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="RForearm_visual">
-            <mesh filename="package://bigman_urdf/meshes/Forearm.STL" scale="0.001 -0.001 0.001" />
+            <mesh filename="package://bigman_urdf/meshes/Forearm.STL" scale="0.001 0.001 0.001" />
           </geometry>
         </visual>
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="RForearm_collision">
-            <mesh filename="package://bigman_urdf/meshes/simple/Forearm.STL" scale="0.001 -0.001 0.001" />
+            <mesh filename="package://bigman_urdf/meshes/simple/Forearm.STL" scale="0.001 0.001 0.001" />
           </geometry>             
         </collision>
       </link>
 
-      <!-- ## WRONG NUMBERS FOR INERTIAL!!! FIX THEM!! ## -->
-      <!-- Here I have used the inertia of a full cylinder with r = 0.02 [m] and h = 0.07 [m] -->
       <link name="RWrMot2">
         <inertial>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
-          <mass value="0.26070556"/>
-          <inertia ixx="0.000132"  ixy="0"  ixz="0" iyy="0.000132" iyz="0" izz="5.213E-5" />
+          <origin xyz="${9.8193770*mmTom} ${-1.3797184*mmTom} ${-8.0380065e+01*mmTom}" rpy="0 0 0"/>
+          <mass value="1.2838072"/>
+          <inertia ixx="${1.9941240e+03*mm2Tom2}"  ixy="${-2.5697060e+01*mm2Tom2}"  ixz="${1.7443538e+02*mm2Tom2}" iyy="${2.1755329e+03*mm2Tom2}" iyz="${1.2100987e+02*mm2Tom2}" izz="${1.8303760e+03*mm2Tom2}" />
         </inertial>
         <visual>
-          <origin xyz="0.025 0 0" rpy="0 1.570796326795 3.14159265359"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="RWrMot2_visual">
-            <mesh filename="package://bigman_urdf/meshes/collada/forearms/fa_asm_3_right_sw0001.dae" scale="0.001 0.001 0.001" />
+            <mesh filename="package://bigman_urdf/meshes/ForearmPitch.STL" scale="0.001 0.001 0.001" />
           </geometry>
         </visual>
         <collision>
-          <origin xyz="0.025 0 0" rpy="0 1.570796326795 3.14159265359"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="RWrMot2_collision">
-            <mesh filename="package://bigman_urdf/meshes/collada/simple/forearms/simple_fa_asm_3_right_sw0001.stl" scale="0.001 0.001 0.001" />
+            <mesh filename="package://bigman_urdf/meshes/simple/ForearmPitch.STL" scale="0.001 0.001 0.001" />
           </geometry>             
         </collision>
       </link>
@@ -160,18 +155,18 @@
   <joint name="LWrj1" type="revolute">
     <parent link="LForearm"/>
     <child link="LWrMot2"/>
-    <origin xyz="0 0 ${-0.14368 + Wrj1_to_FT}" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
-    <limit velocity="4.0" effort="5" lower="-0.524" upper="0.524" />
+    <limit velocity="6.283" effort="60" lower="-1.48" upper="1.48" />
     <dynamics friction="0" damping="0.03"/>
   </joint>
 
   <joint name="LWrj2" type="revolute">
     <parent link="LWrMot2"/>
     <child link="LWrMot3"/>
-    <origin xyz="0 0 0.0" rpy="0 0 0"/>
+    <origin xyz="0 0 -0.092" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
-    <limit velocity="4.0" effort="5" lower="-0.785375" upper="1.395" />
+    <limit velocity="6.283" effort="60" lower="-0.785375" upper="1.395" />
     <dynamics friction="0" damping="0.03"/>
   </joint>
 
@@ -194,18 +189,18 @@
   <joint name="RWrj1" type="revolute">
     <parent link="RForearm"/>
     <child link="RWrMot2"/>
-    <origin xyz="0 0 ${-0.14368 + Wrj1_to_FT}" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
-    <limit velocity="4.0" effort="5" lower="-0.524" upper="0.524" />
+    <limit velocity="6.283" effort="60" lower="-1.48" upper="1.48" />
     <dynamics friction="0" damping="0.03"/>
   </joint>
 
   <joint name="RWrj2" type="revolute">
     <parent link="RWrMot2"/>
     <child link="RWrMot3"/>
-    <origin xyz="0 0 0.0" rpy="0 0 0"/>
+    <origin xyz="0 0 -0.092" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
-    <limit velocity="4.0" effort="5" lower="-1.395" upper="0.785375" />
+    <limit velocity="6.283" effort="60" lower="-1.395" upper="0.785375" />
     <dynamics friction="0" damping="0.03"/>
   </joint>
 
