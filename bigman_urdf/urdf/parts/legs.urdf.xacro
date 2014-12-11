@@ -261,7 +261,7 @@
 
 <!-- ********************RIGHT LEG******************** -->
 
-  <joint name="RHipSag" type="revolute">
+  <joint name="RHipLat" type="revolute">
     <parent link="Waist"/>
     <child link="RHipMot"/>
     <origin xyz="0.1059 -0.06 0.0" rpy="0 0 0" />
@@ -270,7 +270,7 @@
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
-  <joint name="RHipLat" type="revolute">
+  <joint name="RHipYaw" type="revolute">
     <parent link="RHipMot"/>
     <child link="RThighUpLeg"/>
     <origin xyz="-0.0889 -0.121032 -0.217872" rpy="0 0 0" />
@@ -279,7 +279,7 @@
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
-  <joint name="RHipYaw" type="revolute">
+  <joint name="RHipSag" type="revolute">
     <parent link="RThighUpLeg"/>
     <child link="RThighLowLeg"/>
     <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
@@ -297,7 +297,7 @@
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
-  <joint name="RAnkLat" type="revolute">
+  <joint name="RAnkSag" type="revolute">
     <parent link="RLowLeg"/>
     <child link="RFootmot"/>
     <origin xyz="0.0 0.0 -0.4" rpy="0 0 0" />
@@ -306,7 +306,7 @@
     <dynamics friction="0" damping="3.0"/> 
   </joint>
 
-    <joint name="RAnkSag" type="revolute">
+    <joint name="RAnkLat" type="revolute">
       <parent link="RFootmot"/>
       <child link="RFoot"/>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
@@ -318,7 +318,7 @@
 
 <!-- ********************LEFT LEG******************** -->
 
-  <joint name="LHipSag" type="revolute">
+  <joint name="LHipLat" type="revolute">
     <parent link="Waist"/>
     <child link="LHipMot"/>
     <origin xyz="0.1059 0.06 0.0" rpy="0 0 0" />
@@ -327,7 +327,7 @@
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
-  <joint name="LHipLat" type="revolute">
+  <joint name="LHipYaw" type="revolute">
     <parent link="LHipMot"/>
     <child link="LThighUpLeg"/>
     <origin xyz="-0.0889 0.121032 -0.217872" rpy="0 0 0" />
@@ -336,7 +336,7 @@
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
-  <joint name="LHipYaw" type="revolute">
+  <joint name="LHipSag" type="revolute">
     <parent link="LThighUpLeg"/>
     <child link="LThighLowLeg"/>
     <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
@@ -354,7 +354,7 @@
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
-  <joint name="LAnkLat" type="revolute">
+  <joint name="LAnkSag" type="revolute">
     <parent link="LLowLeg"/>
     <child link="LFootmot"/>
     <origin xyz="0.0 0.0 -0.4" rpy="0 0 0" />
@@ -363,7 +363,7 @@
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
-  <joint name="LAnkSag" type="revolute">
+  <joint name="LAnkLat" type="revolute">
     <parent link="LFootmot"/>
     <child link="LFoot"/>
     <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
