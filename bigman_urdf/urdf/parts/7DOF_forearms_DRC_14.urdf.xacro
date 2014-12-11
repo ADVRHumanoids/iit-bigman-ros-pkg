@@ -55,24 +55,22 @@
         </collision>
       </link>
 
-      <!-- ## WRONG NUMBERS FOR INERTIAL!!! FIX THEM!! ## -->
-      <!-- Here I have used the inertia of a concave cylinder with r = 0.02 [m] -->
       <link name="LWrMot3">
         <inertial>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
-          <mass value="0.054007518"/>
-          <inertia ixx="2.16E-5"  ixy="0"  ixz="0" iyy="2.16E-5" iyz="0" izz="2.16E-5" />
+          <origin xyz="${7.0380706*mmTom} ${-1.0811188e-02*mmTom} ${-3.9669274e+01*mmTom}" rpy="0 0 0"/>
+          <mass value="4.2801447e-01"/>
+          <inertia ixx="${2.8620156e+02*mm2Tom2}"  ixy="${5.2570457e-02*mm2Tom2}"  ixz="${-3.9174213e+01*mm2Tom2}" iyy="${7.1261855e+02*mm2Tom2}" iyz="${-9.5020266e-02*mm2Tom2}" izz="${6.1444258e+02*mm2Tom2}" />
         </inertial>
         <visual>
-          <origin xyz="0.025 -0.012 -0.02" rpy="0 3.14159265359 1.570796326795"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="LWrMot3_visual">
-            <mesh filename="package://bigman_urdf/meshes/collada/forearms/fa_hand_interface_rig_sw0001.dae" scale="0.001 0.001 0.001" />
+            <mesh filename="package://bigman_urdf/meshes/ForearmRoll.STL" scale="0.001 -0.001 0.001" />
           </geometry>
         </visual>
         <collision>
-          <origin xyz="0.025 -0.012 -0.02" rpy="0 3.14159265359 1.570796326795"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="LWrMot3_collision">
-            <mesh filename="package://bigman_urdf/meshes/collada/simple/forearms/simple_fa_hand_interface_rig_sw0001.stl" scale="0.001 0.001 0.001" />
+            <mesh filename="package://bigman_urdf/meshes/simple/ForearmRoll.STL" scale="0.001 -0.001 0.001" />
           </geometry>             
         </collision>
       </link>
@@ -119,24 +117,22 @@
         </collision>
       </link>
 
-      <!-- ## WRONG NUMBERS FOR INERTIAL!!! FIX THEM!! ## -->
-      <!-- Here I have used the inertia of a concave cylinder with r = 0.02 [m] -->
       <link name="RWrMot3">
         <inertial>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
-          <mass value="0.054007518"/>
-          <inertia ixx="2.16E-5"  ixy="0"  ixz="0" iyy="2.16E-5" iyz="0" izz="2.16E-5" />
+          <origin xyz="${7.0380706*mmTom} ${1.0811188e-02*mmTom} ${-3.9669274e+01*mmTom}" rpy="0 0 0"/>
+          <mass value="4.2801447e-01"/>
+          <inertia ixx="${2.8620156e+02*mm2Tom2}"  ixy="${-5.2570457e-02*mm2Tom2}"  ixz="${-3.9174213e+01*mm2Tom2}" iyy="${7.1261855e+02*mm2Tom2}" iyz="${9.5020266e-02*mm2Tom2}" izz="${6.1444258e+02*mm2Tom2}" />
         </inertial>
         <visual>
-          <origin xyz="0.025 -0.012 -0.02" rpy="0 3.14159265359 1.570796326795"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="RWrMot3_visual">
-            <mesh filename="package://bigman_urdf/meshes/collada/forearms/fa_hand_interface_rig_sw0001.dae" scale="0.001 0.001 0.001" />
+            <mesh filename="package://bigman_urdf/meshes/ForearmRoll.STL" scale="0.001 0.001 0.001" />
           </geometry>
         </visual>
         <collision>
-          <origin xyz="0.025 -0.012 -0.02" rpy="0 3.14159265359 1.570796326795"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="RWrMot3_collision">
-            <mesh filename="package://bigman_urdf/meshes/collada/simple/forearms/simple_fa_hand_interface_rig_sw0001.stl" scale="0.001 0.001 0.001" />
+            <mesh filename="package://bigman_urdf/meshes/simple/ForearmRoll.STL" scale="0.001 0.001 0.001" />
           </geometry>             
         </collision>
       </link> 
@@ -166,7 +162,7 @@
     <child link="LWrMot3"/>
     <origin xyz="0 0 -0.092" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
-    <limit velocity="6.283" effort="60" lower="-0.785375" upper="1.395" />
+    <limit velocity="6.283" effort="60" lower="-1.48" upper="1.48" />
     <dynamics friction="0" damping="0.03"/>
   </joint>
 
@@ -200,7 +196,7 @@
     <child link="RWrMot3"/>
     <origin xyz="0 0 -0.092" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
-    <limit velocity="6.283" effort="60" lower="-1.395" upper="0.785375" />
+    <limit velocity="6.283" effort="60" lower="-1.48" upper="1.48" />
     <dynamics friction="0" damping="0.03"/>
   </joint>
 
