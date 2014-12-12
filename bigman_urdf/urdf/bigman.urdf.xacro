@@ -56,7 +56,7 @@ and to define the end effectors of the robot -->
 <link name="l_wrist"/>
 <link name="r_wrist"/>
 
-<xacro:include filename="$(find bigman_urdf)/urdf/parts/7DOF_forearms_DRC_14.urdf.xacro" />
+<xacro:include filename="$(find bigman_urdf)/urdf/parts/forearms.urdf.xacro" />
 
 <!-- ************ HANDS ************ -->
 
