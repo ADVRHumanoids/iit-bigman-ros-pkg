@@ -207,7 +207,7 @@
     <child link="RElb"/>
     <origin xyz="0.036 0.0 -0.15" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="6.283" effort="60" lower="-2.3562" upper="0.0" />
+    <limit velocity="6.283" effort="60" lower="-2.966" upper="0.523" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
@@ -244,7 +244,7 @@
     <child link="LElb"/>
     <origin xyz="0.036 0.0 -0.15" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="6.283" effort="60" lower="-2.3562" upper="0.0" />
+    <limit velocity="6.283" effort="60" lower="-2.966" upper="0.523" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 

@@ -4,14 +4,6 @@
 <xacro:property name="mmTom" value="0.001" />
 <xacro:property name="mm2Tom2" value="${0.001*0.001}" />
   
-<!-- distance from last motor to FT sensor 
-		The value needs to be subtracted to the *FOrearmPlate joint z origin,
-		and in order to be compensated in the following joint and link,
-		it neeeds to be added in return to the following joint (*Wrj1) z origin
-		and to the z displacement of mass, visual and collision of *Forearm -->
-<xacro:property name="Wrj1_to_FT" value="0.0568" />
-
-
 <!-- ****************LINKS**************** -->
 <!-- ****************LEFT FOREARM**************** -->
 
