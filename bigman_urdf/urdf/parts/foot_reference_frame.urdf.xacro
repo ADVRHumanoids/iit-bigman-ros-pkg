@@ -14,10 +14,10 @@
 
 	<xacro:macro name="references_frame_foot" params="parent name mirror_y">
 	<!-- macro for reference frames in foot -->
-		<xacro:reference_frame_foot parent="${parent}" name="${name}_upper_right" x="0.195" y="${mirror_y*-0.09}" />
-		<xacro:reference_frame_foot parent="${parent}" name="${name}_upper_left" x="0.195" y="${mirror_y*0.07}" />
-		<xacro:reference_frame_foot parent="${parent}" name="${name}_lower_right" x="-0.111" y="${mirror_y*-0.09}" />
-		<xacro:reference_frame_foot parent="${parent}" name="${name}_lower_left" x="-0.111" y="${mirror_y*0.07}" />	
+		<xacro:reference_frame_foot parent="${parent}" name="${name}_upper_right" x="0.195" y="${mirror_y*-0.07}" />
+		<xacro:reference_frame_foot parent="${parent}" name="${name}_upper_left" x="0.195" y="${mirror_y*0.09}" />
+		<xacro:reference_frame_foot parent="${parent}" name="${name}_lower_right" x="-0.111" y="${mirror_y*-0.07}" />
+		<xacro:reference_frame_foot parent="${parent}" name="${name}_lower_left" x="-0.111" y="${mirror_y*0.09}" />	
 	</xacro:macro>
 
 	<xacro:references_frame_foot parent="l_sole" name="l_foot" mirror_y="1.0"/>
