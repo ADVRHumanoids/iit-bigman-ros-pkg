@@ -37,13 +37,13 @@ The coordinate frame called gaze defines the head position and orientation. The 
 <link name="r_leg_ft"/>
 
 <joint name="l_leg_ft_joint" type="fixed">
-    <parent link="LFootmot"/>
+    <parent link="LFoot"/>
     <child link="l_leg_ft"/>
     <origin xyz="0.005 0 -0.107" rpy="0 0 0"/>
 </joint>
 
 <joint name="r_leg_ft_joint" type="fixed">
-    <parent link="RFootmot"/>
+    <parent link="RFoot"/>
     <child link="r_leg_ft"/>
     <origin xyz="0.005 0 -0.107" rpy="0 0 0"/> 
 </joint>
