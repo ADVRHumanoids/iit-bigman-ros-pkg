@@ -12,11 +12,41 @@
 
   Velocity and effort limits are fake!
 -->
+<!--
+The coordinate frame called base_link is rigidly attached to the robot root body. It is recommended to choose the robot waist as its root body. The base_link can be attached to the root in any arbitrary position or orientation; for every hardware platform there will be a different place on the base that provides an obvious point of reference. Note that REP 103 [1] specifies a preferred orientation for frames. -->
+<link name="base_link"/>
 
-<!-- ********************TORSO******************** -->
+<link name="Waist">
+    <inertial>
+      <origin xyz="${-3.2862932e+01*mmTom} ${-5.0930727e-01*mmTom} ${-1.2899617*mmTom}" rpy="0.0 0.0 0.0"/>
+      <mass value="6.4080904"/>
+      <inertia ixx="${3.8826078e+04*mm2Tom2}"  ixy="${2.9047605e+02*mm2Tom2}"  ixz="${6.8975598e+02*mm2Tom2}" iyy="${2.5050374e+04*mm2Tom2}" iyz="${-1.3370623e+01*mm2Tom2}" izz="${4.8055286e+04*mm2Tom2}" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="Waist_visual">
+        <mesh filename="package://bigman_urdf/meshes/Waist.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual> 
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="Waist_collision">
+        <mesh filename="package://bigman_urdf/meshes/simple/Waist.STL" scale="0.001 0.001 0.001"/>
+      </geometry>             
+    </collision>   
+</link>
 
-<!-- first real link of the robot, inertial reference frame -->
-<xacro:include filename="$(find bigman_urdf)/urdf/parts/torso.urdf.xacro" />
+<joint name="base_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="Waist"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+</joint>
+
+<xacro:unless value="${BIGMAN_ONLY_LEGS}">
+       <!-- ********************TORSO******************** -->
+       <!-- first real link of the robot, inertial reference frame -->
+       <xacro:include filename="$(find bigman_urdf)/urdf/parts/torso.urdf.xacro" />
+</xacro:unless>
   
 <!-- ********************LEGS******************** -->
 <!-- This links are defined in order to be compliant with http://www.ros.org/reps/rep-0120.html#coordinate-frames
@@ -76,8 +106,10 @@ and to define the end effectors of the robot -->
 <!-- Reference frames in feet -->
 <xacro:include filename="$(find bigman_urdf)/urdf/parts/foot_reference_frame.urdf.xacro" />
 
-<!-- ********************ARMS******************** -->
-<xacro:include filename="$(find bigman_urdf)/urdf/parts/arms.urdf.xacro" />
+<xacro:unless value="${BIGMAN_ONLY_LEGS}">
+       <!-- ********************ARMS******************** -->
+       <xacro:include filename="$(find bigman_urdf)/urdf/parts/arms.urdf.xacro" />
+</xacro:unless>
 
 </robot>
 

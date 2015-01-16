@@ -50,7 +50,7 @@
   </xacro:if>
 </xacro:if> 
 -->
-
+<xacro:unless value="${BIGMAN_ONLY_LEGS}">
 <!-- Other parameters... -->
    <gazebo reference="WaistSag">
     <implicitSpringDamper>1</implicitSpringDamper>
@@ -65,57 +65,7 @@
     <provideFeedback>true</provideFeedback>
    </gazebo>
 
-   <gazebo reference="RHipSag">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-   </gazebo>
-   <gazebo reference="RHipLat">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-   </gazebo>
-   <gazebo reference="RHipYaw">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-   </gazebo>
-   <gazebo reference="RKneeSag">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-   </gazebo>
-   <gazebo reference="RAnkLat">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-   </gazebo>
-   <gazebo reference="RAnkSag">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-  </gazebo>
-
-   <gazebo reference="LHipSag">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-   </gazebo>
-   <gazebo reference="LHipLat">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-   </gazebo>
-   <gazebo reference="LHipYaw">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-   </gazebo>
-   <gazebo reference="LKneeSag">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-   </gazebo>
-   <gazebo reference="LAnkLat">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-   </gazebo>
-   <gazebo reference="LAnkSag">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-   </gazebo>
-
-   <gazebo reference="RShSag">
+<gazebo reference="RShSag">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
    </gazebo>
@@ -185,6 +135,56 @@
         <provideFeedback>true</provideFeedback>
       </gazebo>
     </xacro:unless>
+</xacro:unless>
 
+   <gazebo reference="RHipSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RHipLat">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RHipYaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RKneeSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RAnkLat">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="RAnkSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+
+   <gazebo reference="LHipSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LHipLat">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LHipYaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LKneeSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LAnkLat">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="LAnkSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
 
 </robot>
