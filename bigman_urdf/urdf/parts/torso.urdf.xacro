@@ -11,7 +11,6 @@
 <xacro:property name="cos_26" value="0.89879991307" />
 <xacro:property name="sin_26" value="0.43835911792" />
 
-
 <!-- LINKS -->
 <!-- This links are defined in order to be compliant with http://www.ros.org/reps/rep-0120.html#coordinate-frames
 and to define the end effectors of the robot
@@ -91,13 +90,15 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry name="DWYTorso_visual">
-        <mesh filename="package://bigman_urdf/meshes/Chest.STL" scale="0.001 0.001 0.001" />
+        <!--mesh filename="package://bigman_urdf/meshes/Chest.STL" scale="0.001 0.001 0.001" /-->
+        <mesh filename="package://bigman_urdf/meshes/NewChest.STL" scale="0.001 0.001 0.001" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry name="DWYTorso_collision">
-        <mesh filename="package://bigman_urdf/meshes/simple/Chest.STL" scale="0.001 0.001 0.001" />
+        <!--mesh filename="package://bigman_urdf/meshes/simple/Chest.STL" scale="0.001 0.001 0.001" /-->
+        <mesh filename="package://bigman_urdf/meshes/simple/NewChest.STL" scale="0.001 0.001 0.001" />
       </geometry>             
     </collision>
   </link>
@@ -119,9 +120,8 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <parent link="Waist"/>
     <child link="DWL"/>
     <origin xyz="0.0715192 0 0.195982" rpy="0 0 0" />
-    <axis xyz="${cos_26} 0 ${sin_26}" />
+    <axis xyz="${cos_26} 0.0 ${sin_26}" />
     <limit velocity="6.283" effort="120" lower="-0.610" upper="0.610" />
-    <!-- dynamics friction="0" damping="0.3"/ -->
     <dynamics friction="0" damping="3.0"/> 
 </joint>
 
