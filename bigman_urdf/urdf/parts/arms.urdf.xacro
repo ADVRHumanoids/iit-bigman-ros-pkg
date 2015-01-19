@@ -178,8 +178,12 @@
 <joint name="RShSag" type="revolute">
     <parent link="DWYTorso"/>
     <child link="RShp"/>
-    <!--origin xyz="0.0 -0.2 0.0" rpy="0 0 0" /-->
+<xacro:if value="${BIGMAN_OLD_CHEST}">
+    <origin xyz="0.0 -0.2 0.0" rpy="0 0 0" />
+</xacro:if>
+<xacro:unless value="${BIGMAN_OLD_CHEST}">
     <origin xyz="0.045646 -0.219164 0.001531" rpy="0 0 0.3491" />
+</xacro:unless>
     <axis xyz="0 ${cos_42} ${-sin_42}" />
     <limit velocity="6.283" effort="120" lower="-2.844" upper="2.844" />
     <dynamics friction="0" damping="3.0"/>
@@ -216,8 +220,12 @@
 <joint name="LShSag" type="revolute">
     <parent link="DWYTorso"/>
     <child link="LShp"/>
-    <!--origin xyz="0.0 0.2 0.0" rpy="0 0 0" /-->
+<xacro:if value="${BIGMAN_OLD_CHEST}">
+    <origin xyz="0.0 0.2 0.0" rpy="0 0 0" />
+</xacro:if>
+<xacro:unless value="${BIGMAN_OLD_CHEST}">
     <origin xyz="0.045646 0.219164 0.001531" rpy="0 0 -0.3491" />
+</xacro:unless>
     <axis xyz="0.0 ${cos_42} ${sin_42}" />
     <limit velocity="6.283" effort="120" lower="-2.844" upper="2.844" />
     <dynamics friction="0" damping="3.0"/>

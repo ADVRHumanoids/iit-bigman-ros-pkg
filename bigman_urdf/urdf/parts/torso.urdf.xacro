@@ -90,15 +90,23 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry name="DWYTorso_visual">
-        <!--mesh filename="package://bigman_urdf/meshes/Chest.STL" scale="0.001 0.001 0.001" /-->
+<xacro:if value="${BIGMAN_OLD_CHEST}">
+        <mesh filename="package://bigman_urdf/meshes/Chest.STL" scale="0.001 0.001 0.001" />
+</xacro:if>
+<xacro:unless value="${BIGMAN_OLD_CHEST}">
         <mesh filename="package://bigman_urdf/meshes/NewChest.STL" scale="0.001 0.001 0.001" />
+</xacro:unless>
       </geometry>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry name="DWYTorso_collision">
-        <!--mesh filename="package://bigman_urdf/meshes/simple/Chest.STL" scale="0.001 0.001 0.001" /-->
+<xacro:if value="${BIGMAN_OLD_CHEST}">
+        <mesh filename="package://bigman_urdf/meshes/simple/Chest.STL" scale="0.001 0.001 0.001" />
+</xacro:if>
+<xacro:unless value="${BIGMAN_OLD_CHEST}">
         <mesh filename="package://bigman_urdf/meshes/simple/NewChest.STL" scale="0.001 0.001 0.001" />
+</xacro:unless>
       </geometry>             
     </collision>
   </link>
