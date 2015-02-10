@@ -10,7 +10,27 @@
 
 
 <!-- LINKS -->
-
+<xacro:if value="${BIGMAN_ONLY_LEGS}">
+<link name ="PelvisWeightBench">
+    <inertial>
+      <origin xyz="0.0 0.0 ${1.8846109e+02*mmTom}" rpy="0 0 0"/>
+      <mass value="5.5278386"/>
+      <inertia ixx="${1.5195067e+05*mm2Tom2}"  ixy="0.0"  ixz="${-2.4191890e-01*mm2Tom2}" iyy="${1.5213465e+05*mm2Tom2}" iyz="0.0" izz="${5.1389419e+03*mm2Tom2}" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="PelvisWeightBench_visual">
+        <mesh filename="package://bigman_urdf/meshes/PelvisWeightBench.STL" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry name="PelvisWeightBench_collision">
+        <mesh filename="package://bigman_urdf/meshes/simple/PelvisWeightBench.STL" scale="0.001 0.001 0.001" />
+      </geometry>             
+    </collision>
+</link>
+</xacro:if>
 <!-- ********************RIGHT LEG******************** -->
 
 <link name ="RHipMot">
@@ -268,7 +288,13 @@
 
 
 <!-- JOINTS -->
-
+<xacro:if value="${BIGMAN_ONLY_LEGS}">
+       <joint name="PelvisWeightBench_joint" type="fixed">
+           <parent link="Waist"/>
+           <child link="PelvisWeightBench"/>
+           <origin xyz="-0.035 0 0.075" rpy="0 0 ${PI_2}" />
+       </joint>
+</xacro:if>
 <!-- ********************RIGHT LEG******************** -->
 
   <joint name="RHipLat" type="revolute">
