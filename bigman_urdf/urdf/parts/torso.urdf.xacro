@@ -13,7 +13,7 @@
 
 <!-- LINKS -->
 <!-- This links are defined in order to be compliant with http://www.ros.org/reps/rep-0120.html#coordinate-frames
-and to define the end effectors of the robot
+and to define the end effectors of the robot-->
 
 
 <!-- The coordinate frame called torso is attached to the lowest body of the model which is a parent of l_gripper, r_gripper and gaze. -->
