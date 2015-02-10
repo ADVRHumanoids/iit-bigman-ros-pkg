@@ -21,6 +21,18 @@
 <!--
 ####################################################
 ##
+##  BIGMAN_OLD_CHEST
+##  if "true" the old version of the chest will be
+##  used.
+##  
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_OLD_CHEST" value="false" />
+
+<!--
+####################################################
+##
 ##  BIGMAN_FIXED_HANDS
 ##  if "true" a fixed joint between wrist and hand 
 ##  will be used otherwise a rotative joints will

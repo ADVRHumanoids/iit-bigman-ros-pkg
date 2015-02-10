@@ -11,11 +11,9 @@
 <xacro:property name="cos_26" value="0.89879991307" />
 <xacro:property name="sin_26" value="0.43835911792" />
 
-
 <!-- LINKS -->
 <!-- This links are defined in order to be compliant with http://www.ros.org/reps/rep-0120.html#coordinate-frames
-and to define the end effectors of the robot-->
-
+and to define the end effectors of the robot
 
 
 <!-- The coordinate frame called torso is attached to the lowest body of the model which is a parent of l_gripper, r_gripper and gaze. -->
@@ -70,15 +68,23 @@ and to define the end effectors of the robot-->
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry name="DWYTorso_visual">
+<xacro:if value="${BIGMAN_OLD_CHEST}">
         <mesh filename="package://bigman_urdf/meshes/Chest.STL" scale="0.001 0.001 0.001" />
-        <!--mesh filename="package://bigman_urdf/meshes/NewChest.STL" scale="0.001 0.001 0.001" /-->
+</xacro:if>
+<xacro:unless value="${BIGMAN_OLD_CHEST}">
+        <mesh filename="package://bigman_urdf/meshes/NewChest.STL" scale="0.001 0.001 0.001" />
+</xacro:unless>
       </geometry>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry name="DWYTorso_collision">
+<xacro:if value="${BIGMAN_OLD_CHEST}">
         <mesh filename="package://bigman_urdf/meshes/simple/Chest.STL" scale="0.001 0.001 0.001" />
-        <!--mesh filename="package://bigman_urdf/meshes/simple/NewChest.STL" scale="0.001 0.001 0.001" /-->
+</xacro:if>
+<xacro:unless value="${BIGMAN_OLD_CHEST}">
+        <mesh filename="package://bigman_urdf/meshes/simple/NewChest.STL" scale="0.001 0.001 0.001" />
+</xacro:unless>
       </geometry>             
     </collision>
   </link>
@@ -96,7 +102,6 @@ and to define the end effectors of the robot-->
     <origin xyz="0.0715192 0 0.195982" rpy="0 0 0" />
     <axis xyz="${cos_26} 0 ${sin_26}" />
     <limit velocity="6.283" effort="120" lower="-0.610" upper="0.610" />
-    <!-- dynamics friction="0" damping="0.3"/ -->
     <dynamics friction="0" damping="3.0"/> 
 </joint>
 
