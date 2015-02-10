@@ -42,6 +42,11 @@ The coordinate frame called base_link is rigidly attached to the robot root body
     <origin xyz="0 0 0" rpy="0 0 0" />
 </joint>
 
+<xacro:if value="${BIGMAN_ONLY_LEGS}">
+       <!-- ********************FAKE TORSO******************** -->
+       <xacro:include filename="$(find bigman_urdf)/urdf/parts/pelvis_weight_bench.urdf.xacro" />
+</xacro:if>
+
 <xacro:unless value="${BIGMAN_ONLY_LEGS}">
        <!-- ********************TORSO******************** -->
        <!-- first real link of the robot, inertial reference frame -->
