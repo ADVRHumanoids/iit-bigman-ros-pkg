@@ -102,13 +102,13 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="RLowLeg_visual">
-        <mesh filename="package://bigman_urdf/meshes/KneePitch.STL" scale="0.001 0.001 0.001" />
+        <mesh filename="package://bigman_urdf/meshes/KneePitchCalf.STL" scale="0.001 0.001 0.001" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="RLowLeg_collision">
-        <mesh filename="package://bigman_urdf/meshes/simple/KneePitch.STL" scale="0.001 0.001 0.001" />
+        <mesh filename="package://bigman_urdf/meshes/simple/KneePitchCalf.STL" scale="0.001 0.001 0.001" />
       </geometry>             
     </collision>
   </link>
@@ -228,13 +228,13 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="LLowLeg_visual">
-        <mesh filename="package://bigman_urdf/meshes/KneePitch.STL" scale="0.001 0.001 0.001" />
+        <mesh filename="package://bigman_urdf/meshes/KneePitchCalf.STL" scale="0.001 0.001 0.001" />
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry name="LLowLeg_collision">
-        <mesh filename="package://bigman_urdf/meshes/simple/KneePitch.STL" scale="0.001 0.001 0.001" />
+        <mesh filename="package://bigman_urdf/meshes/simple/KneePitchCalf.STL" scale="0.001 0.001 0.001" />
       </geometry>             
     </collision>
   </link>
