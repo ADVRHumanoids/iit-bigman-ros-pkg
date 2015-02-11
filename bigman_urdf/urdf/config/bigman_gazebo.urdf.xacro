@@ -7,6 +7,20 @@
 <!--
 ####################################################
 ##
+##  BIGMAN_ONLY_LEGS
+##  if "true" only the kinematic chains of the legs
+##  will be used to generate the model, the flags
+##  regarding the upper body will not be taken in
+##  consideration.
+##  
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_ONLY_LEGS" value="false" />
+
+<!--
+####################################################
+##
 ##  BIGMAN_OLD_CHEST
 ##  if "true" the old version of the chest will be
 ##  used.

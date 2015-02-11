@@ -63,9 +63,6 @@
    </gazebo>
 
 <!-- contact model for hand surface -->
-<!--
-<xacro:if value="${GAZEBO_BIGMAN_USES_7DOF_FOREARMS_DRC_14}">
-    <xacro:if value="${GAZEBO_BIGMAN_USES_SOFTHANDS_DRC_sw1_14}">
    <gazebo reference="LSoftHand">
      <kp>1000000.0</kp>
      <kd>100.0</kd>
@@ -73,8 +70,7 @@
      <mu2>1.0</mu2>
      <fdir1>1 0 0</fdir1>
      <maxVel>1.0</maxVel>
-     <minDepth>0.00</minDepth>
-     <implicitSpringDamper>1</implicitSpringDamper>
+     <minDepth>0.0</minDepth>
    </gazebo>
 
    <gazebo reference="RSoftHand">
@@ -84,27 +80,10 @@
      <mu2>1.0</mu2>
      <fdir1>1 0 0</fdir1>
      <maxVel>1.0</maxVel>
-     <minDepth>0.00</minDepth>
-     <implicitSpringDamper>1</implicitSpringDamper>
+     <minDepth>0.0</minDepth>
    </gazebo>
-  </xacro:if>
-</xacro:if> 
--->
 
 <!-- Other parameters... -->
-   <gazebo reference="WaistSag">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-   </gazebo>
-   <gazebo reference="WaistLat">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-   </gazebo>
-   <gazebo reference="WaistYaw">
-    <implicitSpringDamper>1</implicitSpringDamper>
-    <provideFeedback>true</provideFeedback>
-   </gazebo>
-
    <gazebo reference="RHipSag">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
@@ -151,6 +130,20 @@
     <provideFeedback>true</provideFeedback>
    </gazebo>
    <gazebo reference="LAnkSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+
+<xacro:unless value="${BIGMAN_ONLY_LEGS}">
+   <gazebo reference="WaistSag">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="WaistLat">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+   </gazebo>
+   <gazebo reference="WaistYaw">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
    </gazebo>
@@ -225,6 +218,6 @@
         <provideFeedback>true</provideFeedback>
       </gazebo>
     </xacro:unless>
-
+</xacro:unless>
 
 </robot>

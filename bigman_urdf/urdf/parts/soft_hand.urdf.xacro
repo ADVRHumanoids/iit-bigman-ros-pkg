@@ -4,42 +4,48 @@
 <xacro:if value="${BIGMAN_FIXED_HANDS}">
 
 <!-- LINKS -->
-<link name="RSoftHand">
+<link name="RSoftHand"/>
+<link name="r_palm"/>
+
+<link name="RSoftHandLink">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.3"/>
       <inertia ixx="0.001"  ixy="0"  ixz="0" iyy="0.001" iyz="0" izz="0.001" />
     </inertial>
     <visual>
-      <origin xyz="0.007 0.01 -0.04" rpy="${-3.14159265359/2} 0 ${3.14159265359}"/>
-      <geometry name="RSoftHand_visual">
-        <mesh filename="package://bigman_urdf/meshes/collada/forearms/R_soft_hand_open_lowpoly.dae" scale="0.1 0.1 0.1" />
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry name="RSoftHandLink_visual">
+        <mesh filename="package://bigman_urdf/meshes/SoftHandOpen.STL" scale="0.001 0.001 0.001" />
       </geometry>
    </visual>
    <collision>
-      <origin xyz="0 0.01 -0.04" rpy="0 0 3.14159265359"/>
-      <geometry name="RSoftHand_collision">
-        <mesh filename="package://bigman_urdf/meshes/collada/simple/forearms/R_soft_hand_open.stl" scale="1E-3 1E-3 1E-3" />
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry name="RSoftHandLink_collision">
+        <mesh filename="package://bigman_urdf/meshes/simple/SoftHandOpen.STL" scale="0.001 0.001 0.001" />
       </geometry>
    </collision>
   </link>
 
-  <link name="LSoftHand">
+  <link name="LSoftHand"/>
+  <link name="l_palm"/>
+
+  <link name="LSoftHandLink">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.3"/>
       <inertia ixx="0.001"  ixy="0"  ixz="0" iyy="0.001" iyz="0" izz="0.001" />
     </inertial>
     <visual>
-      <origin xyz="0.007 -0.012 -0.04" rpy="${-3.14159265359/2} 0 ${3.14159265359/2}"/>
-      <geometry name="LSoftHand_visual">
-        <mesh filename="package://bigman_urdf/meshes/collada/forearms/L_soft_hand_open_lowpoly.dae" scale="0.1 0.1 0.1" />
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry name="LSoftHandLink_visual">
+        <mesh filename="package://bigman_urdf/meshes/SoftHandOpen.STL" scale="0.001 -0.001 0.001" />
       </geometry>
    </visual>
    <collision>
-     <origin xyz="0.007 -0.012 -0.04" rpy="0 0 ${3.14159265359/2}"/>
-      <geometry name="LSoftHand_collision">
-        <mesh filename="package://bigman_urdf/meshes/collada/simple/forearms/L_soft_hand_open.stl" scale="1E-3 1E-3 1E-3" />
+     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry name="LSoftHandLink_collision">
+        <mesh filename="package://bigman_urdf/meshes/simple/SoftHandOpen.STL" scale="0.001 -0.001 0.001" />
       </geometry>
    </collision>
   </link>
@@ -47,15 +53,40 @@
 <!-- JOINTS -->
   <joint name="r_handj" type="fixed">
         <parent link="RWrMot3"/>
+        <child link="RSoftHandLink"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <joint name="r_handj2" type="fixed">
+        <parent link="RSoftHandLink"/>
         <child link="RSoftHand"/>
-        <origin xyz="0 0 -0.11" rpy="0 0 0"/>
+        <origin xyz="${1.1908576e+01*mmTom} ${2.1833446*mmTom} ${-1.5361558e+02*mmTom}" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="r_handj3" type="fixed">
+        <parent link="RSoftHand"/>
+        <child link="r_palm"/>
+        <origin xyz="0 0.05 0.0" rpy="0 0 0"/>
   </joint>
 
   <joint name="l_handj" type="fixed">
         <parent link="LWrMot3"/>
-        <child link="LSoftHand"/>
-        <origin xyz="0 0 -0.11" rpy="0 0 0"/>
+        <child link="LSoftHandLink"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
+
+  <joint name="l_handj2" type="fixed">
+        <parent link="LSoftHandLink"/>
+        <child link="LSoftHand"/>
+        <origin xyz="${1.1908576e+01*mmTom} ${-2.1833446*mmTom} ${-1.5361558e+02*mmTom}" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="l_handj3" type="fixed">
+        <parent link="LSoftHand"/>
+        <child link="l_palm"/>
+        <origin xyz="0 -0.05 0.0" rpy="0 0 0"/>
+  </joint>
+
 </xacro:if>
 
 <xacro:unless value="${BIGMAN_FIXED_HANDS}">

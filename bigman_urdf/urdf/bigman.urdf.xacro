@@ -17,6 +17,7 @@
 <!-- ************ MODEL CONFIGURATION ************ -->
 <xacro:include filename="$(find bigman_urdf)/urdf/bigman_config.urdf.xacro" />
 
+<xacro:unless value="${BIGMAN_ONLY_LEGS}">
 <!-- Head -->
 <!-- This links are defined in order to be compliant with http://www.ros.org/reps/rep-0120.html#coordinate-frames
 and to define the end effectors of the robot.
@@ -28,6 +29,7 @@ The coordinate frame called gaze defines the head position and orientation. The 
 	<child link="gaze"/>
 	<origin xyz="0 0 0.1" rpy="0 0 0" />
 </joint>
+</xacro:unless>
 
 <!-- ************ BIGMAN BASE ************** -->
 <xacro:include filename="$(find bigman_urdf)/urdf/bigman_base.urdf.xacro"/>
@@ -48,6 +50,7 @@ The coordinate frame called gaze defines the head position and orientation. The 
     <origin xyz="0.005 0 -0.107" rpy="0 0 0"/> 
 </joint>
 
+<xacro:unless value="${BIGMAN_ONLY_LEGS}">
 <link name="l_arm_ft"/>
 <link name="r_arm_ft"/>
 
@@ -72,15 +75,10 @@ and to define the end effectors of the robot -->
 <link name="r_wrist"/>
 
 <xacro:include filename="$(find bigman_urdf)/urdf/parts/forearms.urdf.xacro" />
+<xacro:include filename="$(find bigman_urdf)/urdf/parts/forearm_reference_frame.urdf.xacro" />
 
 <!-- ************ HANDS ************ -->
-
 <xacro:include filename="$(find bigman_urdf)/urdf/parts/soft_hand.urdf.xacro" />
-<!-- Reference frames in hands -->
-<xacro:include filename="$(find bigman_urdf)/urdf/parts/hand_reference_frame.urdf.xacro" />	
-
-<!-- IMU -->
-<xacro:include filename="$(find bigman_urdf)/urdf/sensors/imu.urdf.xacro"/>
 
 <!-- multisense_sl_v4 with fixed joints (NOT FOR SIMULATION) -->
 <xacro:include filename="$(find bigman_urdf)/urdf/sensors/multisense_sl.urdf.xacro"/>
@@ -88,7 +86,11 @@ and to define the end effectors of the robot -->
     <parent link="DWYTorso"/>
     <child link="head"/>
     <origin xyz="0.05 0 0.05" rpy="0 0 0" /> 
-</joint>
+</joint>	
+</xacro:unless>
+
+<!-- IMU -->
+<xacro:include filename="$(find bigman_urdf)/urdf/sensors/imu.urdf.xacro"/>
   
 </robot>
 

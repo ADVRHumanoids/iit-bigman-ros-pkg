@@ -3,6 +3,7 @@
 
 <xacro:property name="mmTom" value="0.001" />
 <xacro:property name="mm2Tom2" value="${0.001*0.001}" />
+<xacro:property name="tonsToKg" value="1000.0" />
   
 <!-- ****************LINKS**************** -->
 <!-- ****************LEFT FOREARM**************** -->
@@ -43,6 +44,26 @@
           <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry name="LWrMot2_collision">
             <mesh filename="package://bigman_urdf/meshes/simple/ForearmPitch.STL" scale="0.001 -0.001 0.001" />
+          </geometry>             
+        </collision>
+      </link>
+
+      <link name="LRaisingSupport">
+        <inertial>
+          <origin xyz="${7.2667838*mmTom} ${1.2370624*mmTom} ${-6.9076044e+01*mmTom}" rpy="0 0 0"/>
+          <mass value="${1.3789343e-03*tonsToKg}"/>
+          <inertia ixx="${5.9368721*mm2Tom2*tonsToKg}"  ixy="${1.6171173e-02*mm2Tom2*tonsToKg}"  ixz="${4.7369581e-02*mm2Tom2*tonsToKg}" iyy="${1.3268985e+01*mm2Tom2*tonsToKg}" iyz="${-1.3188343e-01*mm2Tom2*tonsToKg}" izz="${9.5878298*mm2Tom2*tonsToKg}" />
+        </inertial>
+        <visual>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry name="LRaisingSupport_visual">
+            <mesh filename="package://bigman_urdf/meshes/RaisingSupport.STL" scale="0.001 -0.001 0.001" />
+          </geometry>
+        </visual>
+        <collision>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry name="LRaisingSupport_collision">
+            <mesh filename="package://bigman_urdf/meshes/simple/RaisingSupport.STL" scale="0.001 -0.001 0.001" />
           </geometry>             
         </collision>
       </link>
@@ -88,7 +109,7 @@
           </geometry>             
         </collision>
       </link>
-
+     
       <link name="RWrMot2">
         <inertial>
           <origin xyz="${9.8193770*mmTom} ${-1.3797184*mmTom} ${-8.0380065e+01*mmTom}" rpy="0 0 0"/>
@@ -108,6 +129,26 @@
           </geometry>             
         </collision>
       </link>
+
+      <link name="RRaisingSupport">
+        <inertial>
+          <origin xyz="${7.2667838*mmTom} ${-1.2370624*mmTom} ${-6.9076044e+01*mmTom}" rpy="0 0 0"/>
+          <mass value="${1.3789343e-03*tonsToKg}"/>
+          <inertia ixx="${5.9368721*mm2Tom2*tonsToKg}"  ixy="${-1.6171173e-02*mm2Tom2*tonsToKg}"  ixz="${4.7369581e-02*mm2Tom2*tonsToKg}" iyy="${1.3268985e+01*mm2Tom2*tonsToKg}" iyz="${1.3188343e-01*mm2Tom2*tonsToKg}" izz="${9.5878298*mm2Tom2*tonsToKg}" />
+        </inertial>
+        <visual>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry name="RRaisingSupport_visual">
+            <mesh filename="package://bigman_urdf/meshes/RaisingSupport.STL" scale="0.001 0.001 0.001" />
+          </geometry>
+        </visual>
+        <collision>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry name="RRaisingSupport_collision">
+            <mesh filename="package://bigman_urdf/meshes/simple/RaisingSupport.STL" scale="0.001 0.001 0.001" />
+          </geometry>             
+        </collision>
+      </link> 
 
       <link name="RWrMot3">
         <inertial>
@@ -149,6 +190,12 @@
     <dynamics friction="0" damping="0.03"/>
   </joint>
 
+    <joint name="LRaisingSupport_joint" type="fixed">
+    <parent link="LWrMot2"/>
+    <child link="LRaisingSupport"/>
+    <origin xyz="0.0 0.0 -0.0505" rpy="0 0 0"/>
+  </joint>
+
   <joint name="LWrj2" type="revolute">
     <parent link="LWrMot2"/>
     <child link="LWrMot3"/>
@@ -181,6 +228,12 @@
     <axis xyz="0 1 0"/>
     <limit velocity="6.283" effort="60" lower="-1.48" upper="1.48" />
     <dynamics friction="0" damping="0.03"/>
+  </joint>
+
+    <joint name="RRaisingSupport_joint" type="fixed">
+    <parent link="RWrMot2"/>
+    <child link="RRaisingSupport"/>
+    <origin xyz="0.0 0.0 -0.0505" rpy="0 0 0"/>
   </joint>
 
   <joint name="RWrj2" type="revolute">

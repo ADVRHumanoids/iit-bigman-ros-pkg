@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="BIGMAN">
 
-<xacro:property name="model_name" value="IIT Bigman Ctrl" />
+<xacro:property name="model_name" value="IIT Bigman Legs" />
 <xacro:property name="model_version" value="0.1" />
 
 <!--
@@ -16,19 +16,7 @@
 ##
 ####################################################
 --> 
-<xacro:property name="BIGMAN_ONLY_LEGS" value="false" />
-
-<!--
-####################################################
-##
-##  BIGMAN_OLD_CHEST
-##  if "true" the old version of the chest will be
-##  used.
-##  
-##
-####################################################
---> 
-<xacro:property name="BIGMAN_OLD_CHEST" value="false" />
+<xacro:property name="BIGMAN_ONLY_LEGS" value="true" />
 
 <!--
 ####################################################

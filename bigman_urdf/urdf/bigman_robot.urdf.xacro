@@ -26,6 +26,7 @@
 
   <xacro:include filename="$(find bigman_urdf)/urdf/bigman.urdf.xacro" />
 
+
   <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/microstrain_3dmgx2_imu.gazebo.xacro" />
 
   <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/force_torque.gazebo.xacro" />
