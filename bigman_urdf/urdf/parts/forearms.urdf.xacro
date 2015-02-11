@@ -27,6 +27,21 @@
         </collision>
       </link>
 
+      <link name="LRaisingSupport">
+        <visual>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry name="LRaisingSupport_visual">
+            <mesh filename="package://bigman_urdf/meshes/RaisingSupport.STL" scale="0.001 -0.001 0.001" />
+          </geometry>
+        </visual>
+        <collision>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry name="LRaisingSupport_collision">
+            <mesh filename="package://bigman_urdf/meshes/simple/RaisingSupport.STL" scale="0.001 -0.001 0.001" />
+          </geometry>             
+        </collision>
+      </link>
+
       <link name="LWrMot2">
         <inertial>
           <origin xyz="${9.8193770*mmTom} ${1.3797184*mmTom} ${-8.0380065e+01*mmTom}" rpy="0 0 0"/>
@@ -89,6 +104,21 @@
         </collision>
       </link>
 
+      <link name="RRaisingSupport">
+        <visual>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry name="RRaisingSupport_visual">
+            <mesh filename="package://bigman_urdf/meshes/RaisingSupport.STL" scale="0.001 0.001 0.001" />
+          </geometry>
+        </visual>
+        <collision>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry name="RRaisingSupport_collision">
+            <mesh filename="package://bigman_urdf/meshes/simple/RaisingSupport.STL" scale="0.001 0.001 0.001" />
+          </geometry>             
+        </collision>
+      </link>      
+
       <link name="RWrMot2">
         <inertial>
           <origin xyz="${9.8193770*mmTom} ${-1.3797184*mmTom} ${-8.0380065e+01*mmTom}" rpy="0 0 0"/>
@@ -140,6 +170,12 @@
     <dynamics friction="0" damping="0.03"/>
   </joint>
 
+  <joint name="LRaisingSupport_joint" type="fixed">
+    <parent link="LForearm"/>
+    <child link="LRaisingSupport"/>
+    <origin xyz="0.0 0.0 -0.0505" rpy="0 0 0"/>
+  </joint>
+
   <joint name="LWrj1" type="revolute">
     <parent link="LForearm"/>
     <child link="LWrMot2"/>
@@ -172,6 +208,12 @@
     <axis xyz="0 0 1" />
     <limit velocity="6.283" effort="60" lower="-2.529" upper="2.529" />
     <dynamics friction="0" damping="0.03"/>
+  </joint>
+
+  <joint name="RRaisingSupport_joint" type="fixed">
+    <parent link="RForearm"/>
+    <child link="RRaisingSupport"/>
+    <origin xyz="0.0 0.0 -0.0505" rpy="0 0 0"/>
   </joint>
 
   <joint name="RWrj1" type="revolute">
