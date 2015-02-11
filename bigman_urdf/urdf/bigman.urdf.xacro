@@ -75,9 +75,9 @@ and to define the end effectors of the robot -->
 <link name="r_wrist"/>
 
 <xacro:include filename="$(find bigman_urdf)/urdf/parts/forearms.urdf.xacro" />
+<xacro:include filename="$(find bigman_urdf)/urdf/parts/forearm_reference_frame.urdf.xacro" />
 
 <!-- ************ HANDS ************ -->
-
 <xacro:include filename="$(find bigman_urdf)/urdf/parts/soft_hand.urdf.xacro" />
 
 <!-- multisense_sl_v4 with fixed joints (NOT FOR SIMULATION) -->

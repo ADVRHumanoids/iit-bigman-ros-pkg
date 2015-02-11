@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+       <xacro:property name="x_positive" value="0.08" />
+	<xacro:property name="x_negative" value="-0.08" />
+
+       <xacro:macro name="reference_frame_forearm" params="parent name x">
+		<link name="${name}_link"/>
+
+		<joint name="${name}_joint" type="fixed">
+			<origin xyz="${x} 0 -0.07" rpy="0 0 0" />
+			<parent link="${parent}"/>
+			<child link="${name}_link"/>
+		</joint>
+	</xacro:macro>
+
+       <xacro:macro name="references_frame_forearm" params="parent name">
+		<xacro:reference_frame_forearm parent="${parent}" name="${name}_forward_contact" x="${x_positive}" />
+		<xacro:reference_frame_forearm parent="${parent}" name="${name}_backward_contact" x="${x_negative}" />	
+              <xacro:reference_frame_forearm parent="${parent}" name="${name}_central_contact" x="0.0" />
+	</xacro:macro>
+
+       <xacro:references_frame_forearm parent="LRaisingSupport" name="l_forearm"/>
+	<xacro:references_frame_forearm parent="RRaisingSupport" name="r_forearm"/>
+
+
+</robot>
