@@ -66,7 +66,7 @@
   <joint name="r_handj3" type="fixed">
         <parent link="RSoftHand"/>
         <child link="r_palm"/>
-        <origin xyz="0 0.05 0.0" rpy="0 0 0"/>
+        <origin xyz="0 ${2.0696923e+01*mmTom+5.0*mmTom} 0.0" rpy="0 0 0"/>
   </joint>
 
   <joint name="l_handj" type="fixed">
@@ -84,7 +84,7 @@
   <joint name="l_handj3" type="fixed">
         <parent link="LSoftHand"/>
         <child link="l_palm"/>
-        <origin xyz="0 -0.05 0.0" rpy="0 0 0"/>
+        <origin xyz="0 ${-2.0696923e+01*mmTom-5.0*mmTom} 0.0" rpy="0 0 0"/>
   </joint>
 
 </xacro:if>
