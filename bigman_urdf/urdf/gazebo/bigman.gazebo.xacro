@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
+<xacro:if value="${BIGMAN_LEGS}">
 <!-- contact model for foot surface -->
    <gazebo reference="LFoot">
      <kp>1000000.0</kp>
@@ -21,7 +22,9 @@
      <maxVel>1.0</maxVel>
      <minDepth>0.0</minDepth>
    </gazebo>
+</xacro:if>
 
+<xacro:if value="${BIGMAN_UPPER_BODY}">
 <!-- contact model for hand surface -->
    <gazebo reference="LSoftHand">
      <kp>1000000.0</kp>
@@ -42,7 +45,9 @@
      <maxVel>1.0</maxVel>
      <minDepth>0.0</minDepth>
    </gazebo>
+</xacro:if>
 
+<xacro:if value="${BIGMAN_LEGS}">
 <!-- Other parameters... -->
    <gazebo reference="RHipSag">
     <implicitSpringDamper>1</implicitSpringDamper>
@@ -93,8 +98,9 @@
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
    </gazebo>
+</xacro:if>
 
-<xacro:unless value="${BIGMAN_ONLY_LEGS}">
+<xacro:if value="${BIGMAN_UPPER_BODY}">
    <gazebo reference="WaistSag">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
@@ -178,6 +184,6 @@
         <provideFeedback>true</provideFeedback>
       </gazebo>
     </xacro:unless>
-</xacro:unless>
+</xacro:if>
 
 </robot>

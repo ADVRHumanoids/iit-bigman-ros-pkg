@@ -3,7 +3,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
 <gazebo>
-<xacro:unless value="${BIGMAN_ONLY_LEGS}">
+<xacro:if value="${BIGMAN_UPPER_BODY}">
 <!-- TORSO -->
 <plugin name="bigman_yarp_gazebo_plugin_torso" filename="libgazebo_yarp_controlboard.so">
 	<yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_torso.ini</yarpConfigurationFile>
@@ -57,8 +57,9 @@
 			<initialConfiguration>0.0</initialConfiguration>
 		</plugin>
 	</xacro:unless>
-</xacro:unless>
+</xacro:if>
 
+<xacro:if value="${BIGMAN_LEGS}">
 <!-- LEGS -->
 <plugin name="bigman_yarp_gazebo_plugin_left_leg" filename="libgazebo_yarp_controlboard.so">
 	<yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_left_leg.ini</yarpConfigurationFile>
@@ -88,7 +89,7 @@
 
 <!-- Plugin to apply external wrenches to the robot -->
 <plugin name="bigman_yarp_gazebo_plugin_external_wrench" filename="libgazebo_yarp_externalwrench.so"/>
-
+</xacro:if>
 </gazebo>
 
 </robot>
