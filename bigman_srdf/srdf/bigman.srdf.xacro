@@ -16,41 +16,47 @@
         <link name="Waist"/>
     </group>
     <group name="force_torque_sensors">
-            <joint name="l_leg_ft_joint"/>
-            <joint name="r_leg_ft_joint"/>
-            <xacro:unless value="${BIGMAN_ONLY_LEGS}">
-              <joint name="l_arm_ft_joint"/>
-              <joint name="r_arm_ft_joint"/>
-            </xacro:unless>
+            <xacro:if value="${BIGMAN_LEGS}">
+		    <joint name="l_leg_ft_joint"/>
+		    <joint name="r_leg_ft_joint"/>
+	    </xacro:if>
+            <xacro:if value="${BIGMAN_UPPER_BODY}">
+		      <joint name="l_arm_ft_joint"/>
+		      <joint name="r_arm_ft_joint"/>
+            </xacro:if>
     </group>   
- <xacro:unless value="${BIGMAN_ONLY_LEGS}">
+ <xacro:if value="${BIGMAN_UPPER_BODY}">
     <group name="left_arm">
         <chain base_link="DWYTorso" tip_link="l_wrist"/>
     </group>
     <group name="right_arm">
         <chain base_link="DWYTorso" tip_link="r_wrist"/>
     </group>
-</xacro:unless>
+</xacro:if>
+<xacro:if value="${BIGMAN_LEGS}">
     <group name="left_leg">
         <chain base_link="Waist" tip_link="l_sole"/>
     </group>
     <group name="right_leg">
         <chain base_link="Waist" tip_link="r_sole"/>
     </group>
- <xacro:unless value="${BIGMAN_ONLY_LEGS}">
+</xacro:if>
+ <xacro:if value="${BIGMAN_UPPER_BODY}">>
     <group name="torso">
         <chain base_link="Waist" tip_link="DWYTorso"/>
     </group>
-</xacro:unless>
+</xacro:if>
     <group name="chains"> <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
-<xacro:unless value="${BIGMAN_ONLY_LEGS}">
+<xacro:if value="${BIGMAN_UPPER_BODY}">
         <group name="left_arm"/>
         <group name="right_arm"/>
-</xacro:unless>
+</xacro:if>
+<xacro:if value="${BIGMAN_LEGS}">
         <group name="left_leg"/>
         <group name="right_leg"/>
-<xacro:unless value="${BIGMAN_ONLY_LEGS}">
+</xacro:if>
+<xacro:if value="${BIGMAN_UPPER_BODY}">
         <group name="torso"/>
-</xacro:unless>
+</xacro:if>
     </group>
 </robot>
