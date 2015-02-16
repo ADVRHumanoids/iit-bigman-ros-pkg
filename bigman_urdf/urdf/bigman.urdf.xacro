@@ -17,6 +17,9 @@
 <!-- ************ MODEL CONFIGURATION ************ -->
 <xacro:include filename="$(find bigman_urdf)/urdf/bigman_config.urdf.xacro" />
 
+<!-- ***********  MODEL COLORS *********** -->
+<xacro:include filename="$(find bigman_urdf)/urdf/bigman_materials.urdf.xacro" />
+
 <xacro:unless value="${BIGMAN_ONLY_LEGS}">
 <!-- Head -->
 <!-- This links are defined in order to be compliant with http://www.ros.org/reps/rep-0120.html#coordinate-frames

@@ -35,6 +35,7 @@
 
 <!-- YARP PLUGINS for GAZEBO SIMULATION -->
   <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/yarp_control.gazebo.xacro" />
+  <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/bigman_materials.gazebo.xacro" />
   
 </robot>
 
