@@ -30,6 +30,7 @@ and to define the end effectors of the robot-->
       <geometry name="DWL_visual">
         <mesh filename="package://bigman_urdf/meshes/TorsoRoll.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -50,6 +51,7 @@ and to define the end effectors of the robot-->
       <geometry name="DWS_visual">
         <mesh filename="package://bigman_urdf/meshes/TorsoYawPitch.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -75,6 +77,7 @@ and to define the end effectors of the robot-->
         <mesh filename="package://bigman_urdf/meshes/NewChest.STL" scale="0.001 0.001 0.001" />
 </xacro:unless>
       </geometry>
+      <material name="blue"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
