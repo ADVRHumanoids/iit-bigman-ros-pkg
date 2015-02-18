@@ -23,10 +23,12 @@
               <joint name="r_arm_ft_joint"/>
             </xacro:unless>
     </group>  
+
+ <xacro:unless value="${BIGMAN_ONLY_LEGS}">
     <group name="imu_sensors">
             <link name="imu_link"/>
     </group> 
- <xacro:unless value="${BIGMAN_ONLY_LEGS}">
+
     <group name="left_arm">
         <chain base_link="DWYTorso" tip_link="l_wrist"/>
     </group>
