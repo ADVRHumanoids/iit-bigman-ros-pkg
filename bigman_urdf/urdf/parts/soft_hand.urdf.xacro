@@ -24,6 +24,7 @@
       <geometry name="RSoftHandLink_visual">
         <mesh filename="package://bigman_urdf/meshes/SoftHandOpen.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="black"/>
    </visual>
    <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -47,6 +48,7 @@
       <geometry name="LSoftHandLink_visual">
         <mesh filename="package://bigman_urdf/meshes/SoftHandOpen.STL" scale="0.001 -0.001 0.001" />
       </geometry>
+      <material name="black"/>
    </visual>
    <collision>
      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>

@@ -19,6 +19,7 @@
           <geometry name="LForearm_visual">
             <mesh filename="package://bigman_urdf/meshes/Forearm.STL" scale="0.001 -0.001 0.001" />
           </geometry>
+	  <material name="dark_grey"/>
         </visual>
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -39,6 +40,7 @@
           <geometry name="LWrMot2_visual">
             <mesh filename="package://bigman_urdf/meshes/ForearmPitch.STL" scale="0.001 -0.001 0.001" />
           </geometry>
+	  <material name="dark_grey"/>
         </visual>
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -59,6 +61,7 @@
           <geometry name="LRaisingSupport_visual">
             <mesh filename="package://bigman_urdf/meshes/RaisingSupport.STL" scale="0.001 -0.001 0.001" />
           </geometry>
+	  <material name="dark_grey"/>
         </visual>
         <collision>
           <origin xyz="0.008 0 -0.076" rpy="0 0 0"/>
@@ -81,6 +84,7 @@
           <geometry name="LWrMot3_visual">
             <mesh filename="package://bigman_urdf/meshes/ForearmRoll.STL" scale="0.001 -0.001 0.001" />
           </geometry>
+	  <material name="blue"/>
         </visual>
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -103,6 +107,7 @@
           <geometry name="RForearm_visual">
             <mesh filename="package://bigman_urdf/meshes/Forearm.STL" scale="0.001 0.001 0.001" />
           </geometry>
+	  <material name="dark_grey"/>
         </visual>
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -123,6 +128,7 @@
           <geometry name="RWrMot2_visual">
             <mesh filename="package://bigman_urdf/meshes/ForearmPitch.STL" scale="0.001 0.001 0.001" />
           </geometry>
+	  <material name="dark_grey"/>
         </visual>
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -143,6 +149,7 @@
           <geometry name="RRaisingSupport_visual">
             <mesh filename="package://bigman_urdf/meshes/RaisingSupport.STL" scale="0.001 0.001 0.001" />
           </geometry>
+	  <material name="dark_grey"/>
         </visual>
         <collision>
           <origin xyz="0.008 0 -0.076" rpy="0 0 0"/>
@@ -165,6 +172,7 @@
           <geometry name="RWrMot3_visual">
             <mesh filename="package://bigman_urdf/meshes/ForearmRoll.STL" scale="0.001 0.001 0.001" />
           </geometry>
+	  <material name="blue"/>
         </visual>
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0"/>

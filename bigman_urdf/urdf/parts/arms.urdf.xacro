@@ -22,6 +22,7 @@
       <geometry name="RShp_visual">
         <mesh filename="package://bigman_urdf/meshes/ShoulderPitch.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -42,6 +43,7 @@
       <geometry name="RShr_visual">
         <mesh filename="package://bigman_urdf/meshes/TopUpperArm.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -62,6 +64,7 @@
       <geometry name="RShy_visual">
         <mesh filename="package://bigman_urdf/meshes/BottomUpperArm.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -82,6 +85,7 @@
           <geometry name="RElb_visual">
             <mesh filename="package://bigman_urdf/meshes/Elbow.STL" scale="0.001 0.001 0.001" />
           </geometry>
+	  <material name="dark_grey"/>
         </visual>
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -103,6 +107,7 @@
       <geometry name="LShp_visual">
         <mesh filename="package://bigman_urdf/meshes/ShoulderPitch.STL" scale="0.001 -0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -123,6 +128,7 @@
       <geometry name="LShr_visual">
         <mesh filename="package://bigman_urdf/meshes/TopUpperArm.STL" scale="0.001 -0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -143,6 +149,7 @@
       <geometry name="LShy_visual">
         <mesh filename="package://bigman_urdf/meshes/BottomUpperArm.STL" scale="0.001 -0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -163,6 +170,7 @@
           <geometry name="LElb_visual">
             <mesh filename="package://bigman_urdf/meshes/Elbow.STL" scale="0.001 -0.001 0.001" />
           </geometry>
+	  <material name="dark_grey"/>
         </visual>
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0"/>

@@ -27,6 +27,7 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <geometry name="Waist_visual">
         <mesh filename="package://bigman_urdf/meshes/Waist.STL" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="grey"/>
     </visual> 
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>

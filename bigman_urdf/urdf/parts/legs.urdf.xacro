@@ -24,6 +24,7 @@
       <geometry name="RHipMot_visual">
         <mesh filename="package://bigman_urdf/meshes/HipRoll.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -44,6 +45,7 @@
       <geometry name="RThighUpLeg_visual">
         <mesh filename="package://bigman_urdf/meshes/HipYaw.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -64,6 +66,7 @@
       <geometry name="RThighLowLeg_visual">
         <mesh filename="package://bigman_urdf/meshes/HipPitch.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -84,6 +87,7 @@
       <geometry name="RLowLeg_visual">
         <mesh filename="package://bigman_urdf/meshes/KneePitchCalf.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -104,6 +108,7 @@
       <geometry name="RFootmot_visual">
         <mesh filename="package://bigman_urdf/meshes/AnklePitch.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -124,6 +129,7 @@
       <geometry name="RFoot_visual">
         <mesh filename="package://bigman_urdf/meshes/Foot.STL" scale="0.001 -0.001 0.001"/>
       </geometry>
+      <material name="dark_grey"/>
     </visual> 
     <collision>
       <!--<origin xyz="0 0 0" rpy="0 0 0"/>
@@ -150,6 +156,7 @@
       <geometry name="LHipMot_visual">
         <mesh filename="package://bigman_urdf/meshes/HipRoll.STL" scale="0.001 -0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -170,6 +177,7 @@
       <geometry name="LThighUpLeg_visual">
         <mesh filename="package://bigman_urdf/meshes/HipYaw.STL" scale="0.001 -0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -190,6 +198,7 @@
       <geometry name="LThighLowLeg_visual">
         <mesh filename="package://bigman_urdf/meshes/HipPitch.STL" scale="0.001 -0.001 0.001" />
       </geometry>
+      <material name="grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -210,6 +219,7 @@
       <geometry name="LLowLeg_visual">
         <mesh filename="package://bigman_urdf/meshes/KneePitchCalf.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -230,6 +240,7 @@
       <geometry name="LFootmot_visual">
         <mesh filename="package://bigman_urdf/meshes/AnklePitch.STL" scale="0.001 -0.001 0.001" />
       </geometry>
+      <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -250,6 +261,7 @@
       <geometry name="LFoot_visual">
         <mesh filename="package://bigman_urdf/meshes/Foot.STL" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="dark_grey"/>
     </visual> 
     <collision>
       <!--
