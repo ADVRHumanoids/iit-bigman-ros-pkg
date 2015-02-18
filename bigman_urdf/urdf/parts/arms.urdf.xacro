@@ -7,6 +7,8 @@
 <xacro:property name="mmTom" value="0.001" />
 <xacro:property name="mm2Tom2" value="${0.001*0.001}" />
 
+<xacro:property name="toRad" value="${PI/180.0}" />
+<xacro:property name="safety" value="5.0" />
 
 <!-- LINKS -->
 
@@ -185,7 +187,7 @@
     <origin xyz="0.045646 -0.219164 0.001531" rpy="0 0 0.3491" />
 </xacro:unless>
     <axis xyz="0 ${cos_42} ${-sin_42}" />
-    <limit velocity="6.283" effort="120" lower="-2.844" upper="2.844" />
+    <limit velocity="6.283" effort="120" lower="${(-163+safety)*toRad}" upper="${(161.0-safety)*toRad}" />
     <dynamics friction="0" damping="3.0"/>
 </joint>
 
@@ -194,7 +196,7 @@
     <child link="RShr"/>
     <origin xyz="0.0 -0.116568264 0.03364" rpy="0 0 0" />
     <axis xyz="1 0 0" />
-    <limit velocity="6.283" effort="120" lower="-3.699" upper="-0.052" />
+    <limit velocity="6.283" effort="120" lower="${(-221.0+safety)*toRad}" upper="${(-7.0-safety)*toRad}" />
     <dynamics friction="0" damping="3.0"/>
 </joint>
 
@@ -203,7 +205,7 @@
     <child link="RShy"/>
     <origin xyz="0.0 0.0 -0.222" rpy="0 0 0" />
     <axis xyz="0 0 1" />
-    <limit velocity="6.283" effort="120" lower="-2.844" upper="2.844" />
+    <limit velocity="6.283" effort="120" lower="${(-164+safety)*toRad}" upper="${(162.0-safety)*toRad}" />
     <dynamics friction="0" damping="3.0"/> 
 </joint>
 
@@ -212,7 +214,7 @@
     <child link="RElb"/>
     <origin xyz="0.036 0.0 -0.15" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="6.283" effort="60" lower="-2.966" upper="0.523" />
+    <limit velocity="6.283" effort="60" lower="${(-170.0+safety)*toRad}" upper="${(34.0-safety)*toRad}" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
@@ -227,7 +229,7 @@
     <origin xyz="0.045646 0.219164 0.001531" rpy="0 0 -0.3491" />
 </xacro:unless>
     <axis xyz="0.0 ${cos_42} ${sin_42}" />
-    <limit velocity="6.283" effort="120" lower="-2.844" upper="2.844" />
+    <limit velocity="6.283" effort="120" lower="${(-165.0+safety)*toRad}" upper="${(160.0-safety)*toRad}" />
     <dynamics friction="0" damping="3.0"/>
 </joint>
 
@@ -236,7 +238,7 @@
     <child link="LShr"/>
     <origin xyz="0.0 0.116568264 0.03364" rpy="0 0 0" />
     <axis xyz="1 0 0" />
-    <limit velocity="6.283" effort="120" lower="0.052" upper="3.699" />
+    <limit velocity="6.283" effort="120" lower="${(5.0+safety)*toRad}" upper="${(221.0-safety)*toRad}" />
     <dynamics friction="0" damping="3.0"/>
 </joint>
 
@@ -245,7 +247,7 @@
     <child link="LShy"/>
     <origin xyz="0.0 0.0 -0.222" rpy="0 0 0" />
     <axis xyz="0 0 1" />
-    <limit velocity="6.283" effort="120" lower="-2.844" upper="2.844" />
+    <limit velocity="6.283" effort="120" lower="${(-163.0+safety)*toRad}" upper="${(163.0-safety)*toRad}" />
     <dynamics friction="0" damping="3.0"/>
 </joint>
 
@@ -254,7 +256,7 @@
     <child link="LElb"/>
     <origin xyz="0.036 0.0 -0.15" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="6.283" effort="60" lower="-2.966" upper="0.523" />
+    <limit velocity="6.283" effort="60" lower="${(-170.0+safety)*toRad}" upper="${(34.0-safety)*toRad}" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 

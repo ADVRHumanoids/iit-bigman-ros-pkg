@@ -11,6 +11,9 @@
 <xacro:property name="cos_26" value="0.89879991307" />
 <xacro:property name="sin_26" value="0.43835911792" />
 
+<xacro:property name="toRad" value="${PI/180.0}" />
+<xacro:property name="safety" value="5.0" />
+
 <!-- LINKS -->
 <!-- This links are defined in order to be compliant with http://www.ros.org/reps/rep-0120.html#coordinate-frames
 and to define the end effectors of the robot-->
@@ -101,7 +104,7 @@ and to define the end effectors of the robot-->
     <child link="DWL"/>
     <origin xyz="0.0715192 0 0.195982" rpy="0 0 0" />
     <axis xyz="${cos_26} 0 ${sin_26}" />
-    <limit velocity="6.283" effort="120" lower="-0.610" upper="0.610" />
+    <limit velocity="6.283" effort="120" lower="${(-35.0+safety)*toRad}" upper="${(35.0-safety)*toRad}" />
     <dynamics friction="0" damping="3.0"/> 
 </joint>
 
@@ -110,7 +113,7 @@ and to define the end effectors of the robot-->
     <child link="DWS"/>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="6.283" effort="220" lower="-0.349" upper="1.396" />
+    <limit velocity="6.283" effort="220" lower="${(-20.0+safety)*toRad}" upper="${(80.0-safety)*toRad}" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
@@ -119,7 +122,7 @@ and to define the end effectors of the robot-->
     <child link="DWYTorso"/>
     <origin xyz="0 0 0.22275" rpy="0 0 0" />
     <axis xyz="0 0 1" />
-    <limit velocity="6.283" effort="120" lower="-2.844" upper="2.844" />
+    <limit velocity="6.283" effort="120" lower="${(-120.0+safety)*toRad}" upper="${(120.0-safety)*toRad}" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
