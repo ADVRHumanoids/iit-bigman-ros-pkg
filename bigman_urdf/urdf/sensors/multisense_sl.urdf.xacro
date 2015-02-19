@@ -105,14 +105,8 @@
     <parent link="hokuyo_link"/>
     <child link="head_hokuyo_frame"/>
   </joint>
-  <link name="head_hokuyo_frame">
-    <inertial>
-      <mass value="1e-5" />
-      <!-- collocate with parent link and remove mass from it -->
-      <origin xyz="0.042428 0.0004084 0.0108165" rpy="0 0 0"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-    </inertial>
-  </link>
+
+  <link name="head_hokuyo_frame"/>
 
 <!-- Remove frome here!
   <gazebo reference="head_hokuyo_frame">
@@ -278,7 +272,7 @@
   <link name="center_bottom_led_frame"/>
 
   <joint name="left_led_frame_joint" type="fixed">
-    <origin xyz="-0.01443 0.07452 0.050346" rpy="0 -0.15 0.53"/>
+    <origin xyz="-0.01443 0.07452 0.050346" rpy="0 0 0.6"/>
     <parent link="head"/>
     <child link="left_led_frame"/>
   </joint>
@@ -286,7 +280,8 @@
   <link name="left_led_frame"/>
 
   <joint name="right_led_frame_joint" type="fixed">
-    <origin xyz="-0.01443 -0.07452 0.050346" rpy="0 -0.15 -0.53"/>
+    <!--origin xyz="-0.01443 -0.07452 0.050346" rpy="0 -0.15 -0.53"/-->
+    <origin xyz="-0.01443 -0.07452 0.050346" rpy="0 0 -0.6"/>
     <parent link="head"/>
     <child link="right_led_frame"/>
   </joint>
