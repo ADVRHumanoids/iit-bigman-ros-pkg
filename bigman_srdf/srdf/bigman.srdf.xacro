@@ -45,6 +45,9 @@
     <group name="torso">
         <chain base_link="Waist" tip_link="DWYTorso"/>
     </group>
+    <group name="head">
+        <chain base_link="DWYTorso" tip_link="NeckPitch"/>
+    </group>
 </xacro:if>
     <group name="chains"> <!--THIS HAS TO BE THE LAST GROUP IN THE FILE -->
 <xacro:if value="${BIGMAN_UPPER_BODY}">
@@ -57,6 +60,7 @@
 </xacro:if>
 <xacro:if value="${BIGMAN_UPPER_BODY}">
         <group name="torso"/>
+        <group name="head"/>
 </xacro:if>
     </group>
 </robot>

@@ -54,6 +54,18 @@ The coordinate frame called base_link is rigidly attached to the robot root body
        <!-- ********************TORSO******************** -->
        <!-- first real link of the robot, inertial reference frame -->
        <xacro:include filename="$(find bigman_urdf)/urdf/parts/torso.urdf.xacro" />
+
+       <!-- ********************NECK********************* -->
+       <xacro:include filename="$(find bigman_urdf)/urdf/parts/neck.urdf.xacro" />
+       
+       <link name="gaze"/>
+       
+       <joint name="gaze_joint" type="fixed">
+              <parent link="NeckPitch"/>
+              <child link="gaze"/>
+              <origin xyz="0 0 0" rpy="0 0 0" />
+       </joint>
+       
 </xacro:if>
   
 <xacro:if value="${BIGMAN_LEGS}">

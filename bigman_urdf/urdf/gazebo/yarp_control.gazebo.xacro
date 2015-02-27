@@ -18,6 +18,20 @@
     <yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_torso_torque.ini</yarpConfigurationFile>
 </plugin>
 
+<!-- HEAD -->
+<plugin name="bigman_yarp_gazebo_plugin_head" filename="libgazebo_yarp_controlboard.so">
+	<yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_head.ini</yarpConfigurationFile>
+	<initialConfiguration>0.0 0.0</initialConfiguration>
+</plugin>
+
+<plugin name="bigman_yarp_gazebo_plugin_head_speed" filename="libgazebo_yarp_jointsensors.so">
+    <yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_head_speed.ini</yarpConfigurationFile>
+</plugin>
+
+<plugin name="bigman_yarp_gazebo_plugin_head_torque" filename="libgazebo_yarp_jointsensors.so">
+    <yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_head_torque.ini</yarpConfigurationFile>
+</plugin>
+
 <!-- ARMS -->
 	<plugin name="bigman_yarp_gazebo_plugin_left_arm" filename="libgazebo_yarp_controlboard.so">
 		<yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_left_arm.ini</yarpConfigurationFile>
