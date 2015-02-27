@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
+<xacro:if value="${BIGMAN_LEGS}">
 <!-- contact model for foot surface -->
    <gazebo reference="LFoot">
      <kp>1000000.0</kp>
      <kd>100.0</kd>
-     <mu1>0.5</mu1>
-     <mu2>0.5</mu2>
+     <mu1>1.0</mu1>
+     <mu2>1.0</mu2>
      <fdir1>1 0 0</fdir1>
      <maxVel>1.0</maxVel>
      <minDepth>0.0</minDepth>
@@ -15,8 +16,8 @@
    <gazebo reference="RFoot">
      <kp>1000000.0</kp>
      <kd>100.0</kd>
-     <mu1>0.5</mu1>
-     <mu2>0.5</mu2>
+     <mu1>1.0</mu1>
+     <mu2>1.0</mu2>
      <fdir1>1 0 0</fdir1>
      <maxVel>1.0</maxVel>
      <minDepth>0.0</minDepth>
@@ -41,6 +42,29 @@
      <maxVel>1.0</maxVel>
      <minDepth>0.0</minDepth>
    </gazebo>
+</xacro:if>
+
+<xacro:if value="${BIGMAN_UPPER_BODY}">
+<!-- contact model for hand surface -->
+   <gazebo reference="LSoftHand">
+     <kp>1000000.0</kp>
+     <kd>100.0</kd>
+     <mu1>1.0</mu1>
+     <mu2>1.0</mu2>
+     <fdir1>1 0 0</fdir1>
+     <maxVel>1.0</maxVel>
+     <minDepth>0.0</minDepth>
+   </gazebo>
+
+   <gazebo reference="RSoftHand">
+     <kp>1000000.0</kp>
+     <kd>100.0</kd>
+     <mu1>1.0</mu1>
+     <mu2>1.0</mu2>
+     <fdir1>1 0 0</fdir1>
+     <maxVel>1.0</maxVel>
+     <minDepth>0.0</minDepth>
+   </gazebo>
 
    <gazebo reference="LRaisingSupport">
      <kp>1000000.0</kp>
@@ -61,7 +85,9 @@
      <maxVel>1.0</maxVel>
      <minDepth>0.0</minDepth>
    </gazebo>
+</xacro:if>
 
+<xacro:if value="${BIGMAN_LEGS}">
 <!-- Other parameters... -->
    <gazebo reference="RHipSag">
     <implicitSpringDamper>1</implicitSpringDamper>
@@ -112,8 +138,9 @@
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
    </gazebo>
+</xacro:if>
 
-<xacro:unless value="${BIGMAN_ONLY_LEGS}">
+<xacro:if value="${BIGMAN_UPPER_BODY}">
    <gazebo reference="WaistSag">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
@@ -197,6 +224,6 @@
         <provideFeedback>true</provideFeedback>
       </gazebo>
     </xacro:unless>
-</xacro:unless>
+</xacro:if>
 
 </robot>

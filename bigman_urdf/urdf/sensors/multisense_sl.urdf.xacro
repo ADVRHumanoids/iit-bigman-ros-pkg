@@ -14,22 +14,16 @@
       <inertia iyy="0.0041178" ixy="-1.5797E-06" iyz="-6.8415E-07" ixx="0.0039688" ixz="-0.00089293" izz="0.0035243" />
     </inertial>
     <visual>
-            <origin xyz="-0.0446 0 0.0880" rpy="0 0 1.570795" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://bigman_urdf/meshes/multisense.STL"/>
+                <mesh filename="package://bigman_urdf/meshes/Head.STL" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="dark_grey"/>
         </visual>
   <collision>
-    <origin xyz="-0.0503 0 -0.00195" rpy="0 0 0" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
-      <box size="0.1311 0.12 0.0591"/>
-    </geometry>
-  </collision>
-  <collision>
-    <origin xyz="-0.093 0 0.0868" rpy="0 0 0" />
-    <geometry>
-      <box size="0.0468 0.12 0.1184"/>
+      <mesh filename="package://bigman_urdf/meshes/simple/Head.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
   </link>
@@ -107,14 +101,8 @@
     <parent link="hokuyo_link"/>
     <child link="head_hokuyo_frame"/>
   </joint>
-  <link name="head_hokuyo_frame">
-    <inertial>
-      <mass value="1e-5" />
-      <!-- collocate with parent link and remove mass from it -->
-      <origin xyz="0.042428 0.0004084 0.0108165" rpy="0 0 0"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-    </inertial>
-  </link>
+
+  <link name="head_hokuyo_frame"/>
 
 <!-- Remove frome here!
   <gazebo reference="head_hokuyo_frame">
@@ -162,19 +150,14 @@
     <child link="left_camera_frame"/>
   </joint>
   
-  <link name="left_camera_frame">
-    <inertial>
-      <mass value="1e-5" />
-      <!-- collocate with parent link and remove mass from it -->
-      <origin xyz="-0.075493 0.035033383 0.02574"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-    </inertial>
-  </link>
+  <link name="left_camera_frame"/>
+
   <joint name="left_camera_optical_frame_joint" type="fixed">
     <origin xyz="0 0 0" rpy="-1.5708 0.0 -1.5708" />
     <parent link="left_camera_frame" />
     <child link="left_camera_optical_frame"/>
   </joint>
+
   <link name="left_camera_optical_frame"/>
 
 <!--
@@ -258,19 +241,14 @@
     <child link="right_camera_frame"/>
   </joint>
 
-  <link name="right_camera_frame">
-    <inertial>
-      <mass value="1e-5" />
-      <!-- collocate with parent link and remove mass from it -->
-      <origin xyz="-0.075493 -0.034966617 0.02574"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-    </inertial>
-  </link>
+  <link name="right_camera_frame"/>
+
   <joint name="right_camera_optical_frame_joint" type="fixed">
     <origin xyz="0 0 0" rpy="-1.5708 0.0 -1.5708" />
     <parent link="right_camera_frame" />
     <child link="right_camera_optical_frame"/>
   </joint>
+
   <link name="right_camera_optical_frame"/>
 
   <joint name="center_top_led_frame_joint" type="fixed">
@@ -279,14 +257,7 @@
     <child link="center_top_led_frame"/>
   </joint>
 
-  <link name="center_top_led_frame">
-    <inertial>
-      <mass value="1e-5" />
-      <!-- collocate with parent link and remove mass from it -->
-      <origin xyz="-0.064243 0.000033383 0.03824" rpy="0 0 0" />
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-    </inertial>
-  </link>
+  <link name="center_top_led_frame"/>
 
   <joint name="center_bottom_led_frame_joint" type="fixed">
     <origin xyz="0.01125 0.0 -0.0155"/>
@@ -294,44 +265,23 @@
     <child link="center_bottom_led_frame"/>
   </joint>
 
-  <link name="center_bottom_led_frame">
-    <inertial>
-      <mass value="1e-5" />
-      <!-- collocate with parent link and remove mass from it -->
-      <origin xyz="-0.064243 0.000033383 0.01224" rpy="0 0 0" />
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-    </inertial>
-  </link>
+  <link name="center_bottom_led_frame"/>
 
   <joint name="left_led_frame_joint" type="fixed">
-    <origin xyz="-0.01443 0.07452 0.050346" rpy="0 -0.15 0.53"/>
+    <origin xyz="-0.01443 0.07452 0.050346" rpy="0 0 0.6"/>
     <parent link="head"/>
     <child link="left_led_frame"/>
   </joint>
 
-  <link name="left_led_frame">
-    <inertial>
-      <mass value="1e-5" />
-      <!-- collocate with parent link and remove mass from it -->
-      <origin xyz="-0.089923 0.074553383 0.078086" rpy="0 -0.15 0.53" />
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-    </inertial>
-  </link>
+  <link name="left_led_frame"/>
 
   <joint name="right_led_frame_joint" type="fixed">
-    <origin xyz="-0.01443 -0.07452 0.050346" rpy="0 -0.15 -0.53"/>
+    <origin xyz="-0.01443 -0.07452 0.050346" rpy="0 0 -0.6"/>
     <parent link="head"/>
     <child link="right_led_frame"/>
   </joint>
 
-  <link name="right_led_frame">
-    <inertial>
-      <mass value="1e-5" />
-      <!-- collocate with parent link and remove mass from it -->
-      <origin xyz="-0.089923 -0.074486617 0.07908" rpy="0 -0.15 -0.53" />
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-    </inertial>
-  </link>
+  <link name="right_led_frame"/>
 
 <!--
   <gazebo>
