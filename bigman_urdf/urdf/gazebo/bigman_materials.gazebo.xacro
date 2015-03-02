@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-<gazebo reference="Waist">
+<gazebo reference="base_link">
   <material>Gazebo/Grey</material>
 </gazebo>
 <gazebo reference="DWL">
@@ -114,6 +114,13 @@
 </gazebo>
 <gazebo reference="hokuyo_link">
   <material>Gazebo/Black</material>
+</gazebo>
+
+<gazebo reference="NeckYaw">
+  <material>Gazebo/Grey</material>
+</gazebo>
+<gazebo reference="NeckPitch">
+  <material>Gazebo/Grey</material>
 </gazebo>
 
 </robot>
