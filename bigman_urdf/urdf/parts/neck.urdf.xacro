@@ -25,6 +25,7 @@
       <geometry name="NeckYaw_visual">
         <mesh filename="package://bigman_urdf/meshes/NeckYaw.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="grey"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -45,6 +46,7 @@
       <geometry name="NeckPitch_visual">
         <mesh filename="package://bigman_urdf/meshes/NeckPitch.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="grey"/>
     </visual>
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
