@@ -24,6 +24,7 @@
       <geometry name="RSoftHandLink_visual">
         <mesh filename="package://bigman_urdf/meshes/SoftHandOpen.STL" scale="0.001 0.001 0.001" />
       </geometry>
+      <material name="black"/>
    </visual>
    <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -47,6 +48,7 @@
       <geometry name="LSoftHandLink_visual">
         <mesh filename="package://bigman_urdf/meshes/SoftHandOpen.STL" scale="0.001 -0.001 0.001" />
       </geometry>
+      <material name="black"/>
    </visual>
    <collision>
      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -151,7 +153,7 @@
         <child link="RSoftHand"/>
         <origin xyz="0 0 -0.04" rpy="0 0 0"/>
         <axis xyz="1 0 0" />
-        <limit velocity="4.0" effort="5" lower="0.0" upper="1.57075" />
+        <limit velocity="4.0" effort="5" lower="0.0" upper="5.0" />
         <dynamics friction="0" damping="3.0"/>
 </joint>
 
@@ -159,8 +161,8 @@
         <parent link="LWrMot3"/>
         <child link="LSoftHand"/>
         <origin xyz="0 0 -0.04" rpy="0 0 0"/>
-        <axis xyz="1 0 0" />
-        <limit velocity="4.0" effort="5" lower="-1.57075" upper="0.0" />
+        <axis xyz="-1 0 0" />
+        <limit velocity="4.0" effort="5" lower="0" upper="5.0" />
         <dynamics friction="0" damping="3.0"/>
 </joint>
 

@@ -7,16 +7,24 @@
 <!--
 ####################################################
 ##
-##  BIGMAN_ONLY_LEGS
-##  if "true" only the kinematic chains of the legs
-##  will be used to generate the model, the flags
-##  regarding the upper body will not be taken in
-##  consideration.
-##  
+##  BIGMAN_UPPER_BODY
+##  if "true" the kinematic chains of the arms and torso 
+##  will be used to generate the model
 ##
 ####################################################
 --> 
-<xacro:property name="BIGMAN_ONLY_LEGS" value="false" />
+<xacro:property name="BIGMAN_UPPER_BODY" value="true" />
+
+<!--
+####################################################
+##
+##  BIGMAN_LEGS
+##  if "true" the kinematic chains of the legs
+##  will be used to generate the model
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_LEGS" value="true" />
 
 <!--
 ####################################################

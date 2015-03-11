@@ -9,7 +9,7 @@ and we will add a revolute joint between foot_flange and sensor and a fixed join
 -->
 <robot xmlns:xacro="http:/ros.org/wiki/xacro">
 
-<xacro:unless value="${BIGMAN_ONLY_LEGS}">
+<xacro:if value="${BIGMAN_UPPER_BODY}">
 	<gazebo reference="RWrj2">
 		<sensor type="force_torque" name="right_arm">
 			<force_torque>
@@ -41,8 +41,9 @@ and we will add a revolute joint between foot_flange and sensor and a fixed join
 			</plugin>
 		</sensor>
 	</gazebo>
-</xacro:unless>
+</xacro:if>
 
+<xacro:if value="${BIGMAN_LEGS}">
 	<gazebo reference="LAnkLat">
 		<sensor type="force_torque" name="left_leg">
                      <force_torque>
@@ -74,4 +75,5 @@ and we will add a revolute joint between foot_flange and sensor and a fixed join
 	        	</plugin>
 		</sensor>
 	</gazebo>
+</xacro:if>
 </robot>

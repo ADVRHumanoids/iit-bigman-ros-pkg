@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:property name="mmTom" value="0.001" />
+<xacro:property name="mm2Tom2" value="${0.001*0.001}" />
+
+<xacro:property name="PI" value="3.14159265359" />
+<xacro:property name="PI_2" value="1.57079632679" />
+
+<xacro:property name="cos_26" value="0.89879991307" />
+<xacro:property name="sin_26" value="0.43835911792" />
+
+<xacro:property name="toRad" value="${PI/180.0}" />
+<xacro:property name="safety" value="5.0" />
+
+<!-- LINKS -->
+  <link name ="NeckYaw">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.01"  ixy="0.0"  ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry name="NeckYaw_visual">
+        <mesh filename="package://bigman_urdf/meshes/NeckYaw.STL" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry name="NeckYaw_collision">
+        <mesh filename="package://bigman_urdf/meshes/simple/NeckYaw.STL" scale="0.001 0.001 0.001" />
+      </geometry>             
+    </collision>
+  </link>
+
+  <link name ="NeckPitch">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.01"  ixy="0.0"  ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry name="NeckPitch_visual">
+        <mesh filename="package://bigman_urdf/meshes/NeckPitch.STL" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry name="NeckPitch_collision">
+        <mesh filename="package://bigman_urdf/meshes/simple/NeckPitch.STL" scale="0.001 0.001 0.001" />
+      </geometry>             
+    </collision>
+  </link>
+
+<!-- JOINTS -->
+<joint name="NeckYawj" type="revolute"> 
+    <parent link="DWYTorso"/>
+    <child link="NeckYaw"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit velocity="6.283" effort="120" lower="${(-175.0+safety)*toRad}" upper="${(175.0-safety)*toRad}" />
+    <dynamics friction="0" damping="3.0"/> 
+</joint>
+
+<joint name="NeckPitchj" type="revolute"> 
+    <parent link="NeckYaw"/>
+    <child link="NeckPitch"/>
+    <origin xyz="0 0 0.1155" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit velocity="6.283" effort="120" lower="${(-30.0+safety)*toRad}" upper="${(70.0-safety)*toRad}" />
+    <dynamics friction="0" damping="3.0"/> 
+</joint>
+
+</robot>
