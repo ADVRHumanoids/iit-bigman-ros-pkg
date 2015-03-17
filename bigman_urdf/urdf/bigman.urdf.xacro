@@ -76,14 +76,14 @@
 
 	<joint name="neck_joint" type="fixed">
 	    <parent link="NeckPitch"/>
-	    <child link="head"/>
+	    <child link="${multisense_namespace}/head"/>
 	    <origin xyz="0.08765 0 0.06475" rpy="0 0 0" /> 
 	</joint>
 
        <link name="gaze"/>
        
        <joint name="gaze_joint" type="fixed">
-              <parent link="head"/>
+              <parent link="${multisense_namespace}/head"/>
               <child link="gaze"/>
               <origin xyz="0 0 0" rpy="0 0 0" />
        </joint>	

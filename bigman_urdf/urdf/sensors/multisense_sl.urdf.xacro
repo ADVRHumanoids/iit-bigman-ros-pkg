@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="multisense_sl">
 
+<xacro:property name="multisense_namespace" value="multisense" />
 
 <!-- 
        Based on multisense_sl_v4.urdf in multisense_sl_description (DRCSIM) 
 -->
 
   <!-- Head Link Simple Collision Meshes -->
-  <link name="head">
+  <link name="${multisense_namespace}/head">
     <inertial>
       <origin xyz="-0.075493 3.3383E-05 0.02774" rpy="0 0 0" />
       <mass value="1.41984" />
@@ -28,7 +29,7 @@
   </collision>
   </link>
   
-  <link name="hokuyo_link">
+  <link name="${multisense_namespace}/hokuyo_link">
     <inertial>
       <origin xyz="0.032428 0.0004084 -0.0041835" rpy="0 0 0" />
       <mass value="0.057654" />
@@ -70,8 +71,8 @@
 
   <joint name="hokuyo_joint" type="continuous">
     <origin xyz="-0.0446 0 0.0880" rpy="0 0 0" />
-    <parent link="head" />
-    <child link="hokuyo_link" />
+    <parent link="${multisense_namespace}/head" />
+    <child link="${multisense_namespace}/hokuyo_link" />
     <axis xyz="1 0 0" />
     <dynamics damping="0.01" friction="0"/>
   </joint>
@@ -82,8 +83,8 @@
 
   <joint name="hokuyo_joint" type="fixed">
     <origin xyz="-0.0446 0 0.0880" rpy="0 0 0" />
-    <parent link="head" />
-    <child link="hokuyo_link" />
+    <parent link="${multisense_namespace}/head" />
+    <child link="${multisense_namespace}/hokuyo_link" />
   </joint>
 
 </xacro:if>
@@ -98,11 +99,11 @@
   <joint name="head_hokuyo_joint" type="fixed">
     <axis xyz="0 1 0" />
     <origin xyz="0.03 0 0.015" rpy="0 0 0"/>
-    <parent link="hokuyo_link"/>
-    <child link="head_hokuyo_frame"/>
+    <parent link="${multisense_namespace}/hokuyo_link"/>
+    <child link="${multisense_namespace}/head_hokuyo_frame"/>
   </joint>
 
-  <link name="head_hokuyo_frame"/>
+  <link name="${multisense_namespace}/head_hokuyo_frame"/>
 
 <!-- Remove frome here!
   <gazebo reference="head_hokuyo_frame">
@@ -146,19 +147,19 @@
   <joint name="left_camera_frame_joint" type="fixed">
     <!-- optical frame collocated with tilting DOF -->
     <origin xyz="0.0 0.035 -0.002"/>
-    <parent link="head"/>
-    <child link="left_camera_frame"/>
+    <parent link="${multisense_namespace}/head"/>
+    <child link="${multisense_namespace}/left_camera_frame"/>
   </joint>
   
-  <link name="left_camera_frame"/>
+  <link name="${multisense_namespace}/left_camera_frame"/>
 
   <joint name="left_camera_optical_frame_joint" type="fixed">
     <origin xyz="0 0 0" rpy="-1.5708 0.0 -1.5708" />
-    <parent link="left_camera_frame" />
-    <child link="left_camera_optical_frame"/>
+    <parent link="${multisense_namespace}/left_camera_frame" />
+    <child link="${multisense_namespace}/left_camera_optical_frame"/>
   </joint>
 
-  <link name="left_camera_optical_frame"/>
+  <link name="${multisense_namespace}/left_camera_optical_frame"/>
 
 <!--
   <gazebo reference="left_camera_frame">
@@ -237,51 +238,51 @@
 
   <joint name="right_camera_frame_joint" type="fixed">
     <origin xyz="0.0 -0.035 -0.002"/>
-    <parent link="head"/>
-    <child link="right_camera_frame"/>
+    <parent link="${multisense_namespace}/head"/>
+    <child link="${multisense_namespace}/right_camera_frame"/>
   </joint>
 
-  <link name="right_camera_frame"/>
+  <link name="${multisense_namespace}/right_camera_frame"/>
 
   <joint name="right_camera_optical_frame_joint" type="fixed">
     <origin xyz="0 0 0" rpy="-1.5708 0.0 -1.5708" />
-    <parent link="right_camera_frame" />
-    <child link="right_camera_optical_frame"/>
+    <parent link="${multisense_namespace}/right_camera_frame" />
+    <child link="${multisense_namespace}/right_camera_optical_frame"/>
   </joint>
 
-  <link name="right_camera_optical_frame"/>
+  <link name="${multisense_namespace}/right_camera_optical_frame"/>
 
   <joint name="center_top_led_frame_joint" type="fixed">
     <origin xyz="0.01125 0.0 0.0105"/>
-    <parent link="head"/>
-    <child link="center_top_led_frame"/>
+    <parent link="${multisense_namespace}/head"/>
+    <child link="${multisense_namespace}/center_top_led_frame"/>
   </joint>
 
-  <link name="center_top_led_frame"/>
+  <link name="${multisense_namespace}/center_top_led_frame"/>
 
   <joint name="center_bottom_led_frame_joint" type="fixed">
     <origin xyz="0.01125 0.0 -0.0155"/>
-    <parent link="head"/>
-    <child link="center_bottom_led_frame"/>
+    <parent link="${multisense_namespace}/head"/>
+    <child link="${multisense_namespace}/center_bottom_led_frame"/>
   </joint>
 
-  <link name="center_bottom_led_frame"/>
+  <link name="${multisense_namespace}/center_bottom_led_frame"/>
 
   <joint name="left_led_frame_joint" type="fixed">
     <origin xyz="-0.01443 0.07452 0.050346" rpy="0 0 0.6"/>
-    <parent link="head"/>
-    <child link="left_led_frame"/>
+    <parent link="${multisense_namespace}/head"/>
+    <child link="${multisense_namespace}/left_led_frame"/>
   </joint>
 
-  <link name="left_led_frame"/>
+  <link name="${multisense_namespace}/left_led_frame"/>
 
   <joint name="right_led_frame_joint" type="fixed">
     <origin xyz="-0.01443 -0.07452 0.050346" rpy="0 0 -0.6"/>
-    <parent link="head"/>
-    <child link="right_led_frame"/>
+    <parent link="${multisense_namespace}/head"/>
+    <child link="${multisense_namespace}/right_led_frame"/>
   </joint>
 
-  <link name="right_led_frame"/>
+  <link name="${multisense_namespace}/right_led_frame"/>
 
 <!--
   <gazebo>
@@ -290,7 +291,7 @@
 -->
 
   <!-- imu link -->
-  <link name="head_imu_link">
+  <link name="${multisense_namespace}/head_imu_link">
     <inertial>
       <mass value="1e-5" />
       <!-- collocate with parent link and remove mass from it -->
@@ -306,8 +307,8 @@
   </link>
 
   <joint name="head_imu_joint" type="fixed">
-    <parent link="head"/>
-    <child link="head_imu_link"/>
+    <parent link="${multisense_namespace}/head"/>
+    <child link="${multisense_namespace}/head_imu_link"/>
     <!-- putting it at the same z-level as the stereo -->
     <origin xyz="-0.0475 0.035 0.0" rpy="0 0 0"/>
   </joint>
