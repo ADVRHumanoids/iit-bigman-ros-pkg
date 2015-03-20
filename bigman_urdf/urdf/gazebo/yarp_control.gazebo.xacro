@@ -102,8 +102,8 @@
 </plugin>
 </xacro:if>
 
-<!-- Plugin to apply external wrenches to the robot -->
-<plugin name="bigman_yarp_gazebo_plugin_external_wrench" filename="libgazebo_yarp_externalwrench.so"/>
+<!-- Plugin to apply external wrenches to the robot & show the CoM in simulation-->
+<!-- plugin name="bigman_yarp_gazebo_plugin_external_wrench" filename="libgazebo_yarp_externalwrench.so"/ -->
 <plugin name="bigman_show_model_com" filename="libgazebo_yarp_showmodelcom.so"/>
 </gazebo>
 
