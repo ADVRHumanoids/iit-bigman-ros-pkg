@@ -72,21 +72,9 @@
 	<xacro:include filename="$(find bigman_urdf)/urdf/parts/soft_hand.urdf.xacro" />
 
 	<!-- multisense_sl_v4 with fixed joints (NOT FOR SIMULATION) -->
-	<xacro:include filename="$(find bigman_urdf)/urdf/sensors/multisense_sl.urdf.xacro"/>
-
-	<joint name="neck_joint" type="fixed">
-	    <parent link="NeckPitch"/>
-	    <child link="${multisense_namespace}/head"/>
-	    <origin xyz="0.08765 0 0.06475" rpy="0 0 0" /> 
-	</joint>
-
-       <link name="gaze"/>
-       
-       <joint name="gaze_joint" type="fixed">
-              <parent link="${multisense_namespace}/head"/>
-              <child link="gaze"/>
-              <origin xyz="0 0 0" rpy="0 0 0" />
-       </joint>	
+       <xacro:if value="${BIGMAN_HEAD}">
+	       <xacro:include filename="$(find bigman_urdf)/urdf/sensors/multisense_sl.urdf.xacro"/>
+       </xacro:if>	
 </xacro:if>
 
 <xacro:if value="${BIGMAN_LEGS}">

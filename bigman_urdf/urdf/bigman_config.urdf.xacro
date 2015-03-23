@@ -64,4 +64,19 @@
 --> 
 <xacro:property name="BIGMAN_FIXED_MULTISENSE" value="true" />
 
+<!--
+####################################################
+##
+##  BIGMAN_HEAD
+##  if "true" a fixed joint between "NeckPitch" and
+##  "head" will be used to connect the head to the rest
+##  of the body. If "false" the head will not be added 
+##  to the model (this is the case when the multisense
+##  from the launch file is used). 
+##  
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_HEAD" value="true" />
+
 </robot>
