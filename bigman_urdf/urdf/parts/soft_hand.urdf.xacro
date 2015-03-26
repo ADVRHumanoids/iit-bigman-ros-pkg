@@ -12,6 +12,23 @@
 <!-- LINKS -->
 <link name="RSoftHand"/>
 <link name="r_palm"/>
+<link name="R_visual_cube">
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1.0e-5"/>
+        <inertia ixx="0"  ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <box size="0.08 0.08 0.08" />
+        </geometry>
+    </visual>
+</link>
+<gazebo reference="R_visual_cube">
+    <material>Gazebo/RedBright</material>
+</gazebo>
+
 
 <link name="RSoftHandLink">
     <inertial>
@@ -36,6 +53,22 @@
 
   <link name="LSoftHand"/>
   <link name="l_palm"/>
+  <link name="L_visual_cube">
+      <inertial>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <mass value="1.0e-5"/>
+          <inertia ixx="0"  ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+      </inertial>
+      <visual>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+              <box size="0.08 0.08 0.08" />
+          </geometry>
+      </visual>
+  </link>
+  <gazebo reference="L_visual_cube">
+      <material>Gazebo/RedBright</material>
+  </gazebo>
 
   <link name="LSoftHandLink">
     <inertial>
@@ -59,7 +92,16 @@
   </link>
 
 <!-- JOINTS -->
-  <joint name="r_handj" type="fixed">
+  <joint name="r_handj" type="revolute">
+      <parent link="RWrMot3"/>
+      <child link="R_visual_cube"/>
+      <origin xyz="0 0 -0.04" rpy="0 0 0"/>
+      <axis xyz="1 0 0" />
+      <limit velocity="4.0" effort="5" lower="0.0" upper="1.7" />
+      <dynamics friction="0" damping="3.0"/>
+  </joint>
+
+  <joint name="r_handj1" type="fixed">
         <parent link="RWrMot3"/>
         <child link="RSoftHandLink"/>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -77,7 +119,16 @@
         <origin xyz="0 ${2.0696923e+01*mmTom+5.0*mmTom} 0.0" rpy="0 0 0"/>
   </joint>
 
-  <joint name="l_handj" type="fixed">
+  <joint name="l_handj" type="revolute">
+      <parent link="LWrMot3"/>
+      <child link="L_visual_cube"/>
+      <origin xyz="0 0 -0.04" rpy="0 0 0"/>
+      <axis xyz="-1 0 0" />
+      <limit velocity="4.0" effort="5" lower="0" upper="1.7" />
+      <dynamics friction="0" damping="3.0"/>
+  </joint>
+
+  <joint name="l_handj1" type="fixed">
         <parent link="LWrMot3"/>
         <child link="LSoftHandLink"/>
         <origin xyz="0 0 0" rpy="0 0 0"/>
