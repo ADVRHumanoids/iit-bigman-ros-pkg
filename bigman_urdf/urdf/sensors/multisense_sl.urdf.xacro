@@ -56,7 +56,7 @@
   </collision>
   </link>
 
-<!-- Remove frome here!  
+<!-- Remove frome here! -->  
 <gazebo reference="head">
     <mu1>0.9</mu1>
     <mu2>0.9</mu2>
@@ -65,7 +65,6 @@
     <mu1>0.9</mu1>
     <mu2>0.9</mu2>
   </gazebo>
--->
 
 <xacro:unless value="${BIGMAN_FIXED_MULTISENSE}">
 
@@ -89,11 +88,11 @@
 
 </xacro:if>
 
-<!-- Remove frome here!
+<!-- Remove frome here! -->
   <gazebo reference="hokuyo_joint">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
--->
+
 
   <!-- Hokuyo Laser -->
   <joint name="head_hokuyo_joint" type="fixed">
@@ -105,7 +104,7 @@
 
   <link name="${multisense_namespace}/head_hokuyo_frame"/>
 
-<!-- Remove frome here!
+<!-- Remove frome here! -->
   <gazebo reference="head_hokuyo_frame">
     <sensor type="gpu_ray" name="head_hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
@@ -126,12 +125,12 @@
           <resolution>0.01</resolution>
         </range>
         <noise>
-          <type>gaussian</type>-->
+          <type>gaussian</type>
           <!-- Noise parameters based on published spec for Hokuyo laser
                achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
                stddev of 0.01m will put 99.7% of samples within 0.03m of the true
                reading. -->
-         <!-- <mean>0.0</mean>
+          <mean>0.0</mean>
           <stddev>0.01</stddev>
         </noise>
       </ray>
@@ -141,7 +140,6 @@
       </plugin>
     </sensor>
   </gazebo>
--->
 
   <!-- Stereo Camera -->
   <joint name="left_camera_frame_joint" type="fixed">
@@ -161,15 +159,14 @@
 
   <link name="${multisense_namespace}/left_camera_optical_frame"/>
 
-<!--
   <gazebo reference="left_camera_frame">
-    <sensor type="multicamera" name="stereo_camera">-->
+    <sensor type="multicamera" name="stereo_camera">
       <!-- see MultiSenseSLPlugin.h for available modes -->
-      <!--<update_rate>30.0</update_rate>
-      <camera name="left">-->
+      <update_rate>30.0</update_rate>
+      <camera name="left">
         <!-- Spec sheet says 80deg X 45deg @ 1024x544pix.  Based on feedback
              from teams, we're instead doing 80deg X 80deg @ 800x800pix. -->
-       <!-- <horizontal_fov>1.3962634</horizontal_fov>
+        <horizontal_fov>1.3962634</horizontal_fov>
         <image>
           <width>800</width>
           <height>800</height>
@@ -180,22 +177,22 @@
           <far>300</far>
         </clip>
         <noise>
-          <type>gaussian</type>-->
+          <type>gaussian</type>
           <!-- Noise is sampled independently per pixel on each frame.  
                That pixel's noise value is added to each of its color
                channels, which at that point lie in the range [0,1].
                The stddev value of 0.007 is based on experimental data 
                from a camera in a Sandia hand pointed at a static scene
                in a couple of different lighting conditions.  -->
-         <!-- <mean>0.0</mean>
+          <mean>0.0</mean>
           <stddev>0.007</stddev>
         </noise>
       </camera>
       <camera name="right">
-        <pose>0 -0.07 0 0 0 0</pose>-->
+        <pose>0 -0.07 0 0 0 0</pose>
         <!-- Spec sheet says 80deg X 45deg @ 1024x544pix.  Based on feedback
              from teams, we're instead doing 80deg X 80deg @ 800x800pix. -->
-       <!-- <horizontal_fov>1.3962634</horizontal_fov>
+        <horizontal_fov>1.3962634</horizontal_fov>
         <image>
           <width>800</width>
           <height>800</height>
@@ -206,14 +203,14 @@
           <far>300</far>
         </clip>
         <noise>
-          <type>gaussian</type>-->
+          <type>gaussian</type>
           <!-- Noise is sampled independently per pixel on each frame.  
                That pixel's noise value is added to each of its color
                channels, which at that point lie in the range [0,1].
                The stddev value of 0.007 is based on experimental data 
                from a camera in a Sandia hand pointed at a static scene
                in a couple of different lighting conditions.  -->
-        <!--  <mean>0.0</mean>
+          <mean>0.0</mean>
           <stddev>0.007</stddev>
         </noise>
       </camera>
@@ -223,9 +220,9 @@
         <cameraName>multisense/camera</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-        <frameName>left_camera_optical_frame</frameName>-->
-        <!-- <rightFrameName>right_camera_optical_frame</rightFrameName> -->
-      <!--  <hackBaseline>0.07</hackBaseline>
+        <frameName>left_camera_optical_frame</frameName>
+        <rightFrameName>right_camera_optical_frame</rightFrameName> 
+        <hackBaseline>0.07</hackBaseline>
         <distortionK1>0.0</distortionK1>
         <distortionK2>0.0</distortionK2>
         <distortionK3>0.0</distortionK3>
@@ -234,7 +231,6 @@
       </plugin>
     </sensor>
   </gazebo>
--->
 
   <joint name="right_camera_frame_joint" type="fixed">
     <origin xyz="0.0 -0.035 -0.002"/>
@@ -284,11 +280,9 @@
 
   <link name="${multisense_namespace}/right_led_frame"/>
 
-<!--
   <gazebo>
     <plugin filename="libMultiSenseSLPlugin.so" name="multisense_plugin"/>
   </gazebo>
--->
 
   <!-- imu link -->
   <link name="${multisense_namespace}/head_imu_link">
@@ -313,17 +307,16 @@
     <origin xyz="-0.0475 0.035 0.0" rpy="0 0 0"/>
   </joint>
 
-<!--
-  <gazebo reference="head_imu_link">-->
+  <gazebo reference="head_imu_link">
     <!-- this is expected to be reparented to head with appropriate offset
          when head_imu_link is reduced by fixed joint reduction -->
     <!-- todo: this is working with gazebo 1.4, need to write a unit test -->
-    <!--<sensor name="head_imu_sensor" type="imu">
+     <sensor name="head_imu_sensor" type="imu">
       <always_on>1</always_on>
       <update_rate>1000.0</update_rate>
       <imu>
         <noise>
-          <type>gaussian</type>-->
+          <type>gaussian</type>
           <!-- Noise parameters from Boston Dynamics
                (http://gazebosim.org/wiki/Sensor_noise):
                  rates (rad/s): mean=0, stddev=2e-4
@@ -341,7 +334,7 @@
                the biases are fixed additive offsets.  We choose
                bias means and stddevs to produce biases close to the provided
                data. -->
-        <!--  <rate>
+          <rate>
             <mean>0.0</mean>
             <stddev>2e-4</stddev>
             <bias_mean>0.0000075</bias_mean>
@@ -357,7 +350,6 @@
       </imu>
     </sensor>
   </gazebo>
--->
 
   <joint name="neck_joint" type="fixed">
     <parent link="NeckPitch"/>
