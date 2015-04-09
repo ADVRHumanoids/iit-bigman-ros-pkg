@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="multisense_sl">
 
-<xacro:property name="multisense_namespace" value="multisense" />
+<xacro:property name="multisense_namespace" value="" />
 
 <!-- 
        Based on multisense_sl_v4.urdf in multisense_sl_description (DRCSIM) 
 -->
 
   <!-- Head Link Simple Collision Meshes -->
-  <link name="${multisense_namespace}/head">
+  <link name="${multisense_namespace}head_multisense">
     <inertial>
       <origin xyz="-0.075493 3.3383E-05 0.02774" rpy="0 0 0" />
       <mass value="1.41984" />
@@ -29,7 +29,7 @@
   </collision>
   </link>
   
-  <link name="${multisense_namespace}/hokuyo_link">
+  <link name="${multisense_namespace}hokuyo_link">
     <inertial>
       <origin xyz="0.032428 0.0004084 -0.0041835" rpy="0 0 0" />
       <mass value="0.057654" />
@@ -57,7 +57,7 @@
   </link>
 
 <!-- Remove frome here! -->  
-<gazebo reference="head">
+<gazebo reference="head_multisense">
     <mu1>0.9</mu1>
     <mu2>0.9</mu2>
   </gazebo>
@@ -70,43 +70,45 @@
 
   <joint name="hokuyo_joint" type="continuous">
     <origin xyz="-0.0446 0 0.0880" rpy="0 0 0" />
-    <parent link="${multisense_namespace}/head" />
-    <child link="${multisense_namespace}/hokuyo_link" />
+    <parent link="${multisense_namespace}head_multisense" />
+    <child link="${multisense_namespace}hokuyo_link" />
     <axis xyz="1 0 0" />
     <dynamics damping="0.01" friction="0"/>
   </joint>
 
+  <!-- Remove frome here! -->
+  <gazebo reference="hokuyo_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
 </xacro:unless>
 
 <xacro:if value="${BIGMAN_FIXED_MULTISENSE}">
 
   <joint name="hokuyo_joint" type="fixed">
     <origin xyz="-0.0446 0 0.0880" rpy="0 0 0" />
-    <parent link="${multisense_namespace}/head" />
-    <child link="${multisense_namespace}/hokuyo_link" />
+    <parent link="${multisense_namespace}head_multisense" />
+    <child link="${multisense_namespace}hokuyo_link" />
   </joint>
 
 </xacro:if>
 
-<!-- Remove frome here! -->
-  <gazebo reference="hokuyo_joint">
-    <implicitSpringDamper>1</implicitSpringDamper>
-  </gazebo>
+
 
 
   <!-- Hokuyo Laser -->
   <joint name="head_hokuyo_joint" type="fixed">
     <axis xyz="0 1 0" />
     <origin xyz="0.03 0 0.015" rpy="0 0 0"/>
-    <parent link="${multisense_namespace}/hokuyo_link"/>
-    <child link="${multisense_namespace}/head_hokuyo_frame"/>
+    <parent link="${multisense_namespace}hokuyo_link"/>
+    <child link="${multisense_namespace}head_hokuyo_frame"/>
   </joint>
 
-  <link name="${multisense_namespace}/head_hokuyo_frame"/>
+  <link name="${multisense_namespace}head_hokuyo_frame"/>
 
 <!-- Remove frome here! -->
   <gazebo reference="head_hokuyo_frame">
-    <sensor type="gpu_ray" name="head_hokuyo_sensor">
+    <!-- sensor type="gpu_ray" name="head_hokuyo_sensor"-->
+    <sensor type="ray" name="head_hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
       <update_rate>40</update_rate>
@@ -134,7 +136,8 @@
           <stddev>0.01</stddev>
         </noise>
       </ray>
-      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
+      <!--plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so"-->
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
         <topicName>/multisense/lidar_scan</topicName>
         <frameName>head_hokuyo_frame</frameName>
       </plugin>
@@ -145,19 +148,19 @@
   <joint name="left_camera_frame_joint" type="fixed">
     <!-- optical frame collocated with tilting DOF -->
     <origin xyz="0.0 0.035 -0.002"/>
-    <parent link="${multisense_namespace}/head"/>
-    <child link="${multisense_namespace}/left_camera_frame"/>
+    <parent link="${multisense_namespace}head_multisense"/>
+    <child link="${multisense_namespace}left_camera_frame"/>
   </joint>
   
-  <link name="${multisense_namespace}/left_camera_frame"/>
+  <link name="${multisense_namespace}left_camera_frame"/>
 
   <joint name="left_camera_optical_frame_joint" type="fixed">
     <origin xyz="0 0 0" rpy="-1.5708 0.0 -1.5708" />
-    <parent link="${multisense_namespace}/left_camera_frame" />
-    <child link="${multisense_namespace}/left_camera_optical_frame"/>
+    <parent link="${multisense_namespace}left_camera_frame" />
+    <child link="${multisense_namespace}left_camera_optical_frame"/>
   </joint>
 
-  <link name="${multisense_namespace}/left_camera_optical_frame"/>
+  <link name="${multisense_namespace}left_camera_optical_frame"/>
 
   <gazebo reference="left_camera_frame">
     <sensor type="multicamera" name="stereo_camera">
@@ -234,58 +237,58 @@
 
   <joint name="right_camera_frame_joint" type="fixed">
     <origin xyz="0.0 -0.035 -0.002"/>
-    <parent link="${multisense_namespace}/head"/>
-    <child link="${multisense_namespace}/right_camera_frame"/>
+    <parent link="${multisense_namespace}head_multisense"/>
+    <child link="${multisense_namespace}right_camera_frame"/>
   </joint>
 
-  <link name="${multisense_namespace}/right_camera_frame"/>
+  <link name="${multisense_namespace}right_camera_frame"/>
 
   <joint name="right_camera_optical_frame_joint" type="fixed">
     <origin xyz="0 0 0" rpy="-1.5708 0.0 -1.5708" />
-    <parent link="${multisense_namespace}/right_camera_frame" />
-    <child link="${multisense_namespace}/right_camera_optical_frame"/>
+    <parent link="${multisense_namespace}right_camera_frame" />
+    <child link="${multisense_namespace}right_camera_optical_frame"/>
   </joint>
 
-  <link name="${multisense_namespace}/right_camera_optical_frame"/>
+  <link name="${multisense_namespace}right_camera_optical_frame"/>
 
   <joint name="center_top_led_frame_joint" type="fixed">
     <origin xyz="0.01125 0.0 0.0105"/>
-    <parent link="${multisense_namespace}/head"/>
-    <child link="${multisense_namespace}/center_top_led_frame"/>
+    <parent link="${multisense_namespace}head_multisense"/>
+    <child link="${multisense_namespace}center_top_led_frame"/>
   </joint>
 
-  <link name="${multisense_namespace}/center_top_led_frame"/>
+  <link name="${multisense_namespace}center_top_led_frame"/>
 
   <joint name="center_bottom_led_frame_joint" type="fixed">
     <origin xyz="0.01125 0.0 -0.0155"/>
-    <parent link="${multisense_namespace}/head"/>
-    <child link="${multisense_namespace}/center_bottom_led_frame"/>
+    <parent link="${multisense_namespace}head_multisense"/>
+    <child link="${multisense_namespace}center_bottom_led_frame"/>
   </joint>
 
-  <link name="${multisense_namespace}/center_bottom_led_frame"/>
+  <link name="${multisense_namespace}center_bottom_led_frame"/>
 
   <joint name="left_led_frame_joint" type="fixed">
     <origin xyz="-0.01443 0.07452 0.050346" rpy="0 0 0.6"/>
-    <parent link="${multisense_namespace}/head"/>
-    <child link="${multisense_namespace}/left_led_frame"/>
+    <parent link="${multisense_namespace}head_multisense"/>
+    <child link="${multisense_namespace}left_led_frame"/>
   </joint>
 
-  <link name="${multisense_namespace}/left_led_frame"/>
+  <link name="${multisense_namespace}left_led_frame"/>
 
   <joint name="right_led_frame_joint" type="fixed">
     <origin xyz="-0.01443 -0.07452 0.050346" rpy="0 0 -0.6"/>
-    <parent link="${multisense_namespace}/head"/>
-    <child link="${multisense_namespace}/right_led_frame"/>
+    <parent link="${multisense_namespace}head_multisense"/>
+    <child link="${multisense_namespace}right_led_frame"/>
   </joint>
 
-  <link name="${multisense_namespace}/right_led_frame"/>
+  <link name="${multisense_namespace}right_led_frame"/>
 
   <gazebo>
     <plugin filename="libMultiSenseSLPlugin.so" name="multisense_plugin"/>
   </gazebo>
 
   <!-- imu link -->
-  <link name="${multisense_namespace}/head_imu_link">
+  <link name="${multisense_namespace}head_imu_link">
     <inertial>
       <mass value="1e-5" />
       <!-- collocate with parent link and remove mass from it -->
@@ -301,8 +304,8 @@
   </link>
 
   <joint name="head_imu_joint" type="fixed">
-    <parent link="${multisense_namespace}/head"/>
-    <child link="${multisense_namespace}/head_imu_link"/>
+    <parent link="${multisense_namespace}head_multisense"/>
+    <child link="${multisense_namespace}head_imu_link"/>
     <!-- putting it at the same z-level as the stereo -->
     <origin xyz="-0.0475 0.035 0.0" rpy="0 0 0"/>
   </joint>
@@ -352,15 +355,15 @@
   </gazebo>
 
   <joint name="neck_joint" type="fixed">
-    <parent link="NeckPitch"/>
-    <child link="${multisense_namespace}/head"/>
+    <parent link="head"/>
+    <child link="${multisense_namespace}head_multisense"/>
     <origin xyz="0.08765 0 0.06475" rpy="0 0 0" /> 
   </joint>
 
   <link name="gaze"/>
        
   <joint name="gaze_joint" type="fixed">
-    <parent link="${multisense_namespace}/head"/>
+    <parent link="${multisense_namespace}head_multisense"/>
     <child link="gaze"/>
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
