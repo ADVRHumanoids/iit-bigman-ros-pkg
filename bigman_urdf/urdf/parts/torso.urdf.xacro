@@ -65,9 +65,9 @@ and to define the end effectors of the robot-->
 
   <link name ="DWYTorso">
     <inertial>
-      <origin xyz="-0.10981228 -0.00551229 -0.06272896" rpy="0 0 0"/>
-      <mass value="22.38913469"/>
-      <inertia ixx="0.15989993"  ixy="0.00087514"  ixz="0.01598045" iyy="0.11274359" iyz="0.00019540" izz="0.21318148" />
+      <origin xyz="0.02049278 -0.00000767 -0.03249378" rpy="0 0 0"/>
+      <mass value="7.31313212"/>
+      <inertia ixx="0.18629757"  ixy="0.00008160"  ixz="0.00030250" iyy="0.02013829" iyz="-0.00001790" izz="0.18850541" />
     </inertial>
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
