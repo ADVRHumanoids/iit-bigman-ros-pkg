@@ -66,7 +66,6 @@
     <mu2>0.9</mu2>
   </gazebo>
 
-<xacro:unless value="${BIGMAN_FIXED_MULTISENSE}">
 
   <joint name="hokuyo_joint" type="continuous">
     <origin xyz="-0.0446 0 0.0880" rpy="0 0 0" />
@@ -80,20 +79,6 @@
   <gazebo reference="hokuyo_joint">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-</xacro:unless>
-
-<xacro:if value="${BIGMAN_FIXED_MULTISENSE}">
-
-  <joint name="hokuyo_joint" type="fixed">
-    <origin xyz="-0.0446 0 0.0880" rpy="0 0 0" />
-    <parent link="${multisense_namespace}head_multisense" />
-    <child link="${multisense_namespace}hokuyo_link" />
-  </joint>
-
-</xacro:if>
-
-
-
 
   <!-- Hokuyo Laser -->
   <joint name="head_hokuyo_joint" type="fixed">
@@ -353,12 +338,6 @@
       </imu>
     </sensor>
   </gazebo>
-
-  <joint name="neck_joint" type="fixed">
-    <parent link="head"/>
-    <child link="${multisense_namespace}head_multisense"/>
-    <origin xyz="0.08765 0 0.06475" rpy="0 0 0" /> 
-  </joint>
 
   <link name="gaze"/>
        
