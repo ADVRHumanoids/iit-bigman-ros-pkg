@@ -59,18 +59,14 @@
         <yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_right_arm_torque.ini</yarpConfigurationFile>
     </plugin>
 
-
-	<!-- HANDS -->
-    <xacro:unless value="${BIGMAN_FIXED_HANDS}">    </xacro:unless>
-    
-		<plugin name="bigman_yarp_gazebo_plugin_left_hand" filename="libgazebo_yarp_controlboard.so">
-			<yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_left_hand.ini</yarpConfigurationFile>
-			<initialConfiguration>0.0</initialConfiguration>
-		</plugin>
-		<plugin name="bigman_yarp_gazebo_plugin_right_hand" filename="libgazebo_yarp_controlboard.so">
-			<yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_right_hand.ini</yarpConfigurationFile>
-			<initialConfiguration>0.0</initialConfiguration>
-		</plugin>
+    <plugin name="bigman_yarp_gazebo_plugin_left_hand" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_left_hand.ini</yarpConfigurationFile>
+            <initialConfiguration>0.0</initialConfiguration>
+    </plugin>
+    <plugin name="bigman_yarp_gazebo_plugin_right_hand" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_right_hand.ini</yarpConfigurationFile>
+            <initialConfiguration>0.0</initialConfiguration>
+    </plugin>
 </xacro:if>
 
 <xacro:if value="${BIGMAN_LEGS}">
@@ -103,9 +99,9 @@
 </xacro:if>
 
 <!-- Plugin to apply external wrenches to the robot & show the CoM in simulation-->
-<plugin name="bigman_yarp_gazebo_plugin_external_wrench" filename="libgazebo_yarp_externalwrench.so"/>
+<!-- <plugin name="bigman_yarp_gazebo_plugin_external_wrench" filename="libgazebo_yarp_externalwrench.so"/> -->
 <plugin name="bigman_add_objects" filename="libgazebo_yarp_objects.so"/>
-<plugin name="bigman_show_model_com" filename="libgazebo_yarp_showmodelcom.so"/>
+<!-- <plugin name="bigman_show_model_com" filename="libgazebo_yarp_showmodelcom.so"/> -->
 </gazebo>
 
 </robot>

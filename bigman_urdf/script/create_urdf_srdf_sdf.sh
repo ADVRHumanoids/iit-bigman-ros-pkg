@@ -63,8 +63,9 @@ EOF
             rosrun xacro xacro.py bigman.urdf.xacro > ${model_filename}.urdf
             echo "...${model_filename}.urdf correctly created!"
 
-            echo "Creating sdf of bigman_robot.urdf.xacro"
+            echo "Creating urdf of bigman_robot.urdf.xacro"
             rosrun xacro xacro.py bigman_robot.urdf.xacro > bigman_robot.urdf
+            echo "Creating sdf of bigman_robot.urdf.xacro"
             if [ $IS_GZSDF_GAZEBO4 == true ]; then
             	gz sdf --print bigman_robot.urdf > bigman.sdf
 	    else
@@ -85,7 +86,7 @@ EOF
 
             cd $SCRIPT_ROOT
 
-            HAS_MOVEIT_CDC=true;
+            HAS_MOVEIT_CDC=false;
             type moveit_compute_default_collisions >/dev/null 2>&1 || { HAS_MOVEIT_CDC=false; }
 
             if [ $HAS_MOVEIT_CDC == true ]; then

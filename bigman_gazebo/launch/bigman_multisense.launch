@@ -17,10 +17,10 @@
      </node>
 
      <!-- send the bigman robot XML to param server -->
-     <param name="robot_description" command="$(find xacro)/xacro.py '$(find bigman_urdf)/urdf/bigman_real.urdf'" />
+     <param name="robot_description" command="$(find xacro)/xacro.py '$(find bigman_urdf)/urdf/bigman.urdf'" />
      
      <!-- send the bigman robot XML to param server -->
-    <param name="robot_description_semantic" textfile="$(find bigman_srdf)/srdf/bigman_real.srdf" />   
+    <param name="robot_description_semantic" textfile="$(find bigman_srdf)/srdf/bigman.srdf" />   
 
     <!-- start robot state publisher -->
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" >
