@@ -94,7 +94,34 @@ and to define the end effectors of the robot-->
     </collision>
   </link>
 
+<link name ="TorsoProtections">
+    <inertial>
+      <origin xyz="0.00010203 0.00928164 0.08113610" rpy="0 0 0"/>
+      <mass value="3.0"/>
+      <inertia ixx="0.01628069"  ixy="-0.00000323"  ixz="0.00001424" iyy="0.01424286" iyz="0.00075458" izz="0.00994169" />
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry name="TorsoProtections_visual">
+        <mesh filename="package://bigman_urdf/meshes/ProtectionSystem.STL" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark_grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry name="TorsoProtections_collision">
+        <mesh filename="package://bigman_urdf/meshes/simple/ProtectionSystem.STL" scale="0.001 0.001 0.001" />
+      </geometry>             
+    </collision>
+  </link>
+
 <!-- JOINTS -->
+<joint name="torso_protection_joint" type="fixed">
+    <parent link="DWYTorso"/>
+    <child link="TorsoProtections"/>
+    <origin xyz="0.0 0 0.0" rpy="${-PI_2} 0 0" /> 
+</joint>
+
 <joint name="torso_joint" type="fixed">
     <parent link="DWYTorso"/>
     <child link="torso"/>
