@@ -78,9 +78,9 @@
 
 <link name ="RElb">
         <inertial>
-          <origin xyz="${-5.5754915e+01*mmTom} ${-7.5826040*mmTom} ${-4.3820396e+01*mmTom}" rpy="0 0 0"/>
-          <mass value="8.6765385e-01"/>
-          <inertia ixx="${4.0395238e+03*mm2Tom2}"  ixy="${3.4973136e+02*mm2Tom2}"  ixz="${-6.8400465e+02*mm2Tom2}" iyy="${2.2460561e+03*mm2Tom2}" iyz="${2.8844444e+02*mm2Tom2}" izz="${4.4895027e+03*mm2Tom2}" />
+          <origin xyz="${-6.3655533e+01*mmTom} ${-4.4231462*mmTom} ${-1.3715758e+02*mmTom}" rpy="0 0 0"/>
+          <mass value="1.4874155"/>
+          <inertia ixx="${1.7815816e+04*mm2Tom2}"  ixy="${4.0170943e+02*mm2Tom2}"  ixz="${-2.4568192e+03*mm2Tom2}" iyy="${1.5706187e+04*mm2Tom2}" iyz="${8.9862025e+02*mm2Tom2}" izz="${6.2045522e+03*mm2Tom2}" />
         </inertial>
         <visual>
           <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -163,9 +163,9 @@
 
     <link name ="LElb">
         <inertial>
-          <origin xyz="${-5.5754915e+01*mmTom} ${7.5826040*mmTom} ${-4.3820396e+01*mmTom}" rpy="0 0 0"/>
-          <mass value="8.6765385e-01"/>
-          <inertia ixx="${4.0395238e+03*mm2Tom2}"  ixy="${-3.4973136e+02*mm2Tom2}"  ixz="${-6.8400465e+02*mm2Tom2}" iyy="${2.2460561e+03*mm2Tom2}" iyz="${-2.8844444e+02*mm2Tom2}" izz="${4.4895027e+03*mm2Tom2}" />
+          <origin xyz="${-6.3655533e+01*mmTom} ${4.4231462*mmTom} ${-1.3715758e+02*mmTom}" rpy="0 0 0"/>
+          <mass value="1.4874155"/>
+          <inertia ixx="${1.7815816e+04*mm2Tom2}"  ixy="${-4.0170943e+02*mm2Tom2}"  ixz="${-2.4568192e+03*mm2Tom2}" iyy="${1.5706187e+04*mm2Tom2}" iyz="${-8.9862025e+02*mm2Tom2}" izz="${6.2045522e+03*mm2Tom2}" />
         </inertial>
         <visual>
           <origin xyz="0 0 0" rpy="0 0 0"/>
