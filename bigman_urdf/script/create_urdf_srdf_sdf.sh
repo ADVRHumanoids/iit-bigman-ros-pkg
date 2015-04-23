@@ -85,7 +85,7 @@ EOF
 
             cd $SCRIPT_ROOT
 
-            HAS_MOVEIT_CDC=true;
+            HAS_MOVEIT_CDC=false;
             type moveit_compute_default_collisions >/dev/null 2>&1 || { HAS_MOVEIT_CDC=false; }
 
             if [ $HAS_MOVEIT_CDC == true ]; then
