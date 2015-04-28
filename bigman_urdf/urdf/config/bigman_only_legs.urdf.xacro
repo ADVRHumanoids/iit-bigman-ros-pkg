@@ -79,4 +79,15 @@
 --> 
 <xacro:property name="BIGMAN_HEAD" value="true" />
 
+<!--
+####################################################
+##
+##  BIGMAN_ADD_PROTECTIONS
+##  if "true" the protections are added to the model.
+##  
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_ADD_PROTECTIONS" value="false" />
+
 </robot>
