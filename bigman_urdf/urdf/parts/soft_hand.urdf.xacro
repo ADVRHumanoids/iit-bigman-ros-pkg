@@ -11,7 +11,6 @@
 
 <!-- LINKS -->
 <link name="RSoftHand"/>
-<link name="r_palm"/>
 
 <link name="RSoftHandLink">
     <inertial>
@@ -24,7 +23,7 @@
       <geometry name="RSoftHandLink_visual">
         <mesh filename="package://bigman_urdf/meshes/SoftHandOpen.STL" scale="0.001 0.001 0.001" />
       </geometry>
-      <material name="black"/>
+      <material name="grey"/>
    </visual>
    <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -35,7 +34,6 @@
   </link>
 
   <link name="LSoftHand"/>
-  <link name="l_palm"/>
 
   <link name="LSoftHandLink">
     <inertial>
@@ -48,7 +46,7 @@
       <geometry name="LSoftHandLink_visual">
         <mesh filename="package://bigman_urdf/meshes/SoftHandOpen.STL" scale="0.001 -0.001 0.001" />
       </geometry>
-      <material name="black"/>
+      <material name="grey"/>
    </visual>
    <collision>
      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -71,11 +69,6 @@
         <origin xyz="${1.1908576e+01*mmTom} ${2.1833446*mmTom} ${-1.5361558e+02*mmTom}" rpy="0 0 0"/>
   </joint>
 
-  <joint name="r_handj3" type="fixed">
-        <parent link="RSoftHand"/>
-        <child link="r_palm"/>
-        <origin xyz="0 ${2.0696923e+01*mmTom+5.0*mmTom} 0.0" rpy="0 0 0"/>
-  </joint>
 
   <joint name="l_handj" type="fixed">
         <parent link="LWrMot3"/>
@@ -87,12 +80,6 @@
         <parent link="LSoftHandLink"/>
         <child link="LSoftHand"/>
         <origin xyz="${1.1908576e+01*mmTom} ${-2.1833446*mmTom} ${-1.5361558e+02*mmTom}" rpy="0 0 0"/>
-  </joint>
-
-  <joint name="l_handj3" type="fixed">
-        <parent link="LSoftHand"/>
-        <child link="l_palm"/>
-        <origin xyz="0 ${-2.0696923e+01*mmTom-5.0*mmTom} 0.0" rpy="0 0 0"/>
   </joint>
 
 </xacro:if>
