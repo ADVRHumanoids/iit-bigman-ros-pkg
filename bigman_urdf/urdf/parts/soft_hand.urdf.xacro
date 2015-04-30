@@ -3,9 +3,9 @@
 
 <xacro:if value="${BIGMAN_FIXED_HANDS}">
 
-<xacro:property name="a" value="0.08" />
-<xacro:property name="b" value="0.08" />
-<xacro:property name="c" value="0.1" />
+<xacro:property name="a" value="0.1" />
+<xacro:property name="b" value="0.06" />
+<xacro:property name="c" value="0.14" />
 
 <!-- For the hand we use the inertia of a parallelepiped -->
 
@@ -14,9 +14,9 @@
 
 <link name="RSoftHandLink">
     <inertial>
-      <origin xyz="${1.1908576e+01*mmTom} ${2.1833446*mmTom} ${-1.5361558e+02*mmTom}" rpy="0 0 0"/>
+      <origin xyz="0 0 -0.17" rpy="0 0 0"/>
       <mass value="1.2"/>
-      <inertia ixx="${5.0e-01*(a*a+c*c)/12.0}"  ixy="0"  ixz="0" iyy="${5.0e-01*(b*b+c*c)/12.0}" iyz="0" izz="${5.0e-01*(a*a+b*b)/12.0}" />
+      <inertia ixx="${1.2*(b*b+c*c)/12.0}"  ixy="0"  ixz="0" iyy="${1.2*(a*a+c*c)/12.0}" iyz="0" izz="${1.2*(a*a+b*b)/12.0}" />
     </inertial>
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -37,9 +37,9 @@
 
   <link name="LSoftHandLink">
     <inertial>
-      <origin xyz="${1.1908576e+01*mmTom} ${-2.1833446*mmTom} ${-1.5361558e+02*mmTom}" rpy="0 0 0"/>
+      <origin xyz="0 0 -0.17" rpy="0 0 0"/>
       <mass value="1.2"/>
-      <inertia ixx="${5.0e-01*(a*a+c*c)/12.0}"  ixy="0"  ixz="0" iyy="${5.0e-01*(b*b+c*c)/12.0}" iyz="0" izz="${5.0e-01*(a*a+b*b)/12.0}" />
+      <inertia ixx="${1.2*(b*b+c*c)/12.0}"  ixy="0"  ixz="0" iyy="${1.2*(a*a+c*c)/12.0}" iyz="0" izz="${1.2*(a*a+b*b)/12.0}" />
     </inertial>
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -90,9 +90,9 @@
 <!-- ## WRONG NUMBERS FOR... ok lasciamo perde... FIX THEM!! ## -->
   <link name="RSoftHand">
     <inertial>
-      <origin xyz="${1.1908576e+01*mmTom} ${2.1833446*mmTom} ${-1.5361558e+02*mmTom}" rpy="0 0 0"/>
+      <origin xyz="0 0 -0.17" rpy="0 0 0"/>
       <mass value="1.2"/>
-      <inertia ixx="${5.0e-01*(a*a+c*c)/12.0}"  ixy="0"  ixz="0" iyy="${5.0e-01*(b*b+c*c)/12.0}" iyz="0" izz="${5.0e-01*(a*a+b*b)/12.0}" />
+      <inertia ixx="${1.2*(b*b+c*c)/12.0}"  ixy="0"  ixz="0" iyy="${1.2*(a*a+c*c)/12.0}" iyz="0" izz="${1.2*(a*a+b*b)/12.0}" />
     </inertial>
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
@@ -113,9 +113,9 @@
 
   <link name="LSoftHand">
     <inertial>
-      <origin xyz="${1.1908576e+01*mmTom} ${-2.1833446*mmTom} ${-1.5361558e+02*mmTom}" rpy="0 0 0"/>
+      <origin xyz="0 0 -0.17" rpy="0 0 0"/>
       <mass value="1.2"/>
-      <inertia ixx="${5.0e-01*(a*a+c*c)/12.0}"  ixy="0"  ixz="0" iyy="${5.0e-01*(b*b+c*c)/12.0}" iyz="0" izz="${5.0e-01*(a*a+b*b)/12.0}" />
+      <inertia ixx="${1.2*(b*b+c*c)/12.0}"  ixy="0"  ixz="0" iyy="${1.2*(a*a+c*c)/12.0}" iyz="0" izz="${1.2*(a*a+b*b)/12.0}" />
     </inertial>
     <visual>
      <origin xyz="0 0 0" rpy="0 0 0" />
