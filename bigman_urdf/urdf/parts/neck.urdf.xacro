@@ -16,9 +16,9 @@
 <!-- LINKS -->
   <link name ="NeckYaw">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-      <mass value="1.0"/>
-      <inertia ixx="0.001"  ixy="0.0"  ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+      <origin xyz="0.0 0.0 ${1.1550000e+02*mmTom}" rpy="0 0 0"/>
+      <mass value="0.35"/>
+      <inertia ixx="${3.2840119e+02*mm2Tom2}"  ixy="0.0"  ixz="0.0" iyy="${7.0371675e+01*mm2Tom2}" iyz="0.0" izz="${3.2840111e+02*mm2Tom2}" />
     </inertial>
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -37,9 +37,9 @@
 
   <link name ="NeckPitch">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-      <mass value="1.0"/>
-      <inertia ixx="0.001"  ixy="0.0"  ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+      <origin xyz="${-1.020e+02*mmTom} 0.0 ${2.6575000e+02*mmTom}" rpy="0 0 0"/>
+      <mass value="0.623"/>
+      <inertia ixx="${1.0388333e+03*mm2Tom2}"  ixy="0.0"  ixz="0.0" iyy="${5.4689381e+02*mm2Tom2}" iyz="0.0" izz="${5.4689381e+02*mm2Tom2}" />
     </inertial>
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
