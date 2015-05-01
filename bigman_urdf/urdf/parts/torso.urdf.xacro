@@ -119,6 +119,7 @@ and to define the end effectors of the robot-->
 </xacro:if>
 
 <!-- UPDATE DATA FOR TORSO PROTECTION! -->
+<xacro:if value="${BIGMAN_ADD_BACKPACK}">
 <link name="backpack">
     <inertial>
       <origin xyz="0 0 -0.065" rpy="0 0 0"/>
@@ -139,13 +140,16 @@ and to define the end effectors of the robot-->
       </geometry>             
     </collision>
 </link>
+</xacro:if>
 
 <!-- JOINTS -->
+<xacro:if value="${BIGMAN_ADD_BACKPACK}">
 <joint name="backpack_joint" type="fixed">
     <parent link="DWYTorso"/>
     <child link="backpack"/>
     <origin xyz="-0.185 0 -0.025" rpy="0 0 0" />   
 </joint>
+</xacro:if>
 
 <xacro:if value="${BIGMAN_ADD_PROTECTIONS}">
 <joint name="torso_protection_joint" type="fixed">
