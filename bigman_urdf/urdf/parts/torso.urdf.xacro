@@ -94,11 +94,12 @@ and to define the end effectors of the robot-->
     </collision>
   </link>
 
+<!-- UPDATE DATA FOR TORSO PROTECTION! -->
 <xacro:if value="${BIGMAN_ADD_PROTECTIONS}">
 <link name ="TorsoProtections">
     <inertial>
       <origin xyz="${-8.2963193e+01*mmTom} ${7.0747291e-04*mmTom} ${7.5409106e+01*mmTom}" rpy="0 0 0"/>
-      <mass value="2.9346303"/>
+      <mass value="4.7"/>
       <inertia ixx="${1.4773769e+05*mm2Tom2}"  ixy="${0.0*mm2Tom2}"  ixz="${-2.9780072e+04*mm2Tom2}" iyy="${1.6085511e+05*mm2Tom2}" iyz="${0.0*mm2Tom2}" izz="${1.5409381e+05*mm2Tom2}" />
     </inertial>
     <visual>
@@ -117,7 +118,39 @@ and to define the end effectors of the robot-->
   </link>
 </xacro:if>
 
+<!-- UPDATE DATA FOR TORSO PROTECTION! -->
+<xacro:if value="${BIGMAN_ADD_BACKPACK}">
+<link name="backpack">
+    <inertial>
+      <origin xyz="0 0 -0.065" rpy="0 0 0"/>
+      <mass value="10.0"/>
+      <inertia ixx="${(10.0/12.0)*(0.3*0.3+0.13*0.13)}"  ixy="0.0"  ixz="0.0" iyy="${(10.0/12.0)*(0.16*0.16+0.13*0.13)}" iyz="0.0" izz="${(10.0/12.0)*(0.16*0.16+0.3*0.3)}" />
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry name="backpack_visual">
+        <box size="0.16 0.3 0.22" />
+      </geometry>
+      <material name="dark_grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <geometry name="backpack_collision">
+        <box size="0.16 0.3 0.22" />
+      </geometry>             
+    </collision>
+</link>
+</xacro:if>
+
 <!-- JOINTS -->
+<xacro:if value="${BIGMAN_ADD_BACKPACK}">
+<joint name="backpack_joint" type="fixed">
+    <parent link="DWYTorso"/>
+    <child link="backpack"/>
+    <origin xyz="-0.185 0 -0.025" rpy="0 0 0" />   
+</joint>
+</xacro:if>
+
 <xacro:if value="${BIGMAN_ADD_PROTECTIONS}">
 <joint name="torso_protection_joint" type="fixed">
     <parent link="DWYTorso"/>

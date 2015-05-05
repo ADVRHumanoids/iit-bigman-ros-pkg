@@ -90,4 +90,15 @@
 --> 
 <xacro:property name="BIGMAN_ADD_PROTECTIONS" value="true" />
 
+<!--
+####################################################
+##
+##  BIGMAN_ADD_BACKPACK
+##  if "true" the backpack is added to the model.
+##  
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_ADD_BACKPACK" value="false" />
+
 </robot>
