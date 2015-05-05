@@ -219,7 +219,7 @@
     <dynamics friction="0" damping="3.0"/> 
 </joint>
 
-  <joint name="RElbj" type="revolute">
+   <joint name="RElbj" type="revolute">
     <parent link="RShy"/>
     <child link="RElb"/>
     <origin xyz="0.036 0.0 -0.15" rpy="0 0 0" />

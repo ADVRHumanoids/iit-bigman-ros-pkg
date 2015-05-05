@@ -79,4 +79,26 @@
 --> 
 <xacro:property name="BIGMAN_HEAD" value="true" />
 
+<!--
+####################################################
+##
+##  BIGMAN_ADD_PROTECTIONS
+##  if "true" the protections are added to the model.
+##  
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_ADD_PROTECTIONS" value="false" />
+
+<!--
+####################################################
+##
+##  BIGMAN_ADD_BACKPACK
+##  if "true" the backpack is added to the model.
+##  
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_ADD_BACKPACK" value="false" />
+
 </robot>
