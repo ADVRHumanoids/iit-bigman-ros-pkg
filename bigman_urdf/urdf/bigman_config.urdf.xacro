@@ -99,6 +99,6 @@
 ##
 ####################################################
 --> 
-<xacro:property name="BIGMAN_ADD_BACKPACK" value="false" />
+<xacro:property name="BIGMAN_ADD_BACKPACK" value="true" />
 
 </robot>
