@@ -44,7 +44,7 @@
         <chain base_link="Waist" tip_link="r_sole"/>
     </group>
 </xacro:if>
- <xacro:if value="${BIGMAN_UPPER_BODY}">>
+ <xacro:if value="${BIGMAN_UPPER_BODY}">
     <group name="torso">
         <chain base_link="Waist" tip_link="DWYTorso"/>
     </group>
