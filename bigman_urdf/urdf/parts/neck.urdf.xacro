@@ -11,14 +11,13 @@
 <xacro:property name="sin_26" value="0.43835911792" />
 
 <xacro:property name="toRad" value="${PI/180.0}" />
-<xacro:property name="safety" value="5.0" />
 
 <!-- LINKS -->
   <link name ="NeckYaw">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-      <mass value="1.0"/>
-      <inertia ixx="0.001"  ixy="0.0"  ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+      <origin xyz="0.0 0.0 ${1.1550000e+02*mmTom}" rpy="0 0 0"/>
+      <mass value="0.35"/>
+      <inertia ixx="${3.2840119e+02*mm2Tom2}"  ixy="0.0"  ixz="0.0" iyy="${7.0371675e+01*mm2Tom2}" iyz="0.0" izz="${3.2840111e+02*mm2Tom2}" />
     </inertial>
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -37,9 +36,9 @@
 
   <link name ="head">
     <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-      <mass value="1.0"/>
-      <inertia ixx="0.001"  ixy="0.0"  ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+      <origin xyz="${-1.020e+02*mmTom} 0.0 ${2.6575000e+02*mmTom}" rpy="0 0 0"/>
+      <mass value="0.623"/>
+      <inertia ixx="${1.0388333e+03*mm2Tom2}"  ixy="0.0"  ixz="0.0" iyy="${5.4689381e+02*mm2Tom2}" iyz="0.0" izz="${5.4689381e+02*mm2Tom2}" />
     </inertial>
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -62,7 +61,8 @@
     <child link="NeckYaw"/>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <axis xyz="0 0 1" />
-    <limit velocity="6.283" effort="120" lower="${(-175.0+safety)*toRad}" upper="${(175.0-safety)*toRad}" />
+    <!--limit velocity="6.283" effort="120" lower="${(-175.0)*toRad}" upper="${(175.0)*toRad}" /-->
+    <limit velocity="6.283" effort="120" lower="${(-35.0)*toRad}" upper="${(35.0)*toRad}" />
     <dynamics friction="0" damping="3.0"/> 
 </joint>
 
@@ -71,7 +71,8 @@
     <child link="head"/>
     <origin xyz="0 0 0.1155" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="6.283" effort="120" lower="${(-30.0+safety)*toRad}" upper="${(70.0-safety)*toRad}" />
+    <!--limit velocity="6.283" effort="120" lower="${(-30.0)*toRad}" upper="${(70.0)*toRad}" /-->
+    <limit velocity="6.283" effort="120" lower="${(-25.0)*toRad}" upper="${(60.0)*toRad}" />
     <dynamics friction="0" damping="3.0"/> 
 </joint>
 
