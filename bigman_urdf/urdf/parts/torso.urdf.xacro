@@ -65,8 +65,8 @@ and to define the end effectors of the robot-->
 
   <link name ="DWYTorso">
     <inertial>
-      <origin xyz="0.02049278 -0.00000767 -0.03249378" rpy="0 0 0"/>
-      <mass value="7.31313212"/>
+        <origin xyz="0.0 0.00 0.3" rpy="0 0 0"/>
+        <mass value="26"/>
       <inertia ixx="0.18629757"  ixy="0.00008160"  ixz="0.00030250" iyy="0.02013829" iyz="-0.00001790" izz="0.18850541" />
     </inertial>
     <visual>
@@ -170,7 +170,7 @@ and to define the end effectors of the robot-->
     <child link="DWL"/>
     <origin xyz="0.1115 0 0.195982" rpy="0 0 0" />
     <axis xyz="${cos_26} 0 ${sin_26}" />
-    <limit velocity="6.283" effort="120" lower="${-35.0*toRad}" upper="${35.0*toRad}" />
+    <limit velocity="6.283" effort="120" lower="${-15.0*toRad}" upper="${15.0*toRad}" />
     <dynamics friction="0" damping="3.0"/> 
 </joint>
 
@@ -179,7 +179,7 @@ and to define the end effectors of the robot-->
     <child link="DWS"/>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit velocity="6.283" effort="220" lower="${-20.0*toRad}" upper="${80.0*toRad}" />
+    <limit velocity="6.283" effort="220" lower="${-10.0*toRad}" upper="${40.0*toRad}" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
@@ -188,7 +188,7 @@ and to define the end effectors of the robot-->
     <child link="DWYTorso"/>
     <origin xyz="0 0 0.22275" rpy="0 0 0" />
     <axis xyz="0 0 1" />
-    <limit velocity="6.283" effort="120" lower="${-120.0*toRad}" upper="${120.0*toRad}" />
+    <limit velocity="6.283" effort="120" lower="${-100.0*toRad}" upper="${100.0*toRad}" />
     <dynamics friction="0" damping="3.0"/>
   </joint>
 
