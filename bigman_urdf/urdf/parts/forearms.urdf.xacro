@@ -50,6 +50,7 @@
         </collision>
       </link>
 
+<xacro:if value="${BIGMAN_ADD_RAISING_SUPPORT}">
       <link name="LRaisingSupport">
         <inertial>
           <origin xyz="${7.2667838*mmTom} ${1.2370624*mmTom} ${-6.9076044e+01*mmTom}" rpy="0 0 0"/>
@@ -72,6 +73,7 @@
           </geometry>             
         </collision>
       </link>
+</xacro:if>
 
       <link name="LWrMot3">
         <inertial>
@@ -138,6 +140,7 @@
         </collision>
       </link>
 
+<xacro:if value="${BIGMAN_ADD_RAISING_SUPPORT}">
       <link name="RRaisingSupport">
         <inertial>
           <origin xyz="${7.2667838*mmTom} ${-1.2370624*mmTom} ${-6.9076044e+01*mmTom}" rpy="0 0 0"/>
@@ -160,6 +163,7 @@
           </geometry>             
         </collision>
       </link> 
+</xacro:if>
 
       <link name="RWrMot3">
         <inertial>
@@ -202,11 +206,13 @@
     <dynamics friction="0" damping="0.03"/>
   </joint>
 
-    <joint name="LRaisingSupport_joint" type="fixed">
+<xacro:if value="${BIGMAN_ADD_RAISING_SUPPORT}">
+  <joint name="LRaisingSupport_joint" type="fixed">
     <parent link="LWrMot2"/>
     <child link="LRaisingSupport"/>
     <origin xyz="0.0 0.0 -0.0505" rpy="0 0 0"/>
   </joint>
+</xacro:if>
 
   <joint name="LWrj2" type="revolute">
     <parent link="LWrMot2"/>
@@ -242,11 +248,13 @@
     <dynamics friction="0" damping="0.03"/>
   </joint>
 
-    <joint name="RRaisingSupport_joint" type="fixed">
+<xacro:if value="${BIGMAN_ADD_RAISING_SUPPORT}">
+  <joint name="RRaisingSupport_joint" type="fixed">
     <parent link="RWrMot2"/>
     <child link="RRaisingSupport"/>
     <origin xyz="0.0 0.0 -0.0505" rpy="0 0 0"/>
   </joint>
+</xacro:if>
 
   <joint name="RWrj2" type="revolute">
     <parent link="RWrMot2"/>

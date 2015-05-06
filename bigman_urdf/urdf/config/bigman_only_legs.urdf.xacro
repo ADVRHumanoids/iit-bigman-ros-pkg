@@ -101,4 +101,15 @@
 --> 
 <xacro:property name="BIGMAN_ADD_BACKPACK" value="false" />
 
+<!--
+####################################################
+##
+##  BIGMAN_ADD_RAISING_SUPPORT
+##  if "true" the raising support are added to the model.
+##  
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_ADD_RAISING_SUPPORT" value="false" />
+
 </robot>
