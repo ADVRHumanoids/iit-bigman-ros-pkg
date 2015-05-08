@@ -36,6 +36,7 @@
 <xacro:if value="${BIGMAN_LEGS}">
     <group name="imu_sensors">
             <link name="imu_link"/>
+            <link name="imu_link2"/>
     </group>
     <group name="left_leg">
         <chain base_link="Waist" tip_link="l_sole"/>
