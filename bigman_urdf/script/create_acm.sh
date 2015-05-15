@@ -34,12 +34,21 @@ if [ -d config ]; then
                 echo
                 echo
                 printf "${RED}computing default allowed collision detection matrix for ${model_filename}...${NC}\n"
-                moveit_compute_default_collisions --urdf_path ../urdf/${model_filename}.urdf --srdf_path ../../bigman_srdf/srdf/${model_filename}.srdf
+                moveit_compute_default_collisions --urdf_path ../urdf/${model_filename}.urdf --srdf_path ../../bigman_srdf/srdf/${model_filename}.srdf --num_trials 100000
                 ./save_acm.py ../../bigman_srdf/srdf/${model_filename}.srdf --output
                 printf "${GREEN}..finished computing default allowed collision detection matrix for ${model_filename}${NC}\n"
+
+                echo
+                echo
+                printf "${RED}computing default allowed collision detection matrix for ${model_filename}_capsules...${NC}\n"
+                #ATM using cylinders - and not capsules - is more conservative when creating the ACM
+                #moveit_compute_default_collisions --urdf_path ../urdf/${model_filename}_capsules.urdf --srdf_path ../../bigman_srdf/srdf/${model_filename}_capsules.srdf --num_trials 75000 --cylinders_to_capsules
+                moveit_compute_default_collisions --urdf_path ../urdf/${model_filename}_capsules.urdf --srdf_path ../../bigman_srdf/srdf/${model_filename}_capsules.srdf --num_trials 75000
+                ./save_acm.py ../../bigman_srdf/srdf/${model_filename}_capsules.srdf --output
+                printf "${GREEN}..finished computing default allowed collision detection matrix for ${model_filename}_capsule${NC}\n"
             else
                 echo
-                printf "${RED}ERROR! moveeit_compute_default_collisions was not found. Exiting${NC}\n"
+                printf "${RED}ERROR! moveit_compute_default_collisions was not found. Exiting${NC}\n"
                 exit
             fi
 

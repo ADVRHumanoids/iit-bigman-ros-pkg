@@ -74,7 +74,7 @@ EOF
 
             printf "${PURPLE}Creating capsule urdf of bigman.urdf.xacro ...${NC}\n"
             robot_capsule_urdf ${model_filename}.urdf --output
-            printf "${GREEN}...${model_filename}_capsule.urdf correctly created!${NC}\n"
+            printf "${GREEN}...${model_filename}_capsules.urdf correctly created!${NC}\n"
             echo
             echo
 
@@ -102,12 +102,19 @@ EOF
             printf "${GREEN}...created ${model_filename}.srdf!${NC}\n"
             echo
             echo
+
+            printf "${PURPLE}Creating capsule srdf of bigman.srdf.xacro ...${NC}\n"
+            cp ${model_filename}.srdf ${model_filename}_capsules.srdf
+            printf "${GREEN}...${model_filename}_capsules.srdf correctly created!${NC}\n"
+            echo
+            echo
             
 
             cd $SCRIPT_ROOT
 
             echo
             ./load_acm.py ../../bigman_srdf/srdf/${model_filename}.srdf --output
+            ./load_acm.py ../../bigman_srdf/srdf/${model_filename}_capsules.srdf --output
             printf "${RED}skipping computation of default allowed collision detection matrix${NC}\n"
             printf "${YELLOW}Please make sure the ACM are up-to-date by running ${ORANGE}make acm${YELLOW} in the model build folder${NC}\n"
 
