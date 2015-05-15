@@ -122,6 +122,6 @@
 ##
 ####################################################
 --> 
-<xacro:property name="BIGMAN_NEW_FEET" value="false" />
+<xacro:property name="BIGMAN_NEW_FEET" value="true" />
 
 </robot>
