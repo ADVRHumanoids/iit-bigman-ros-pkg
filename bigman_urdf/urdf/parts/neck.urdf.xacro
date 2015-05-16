@@ -61,8 +61,8 @@
     <child link="NeckYaw"/>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <axis xyz="0 0 1" />
-    <limit velocity="6.283" effort="120" lower="${(-175.0)*toRad}" upper="${(175.0)*toRad}" />
-    <!--limit velocity="6.283" effort="120" lower="${(-35.0)*toRad}" upper="${(35.0)*toRad}" /-->
+<!--     <limit velocity="6.283" effort="120" lower="${(-175.0)*toRad}" upper="${(175.0)*toRad}" /> -->
+    <limit velocity="6.283" effort="120" lower="${(-35.0)*toRad}" upper="${(35.0)*toRad}" />
     <dynamics friction="0" damping="3.0"/> 
 </joint>
 
@@ -72,7 +72,7 @@
     <origin xyz="0 0 0.1155" rpy="0 0 0" />
     <axis xyz="0 1 0" />
     <!--limit velocity="6.283" effort="120" lower="${(-30.0)*toRad}" upper="${(70.0)*toRad}" /-->
-    <limit velocity="6.283" effort="120" lower="${(-25.0)*toRad}" upper="${(60.0)*toRad}" />
+    <limit velocity="6.283" effort="120" lower="${(-15.0)*toRad}" upper="${(60.0)*toRad}" />
     <dynamics friction="0" damping="3.0"/> 
 </joint>
 

@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 2.8)
 PROJECT(iit-bigman-ros-pkg)
 
+add_custom_target(  acm
+                    COMMAND ${CMAKE_SOURCE_DIR}/bigman_urdf/script/create_acm.sh)
+
 add_custom_target(	remove_old_bigman_urdf_gazebo ALL
     				COMMAND ${CMAKE_COMMAND} -E remove_directory 
         			"~/.gazebo/models/bigman_urdf/")

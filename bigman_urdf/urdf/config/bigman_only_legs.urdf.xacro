@@ -112,4 +112,16 @@
 --> 
 <xacro:property name="BIGMAN_ADD_RAISING_SUPPORT" value="false" />
 
+<!--
+####################################################
+##
+##  BIGMAN_NEW_FEET
+##  if "true" the new feet with the joint in the middle
+##  are used to the model.
+##  
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_NEW_FEET" value="true" />
+
 </robot>
