@@ -137,6 +137,12 @@ EOF
     echo "</database>" >> ../../bigman_gazebo/database/database.config
     
     unset i
+
+    printf "${PURPLE}Creating capsule urdf (for visualization) of bigman_capsules.urdf ...${NC}\n"
+    robot_capsule_urdf_to_rviz bigman_capsules.urdf --output
+    printf "${GREEN}...bigman_capsules.rviz correctly created! You can use view it by calling roslaunch bigman_urdf bigman_capsules_slider.launch${NC}\n"
+    echo
+    echo
     
     rm bigman_config.urdf.xacro
     mkdir -p ../../bigman_gazebo/database/bigman_urdf/
