@@ -25,6 +25,7 @@
   <disable_collisions link1="DWS" link2="NeckPitch" reason="Never"/>
   <disable_collisions link1="DWS" link2="NeckYaw" reason="Never"/>
   <disable_collisions link1="DWS" link2="RElb" reason="Never"/>
+  <disable_collisions link1="DWS" link2="RForearm" reason="Never"/>
   <disable_collisions link1="DWS" link2="RShp" reason="Never"/>
   <disable_collisions link1="DWS" link2="RShr" reason="Never"/>
   <disable_collisions link1="DWS" link2="RShy" reason="Never"/>
@@ -228,7 +229,6 @@
   <disable_collisions link1="RForearm" link2="multisense/hokuyo_link" reason="Never"/>
   <disable_collisions link1="RShp" link2="RShr" reason="Adjacent"/>
   <disable_collisions link1="RShp" link2="RShy" reason="Never"/>
-  <disable_collisions link1="RShp" link2="RWrMot2" reason="Never"/>
   <disable_collisions link1="RShp" link2="TorsoProtections" reason="Default"/>
   <disable_collisions link1="RShp" link2="Waist" reason="Never"/>
   <disable_collisions link1="RShp" link2="backpack" reason="Never"/>
