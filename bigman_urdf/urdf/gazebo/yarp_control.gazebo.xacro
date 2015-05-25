@@ -3,6 +3,14 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
 <gazebo>
+<xacro:if value="${BIGMAN_WHOLE_BODY}">
+      <plugin name='bigman_yarp_gazebo_plugin_whole_body' filename='libgazebo_yarp_controlboard.so'>
+      <yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo.ini</yarpConfigurationFile>
+      <initialConfiguration>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 -0.17 0.0 0.0 0.0 0.0 0.0 0.0 0.17 0.0 0.0 0.0 0.0 0.0 0.0 0.0</initialConfiguration>
+    </plugin>
+</xacro:if>
+<xacro:unless value="${BIGMAN_WHOLE_BODY}">
+  
 <xacro:if value="${BIGMAN_UPPER_BODY}">
 <!-- TORSO -->
 <plugin name="bigman_yarp_gazebo_plugin_torso" filename="libgazebo_yarp_controlboard.so">
@@ -105,6 +113,7 @@
 <!-- Plugin to apply external wrenches to the robot & show the CoM in simulation-->
 <!-- plugin name="bigman_yarp_gazebo_plugin_external_wrench" filename="libgazebo_yarp_externalwrench.so"/ -->
 <plugin name="bigman_show_model_com" filename="libgazebo_yarp_showmodelcom.so"/>
+</xacro:unless>
 </gazebo>
 
 </robot>
