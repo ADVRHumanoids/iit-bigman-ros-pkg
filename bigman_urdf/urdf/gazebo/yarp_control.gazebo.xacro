@@ -6,7 +6,16 @@
 <xacro:if value="${BIGMAN_WHOLE_BODY}">
       <plugin name='bigman_yarp_gazebo_plugin_whole_body' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo.ini</yarpConfigurationFile>
-      <initialConfiguration>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 -0.17 0.0 0.0 0.0 0.0 0.0 0.0 0.17 0.0 0.0 0.0 0.0 0.0 0.0 0.0</initialConfiguration>
+      <initialConfiguration>
+	0.0 0.0 0.0 0.0 0.0 0.0 
+	0.0 0.0 0.0 0.0 0.0 0.0 
+	0.0 0.0 0.0 
+	0.0 0.17 0.0 0.0 0.0 0.0 0.0
+	0.0 0.0
+	0.0 -0.17 0.0 0.0 0.0 0.0 0.0 
+	0.0 
+	0.0
+	</initialConfiguration>
     </plugin>
 </xacro:if>
 <xacro:unless value="${BIGMAN_WHOLE_BODY}">
