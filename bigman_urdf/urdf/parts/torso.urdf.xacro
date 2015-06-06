@@ -170,7 +170,7 @@ and to define the end effectors of the robot-->
     <child link="DWL"/>
     <origin xyz="0.1115 0 0.195982" rpy="0 0 0" />
     <axis xyz="${cos_26} 0 ${sin_26}" />
-    <limit velocity="6.283" effort="120" lower="${-0.11*toRad}" upper="${0.11*toRad}" />
+    <limit velocity="6.283" effort="120" lower="${-0.6*toRad}" upper="${0*toRad}" />
     <dynamics friction="0" damping="3.0"/> 
 </joint>
 
