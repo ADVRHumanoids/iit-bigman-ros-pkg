@@ -13,7 +13,7 @@ add_custom_target(  remove_old_bigman_gazebo ALL
                     "~/.gazebo/models/bigman/")
 
 add_custom_target(  compile_urdf_sdf ALL
-                    COMMAND ${CMAKE_SOURCE_DIR}/bigman_urdf/script/create_urdf_srdf_sdf.sh)
+                    COMMAND ${CMAKE_SOURCE_DIR}/bigman_urdf/script/create_urdf_srdf_sdf.sh bigman)
 
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     add_custom_target(	copy_bigman_gazebo ALL
