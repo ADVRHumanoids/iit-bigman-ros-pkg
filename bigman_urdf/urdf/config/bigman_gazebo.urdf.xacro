@@ -134,7 +134,7 @@
 ##
 ####################################################
 --> 
-<xacro:property name="BIGMAN_SAFETY_JOINT_LIMITS_ARMS" value="true" />
+<xacro:property name="BIGMAN_SAFETY_JOINT_LIMITS_ARMS" value="false" />
 <xacro:property name="BIGMAN_SAFETY_JOINT_LIMITS_TORSO" value="false" />
 
 </robot>
