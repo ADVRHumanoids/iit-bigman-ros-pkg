@@ -124,4 +124,17 @@
 --> 
 <xacro:property name="BIGMAN_NEW_FEET" value="false" />
 
+<!--
+####################################################
+##
+##  BIGMAN_SAFETY_JOINT_LIMITS_X
+##  if "true" the more strict joint limits are used 
+##  for the X part
+##  
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_SAFETY_JOINT_LIMITS_ARMS" value="true" />
+<xacro:property name="BIGMAN_SAFETY_JOINT_LIMITS_TORSO" value="false" />
+
 </robot>
