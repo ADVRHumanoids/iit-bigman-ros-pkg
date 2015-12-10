@@ -195,8 +195,12 @@
     <origin xyz="0.045646 -0.219164 0.001531" rpy="0 0 0.3491" />
 </xacro:unless>
     <axis xyz="0 ${cos_42} ${-sin_42}" />
-    <!--limit velocity="6.283" effort="120" lower="${-163*toRad}" upper="${161.0*toRad}" /-->
-    <limit velocity="6.283" effort="120" lower="${-55*toRad}" upper="${85.0*toRad}" /> <!-- <limit velocity="6.283" effort="120" lower="${-57*toRad}" upper="${89.0*toRad}" /> -->
+    <xacro:if value="${BIGMAN_SAFETY_JOINT_LIMITS_ARMS}">
+    	<limit velocity="6.283" effort="120" lower="${-55*toRad}" upper="${85.0*toRad}" />
+    </xacro:if>
+    <xacro:unless value="${BIGMAN_SAFETY_JOINT_LIMITS_ARMS}">
+    	<limit velocity="6.283" effort="120" lower="${-163*toRad}" upper="${161.0*toRad}" />
+    </xacro:unless>
     <dynamics friction="0" damping="3.0"/>
 </joint>
 
@@ -205,8 +209,12 @@
     <child link="RShr"/>
     <origin xyz="0.0 -0.116568264 0.03364" rpy="0 0 0" />
     <axis xyz="1 0 0" />
-    <!--limit velocity="6.283" effort="120" lower="${-221.0*toRad}" upper="${-7.0*toRad}" /-->
-    <limit velocity="6.283" effort="120" lower="${-120.0*toRad}" upper="${-7.0*toRad}" />
+    <xacro:if value="${BIGMAN_SAFETY_JOINT_LIMITS_ARMS}">
+    	<limit velocity="6.283" effort="120" lower="${-120.0*toRad}" upper="${-7.0*toRad}" />
+    </xacro:if>
+    <xacro:unless value="${BIGMAN_SAFETY_JOINT_LIMITS_ARMS}">
+    	<limit velocity="6.283" effort="120" lower="${-221.0*toRad}" upper="${-7.0*toRad}" />
+    </xacro:unless>
     <dynamics friction="0" damping="3.0"/>
 </joint>
 
@@ -239,8 +247,12 @@
     <origin xyz="0.045646 0.219164 0.001531" rpy="0 0 -0.3491" />
 </xacro:unless>
     <axis xyz="0.0 ${cos_42} ${sin_42}" />
-    <!--limit velocity="6.283" effort="120" lower="${-165.0*toRad}" upper="${160.0*toRad}" /-->
-    <limit velocity="6.283" effort="120" lower="${-55.0*toRad}" upper="${85.0*toRad}" /><!-- <limit velocity="6.283" effort="120" lower="${-57*toRad}" upper="${89.0*toRad}" /> -->
+    <xacro:if value="${BIGMAN_SAFETY_JOINT_LIMITS_ARMS}">
+    	<limit velocity="6.283" effort="120" lower="${-55.0*toRad}" upper="${85.0*toRad}" />
+    </xacro:if>
+    <xacro:unless value="${BIGMAN_SAFETY_JOINT_LIMITS_ARMS}">
+    	<limit velocity="6.283" effort="120" lower="${-165.0*toRad}" upper="${160.0*toRad}" />
+    </xacro:unless>
     <dynamics friction="0" damping="3.0"/>
 </joint>
 
@@ -249,8 +261,12 @@
     <child link="LShr"/>
     <origin xyz="0.0 0.116568264 0.03364" rpy="0 0 0" />
     <axis xyz="1 0 0" />
-    <!--limit velocity="6.283" effort="120" lower="${5.0*toRad}" upper="${221.0*toRad}" /-->
-    <limit velocity="6.283" effort="120" lower="${5.0*toRad}" upper="${120.0*toRad}" />
+    <xacro:if value="${BIGMAN_SAFETY_JOINT_LIMITS_ARMS}">
+    	<limit velocity="6.283" effort="120" lower="${5.0*toRad}" upper="${120.0*toRad}" />
+    </xacro:if>
+    <xacro:unless value="${BIGMAN_SAFETY_JOINT_LIMITS_ARMS}">
+    	<limit velocity="6.283" effort="120" lower="${5.0*toRad}" upper="${221.0*toRad}" />
+    </xacro:unless>
     <dynamics friction="0" damping="3.0"/>
 </joint>
 

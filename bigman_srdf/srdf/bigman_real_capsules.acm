@@ -22,6 +22,8 @@
   <disable_collisions link1="DWL" link2="imu_link2" reason="Never"/>
   <disable_collisions link1="DWS" link2="DWYTorso" reason="Adjacent"/>
   <disable_collisions link1="DWS" link2="LElb" reason="Never"/>
+  <disable_collisions link1="DWS" link2="LFootmot" reason="Never"/>
+  <disable_collisions link1="DWS" link2="LForearm" reason="Never"/>
   <disable_collisions link1="DWS" link2="LHipMot" reason="Never"/>
   <disable_collisions link1="DWS" link2="LShp" reason="Never"/>
   <disable_collisions link1="DWS" link2="LShr" reason="Never"/>
@@ -31,6 +33,7 @@
   <disable_collisions link1="DWS" link2="NeckPitch" reason="Never"/>
   <disable_collisions link1="DWS" link2="NeckYaw" reason="Never"/>
   <disable_collisions link1="DWS" link2="RElb" reason="Never"/>
+  <disable_collisions link1="DWS" link2="RForearm" reason="Never"/>
   <disable_collisions link1="DWS" link2="RHipMot" reason="Never"/>
   <disable_collisions link1="DWS" link2="RShp" reason="Never"/>
   <disable_collisions link1="DWS" link2="RShr" reason="Never"/>
@@ -56,7 +59,6 @@
   <disable_collisions link1="DWYTorso" link2="RFootmot" reason="Never"/>
   <disable_collisions link1="DWYTorso" link2="RForearm" reason="Never"/>
   <disable_collisions link1="DWYTorso" link2="RHipMot" reason="Never"/>
-  <disable_collisions link1="DWYTorso" link2="RLowLeg" reason="Never"/>
   <disable_collisions link1="DWYTorso" link2="RShp" reason="Adjacent"/>
   <disable_collisions link1="DWYTorso" link2="RShr" reason="Never"/>
   <disable_collisions link1="DWYTorso" link2="RShy" reason="Never"/>
@@ -83,7 +85,6 @@
   <disable_collisions link1="LElb" link2="RShy" reason="Never"/>
   <disable_collisions link1="LElb" link2="RThighUpLeg" reason="Never"/>
   <disable_collisions link1="LElb" link2="RWrMot2" reason="Never"/>
-  <disable_collisions link1="LElb" link2="RWrMot3" reason="Never"/>
   <disable_collisions link1="LElb" link2="TorsoProtections" reason="Never"/>
   <disable_collisions link1="LElb" link2="imu_link" reason="Never"/>
   <disable_collisions link1="LElb" link2="imu_link2" reason="Never"/>
@@ -94,13 +95,10 @@
   <disable_collisions link1="LFoot" link2="NeckYaw" reason="Never"/>
   <disable_collisions link1="LFootmot" link2="LLowLeg" reason="Adjacent"/>
   <disable_collisions link1="LFootmot" link2="LShp" reason="Never"/>
-  <disable_collisions link1="LFootmot" link2="LShr" reason="Never"/>
   <disable_collisions link1="LFootmot" link2="LThighLowLeg" reason="Never"/>
   <disable_collisions link1="LFootmot" link2="LThighUpLeg" reason="Never"/>
   <disable_collisions link1="LFootmot" link2="NeckPitch" reason="Never"/>
   <disable_collisions link1="LFootmot" link2="NeckYaw" reason="Never"/>
-  <disable_collisions link1="LFootmot" link2="RShp" reason="Never"/>
-  <disable_collisions link1="LFootmot" link2="TorsoProtections" reason="Never"/>
   <disable_collisions link1="LForearm" link2="LShp" reason="Never"/>
   <disable_collisions link1="LForearm" link2="LShr" reason="Never"/>
   <disable_collisions link1="LForearm" link2="LSoftHandLink" reason="Never"/>
@@ -112,14 +110,12 @@
   <disable_collisions link1="LForearm" link2="RShp" reason="Never"/>
   <disable_collisions link1="LForearm" link2="RShr" reason="Never"/>
   <disable_collisions link1="LForearm" link2="RShy" reason="Never"/>
-  <disable_collisions link1="LForearm" link2="RThighUpLeg" reason="Never"/>
-  <disable_collisions link1="LForearm" link2="RWrMot2" reason="Never"/>
-  <disable_collisions link1="LForearm" link2="RWrMot3" reason="Never"/>
   <disable_collisions link1="LHipMot" link2="LShp" reason="Never"/>
   <disable_collisions link1="LHipMot" link2="LShr" reason="Never"/>
   <disable_collisions link1="LHipMot" link2="LThighUpLeg" reason="Adjacent"/>
   <disable_collisions link1="LHipMot" link2="NeckPitch" reason="Never"/>
   <disable_collisions link1="LHipMot" link2="NeckYaw" reason="Never"/>
+  <disable_collisions link1="LHipMot" link2="RElb" reason="Never"/>
   <disable_collisions link1="LHipMot" link2="RShp" reason="Never"/>
   <disable_collisions link1="LHipMot" link2="RShr" reason="Never"/>
   <disable_collisions link1="LHipMot" link2="RShy" reason="Never"/>
@@ -139,7 +135,6 @@
   <disable_collisions link1="LShp" link2="NeckPitch" reason="Never"/>
   <disable_collisions link1="LShp" link2="NeckYaw" reason="Never"/>
   <disable_collisions link1="LShp" link2="RElb" reason="Never"/>
-  <disable_collisions link1="LShp" link2="RFootmot" reason="Never"/>
   <disable_collisions link1="LShp" link2="RForearm" reason="Never"/>
   <disable_collisions link1="LShp" link2="RHipMot" reason="Never"/>
   <disable_collisions link1="LShp" link2="RShp" reason="Never"/>
@@ -201,6 +196,7 @@
   <disable_collisions link1="LThighUpLeg" link2="NeckPitch" reason="Never"/>
   <disable_collisions link1="LThighUpLeg" link2="NeckYaw" reason="Never"/>
   <disable_collisions link1="LThighUpLeg" link2="RElb" reason="Never"/>
+  <disable_collisions link1="LThighUpLeg" link2="RForearm" reason="Never"/>
   <disable_collisions link1="LThighUpLeg" link2="RShp" reason="Never"/>
   <disable_collisions link1="LThighUpLeg" link2="RShr" reason="Never"/>
   <disable_collisions link1="LThighUpLeg" link2="RShy" reason="Never"/>
@@ -212,16 +208,17 @@
   <disable_collisions link1="LWrMot2" link2="LWrMot3" reason="Adjacent"/>
   <disable_collisions link1="LWrMot2" link2="NeckPitch" reason="Never"/>
   <disable_collisions link1="LWrMot2" link2="NeckYaw" reason="Never"/>
-  <disable_collisions link1="LWrMot2" link2="RForearm" reason="Never"/>
+  <disable_collisions link1="LWrMot2" link2="RElb" reason="Never"/>
   <disable_collisions link1="LWrMot2" link2="RShp" reason="Never"/>
   <disable_collisions link1="LWrMot2" link2="RShr" reason="Never"/>
   <disable_collisions link1="LWrMot2" link2="RShy" reason="Never"/>
-  <disable_collisions link1="LWrMot2" link2="RWrMot2" reason="Never"/>
-  <disable_collisions link1="LWrMot2" link2="RWrMot3" reason="Never"/>
   <disable_collisions link1="LWrMot3" link2="NeckPitch" reason="Never"/>
   <disable_collisions link1="LWrMot3" link2="NeckYaw" reason="Never"/>
+  <disable_collisions link1="LWrMot3" link2="RForearm" reason="Never"/>
   <disable_collisions link1="LWrMot3" link2="RShp" reason="Never"/>
   <disable_collisions link1="LWrMot3" link2="RShr" reason="Never"/>
+  <disable_collisions link1="LWrMot3" link2="RShy" reason="Never"/>
+  <disable_collisions link1="LWrMot3" link2="RWrMot2" reason="Never"/>
   <disable_collisions link1="LWrMot3" link2="RWrMot3" reason="Never"/>
   <disable_collisions link1="NeckPitch" link2="NeckYaw" reason="Adjacent"/>
   <disable_collisions link1="NeckPitch" link2="RElb" reason="Never"/>
@@ -275,6 +272,7 @@
   <disable_collisions link1="RFoot" link2="RThighUpLeg" reason="Never"/>
   <disable_collisions link1="RFootmot" link2="RLowLeg" reason="Adjacent"/>
   <disable_collisions link1="RFootmot" link2="RShp" reason="Never"/>
+  <disable_collisions link1="RFootmot" link2="RShr" reason="Never"/>
   <disable_collisions link1="RFootmot" link2="RThighLowLeg" reason="Never"/>
   <disable_collisions link1="RFootmot" link2="RThighUpLeg" reason="Never"/>
   <disable_collisions link1="RFootmot" link2="TorsoProtections" reason="Never"/>
@@ -296,7 +294,6 @@
   <disable_collisions link1="RLowLeg" link2="imu_link2" reason="Never"/>
   <disable_collisions link1="RShp" link2="RShr" reason="Adjacent"/>
   <disable_collisions link1="RShp" link2="RShy" reason="Never"/>
-  <disable_collisions link1="RShp" link2="RThighLowLeg" reason="Never"/>
   <disable_collisions link1="RShp" link2="RThighUpLeg" reason="Never"/>
   <disable_collisions link1="RShp" link2="TorsoProtections" reason="Default"/>
   <disable_collisions link1="RShp" link2="Waist" reason="Never"/>
