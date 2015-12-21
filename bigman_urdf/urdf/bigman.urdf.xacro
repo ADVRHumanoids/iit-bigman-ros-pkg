@@ -73,7 +73,7 @@
 	<!-- ************ HANDS ************ -->
 	<xacro:include filename="$(find bigman_urdf)/urdf/parts/soft_hand.urdf.xacro" />
 
-	<!-- multisense_sl_v4 with fixed joints (NOT FOR SIMULATION) -->
+	<!-- multisense_sl_v4 with fixed joints -->
        <xacro:if value="${BIGMAN_HEAD}">
 	       <xacro:include filename="$(find bigman_urdf)/urdf/sensors/multisense_sl.urdf.xacro"/>
        </xacro:if>	
