@@ -33,6 +33,14 @@
    </collision>
   </link>
 
+<link name="r_hand_upper_right_link"/>
+
+<link name="r_hand_lower_right_link"/>
+
+<link name="r_hand_upper_left_link"/>
+
+<link name="r_hand_lower_left_link"/>
+
   <link name="LSoftHand"/>
 
   <link name="LSoftHandLink">
@@ -56,6 +64,14 @@
    </collision>
   </link>
 
+<link name="l_hand_upper_right_link"/>
+
+<link name="l_hand_lower_right_link"/>
+
+<link name="l_hand_upper_left_link"/>
+
+<link name="l_hand_lower_left_link"/>
+
 <!-- JOINTS -->
   <joint name="r_handj" type="fixed">
         <parent link="RWrMot3"/>
@@ -69,6 +85,29 @@
         <origin xyz="0 0.0305 -0.21" rpy="0 0 0"/>
   </joint>
 
+  <joint name="r_handj3" type="fixed">
+        <parent link="RSoftHand"/>
+        <child link="r_hand_upper_right_link"/>
+        <origin xyz="0.05 0.0 0.0" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="r_handj4" type="fixed">
+        <parent link="RSoftHand"/>
+        <child link="r_hand_lower_right_link"/>
+        <origin xyz="-0.05 0.0 0.0" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="r_handj5" type="fixed">
+        <parent link="RSoftHand"/>
+        <child link="r_hand_upper_left_link"/>
+        <origin xyz="0.05 0.0 0.1" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="r_handj6" type="fixed">
+        <parent link="RSoftHand"/>
+        <child link="r_hand_lower_left_link"/>
+        <origin xyz="-0.05 0.0 0.1" rpy="0 0 0"/>
+  </joint>
 
   <joint name="l_handj" type="fixed">
         <parent link="LWrMot3"/>
@@ -80,6 +119,30 @@
         <parent link="LSoftHandLink"/>
         <child link="LSoftHand"/>
         <origin xyz="0 -0.0305 -0.21" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="l_handj3" type="fixed">
+        <parent link="LSoftHand"/>
+        <child link="l_hand_upper_right_link"/>
+        <origin xyz="0.05 0.0 0.0" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="l_handj4" type="fixed">
+        <parent link="LSoftHand"/>
+        <child link="l_hand_lower_right_link"/>
+        <origin xyz="-0.05 0.0 0.0" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="l_handj5" type="fixed">
+        <parent link="LSoftHand"/>
+        <child link="l_hand_upper_left_link"/>
+        <origin xyz="0.05 0.0 0.1" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="l_handj6" type="fixed">
+        <parent link="LSoftHand"/>
+        <child link="l_hand_lower_left_link"/>
+        <origin xyz="-0.05 0.0 0.1" rpy="0 0 0"/>
   </joint>
 
 </xacro:if>
