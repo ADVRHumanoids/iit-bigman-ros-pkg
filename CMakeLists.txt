@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 2.8)
 PROJECT(iit-bigman-ros-pkg)
 
+
+
+
 add_custom_target(  acm
                     COMMAND ${CMAKE_SOURCE_DIR}/bigman_urdf/script/create_acm.sh bigman)
 
@@ -22,3 +25,7 @@ if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
             			"~/.gazebo/models/bigman/"
             			DEPENDS remove_old_bigman_gazebo)
 endif()
+
+# install urdf and srdf folders in the correct path
+install(DIRECTORY bigman_urdf/urdf/ DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robots/bigman/urdf") #FILES_MATCHING PATTERN "*.urdf / .srdf"
+install(DIRECTORY bigman_srdf/srdf/ DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robots/bigman/srdf") #FILES_MATCHING PATTERN "*.urdf / .srdf"
