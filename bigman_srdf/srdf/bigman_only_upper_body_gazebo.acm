@@ -52,7 +52,6 @@
   <disable_collisions link1="LElb" link2="LWrMot2" reason="Never"/>
   <disable_collisions link1="LElb" link2="LWrMot3" reason="Never"/>
   <disable_collisions link1="LElb" link2="NeckYaw" reason="Never"/>
-  <disable_collisions link1="LElb" link2="multisense/head_imu_link" reason="Never"/>
   <disable_collisions link1="LForearm" link2="LShp" reason="Never"/>
   <disable_collisions link1="LForearm" link2="LShr" reason="Never"/>
   <disable_collisions link1="LForearm" link2="LSoftHand" reason="Never"/>

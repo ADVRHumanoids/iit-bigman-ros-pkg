@@ -65,6 +65,6 @@
   <disable_collisions link1="RThighUpLeg" link2="imu_link" reason="Never"/>
   <disable_collisions link1="RThighUpLeg" link2="imu_link2" reason="Never"/>
   <disable_collisions link1="Waist" link2="imu_link" reason="Adjacent"/>
-  <disable_collisions link1="Waist" link2="imu_link2" reason="Never"/>
-  <disable_collisions link1="imu_link" link2="imu_link2" reason="Adjacent"/>
+  <disable_collisions link1="Waist" link2="imu_link2" reason="Adjacent"/>
+  <disable_collisions link1="imu_link" link2="imu_link2" reason="Never"/>
 </robot>

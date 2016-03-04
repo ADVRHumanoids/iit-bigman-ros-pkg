@@ -3,13 +3,13 @@
   <disable_collisions link1="DWL" link2="DWS" reason="Adjacent"/>
   <disable_collisions link1="DWL" link2="DWYTorso" reason="Default"/>
   <disable_collisions link1="DWL" link2="LElb" reason="Never"/>
+  <disable_collisions link1="DWL" link2="LForearm" reason="Never"/>
   <disable_collisions link1="DWL" link2="LShp" reason="Never"/>
   <disable_collisions link1="DWL" link2="LShr" reason="Never"/>
   <disable_collisions link1="DWL" link2="LShy" reason="Never"/>
   <disable_collisions link1="DWL" link2="NeckPitch" reason="Never"/>
   <disable_collisions link1="DWL" link2="NeckYaw" reason="Never"/>
   <disable_collisions link1="DWL" link2="RElb" reason="Never"/>
-  <disable_collisions link1="DWL" link2="RForearm" reason="Never"/>
   <disable_collisions link1="DWL" link2="RShp" reason="Never"/>
   <disable_collisions link1="DWL" link2="RShr" reason="Never"/>
   <disable_collisions link1="DWL" link2="RShy" reason="Never"/>
