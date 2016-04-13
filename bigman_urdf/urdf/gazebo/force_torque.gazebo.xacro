@@ -14,7 +14,7 @@ and we will add a revolute joint between foot_flange and sensor and a fixed join
 		<sensor type="force_torque" name="right_arm">
 			<force_torque>
                        <frame>sensor</frame>
-                       <measure_direction>child_to_parent</measure_direction>
+                       <measure_direction>parent_to_child</measure_direction>
                      </force_torque>
 			<always_on>true</always_on>
 			<visualize>true</visualize>
@@ -30,7 +30,7 @@ and we will add a revolute joint between foot_flange and sensor and a fixed join
 		<sensor type="force_torque" name="left_arm">
 			<force_torque>
                        <frame>sensor</frame>
-                       <measure_direction>child_to_parent</measure_direction>
+                       <measure_direction>parent_to_child</measure_direction>
                      </force_torque>
 			<always_on>true</always_on>
 			<visualize>true</visualize>
@@ -48,7 +48,7 @@ and we will add a revolute joint between foot_flange and sensor and a fixed join
 		<sensor type="force_torque" name="left_leg">
                      <force_torque>
                        <frame>sensor</frame>
-                       <measure_direction>child_to_parent</measure_direction>     
+                       <measure_direction>parent_to_child</measure_direction>     
                      </force_torque>
 			<always_on>true</always_on>
 			<visualize>true</visualize>
@@ -64,7 +64,7 @@ and we will add a revolute joint between foot_flange and sensor and a fixed join
 		<sensor type="force_torque" name="right_leg">
                      <force_torque>
                        <frame>sensor</frame>
-                       <measure_direction>child_to_parent</measure_direction>
+                       <measure_direction>parent_to_child</measure_direction>
                      </force_torque>
 			<always_on>true</always_on>
 			<visualize>true</visualize>
