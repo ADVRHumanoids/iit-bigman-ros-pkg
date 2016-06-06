@@ -273,7 +273,7 @@
   <link name="${multisense_namespace}right_led_frame"/>
 
   <gazebo>
-    <plugin filename="libMultiSenseSLPlugin.so" name="multisense_plugin"/>
+    <plugin filename="libMultiSenseSLPlugin2.so" name="multisense_plugin"/>
   </gazebo>
 
   <!-- imu link -->
