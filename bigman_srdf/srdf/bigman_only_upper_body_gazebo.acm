@@ -38,7 +38,6 @@
   <disable_collisions link1="DWYTorso" link2="NeckYaw" reason="Adjacent"/>
   <disable_collisions link1="DWYTorso" link2="RShp" reason="Adjacent"/>
   <disable_collisions link1="DWYTorso" link2="RShr" reason="Never"/>
-  <disable_collisions link1="DWYTorso" link2="RShy" reason="Never"/>
   <disable_collisions link1="DWYTorso" link2="TorsoProtections" reason="Adjacent"/>
   <disable_collisions link1="DWYTorso" link2="Waist" reason="Never"/>
   <disable_collisions link1="DWYTorso" link2="backpack" reason="Adjacent"/>
@@ -53,6 +52,7 @@
   <disable_collisions link1="LElb" link2="LWrMot2" reason="Never"/>
   <disable_collisions link1="LElb" link2="LWrMot3" reason="Never"/>
   <disable_collisions link1="LElb" link2="NeckYaw" reason="Never"/>
+  <disable_collisions link1="LElb" link2="head_imu_link" reason="Never"/>
   <disable_collisions link1="LForearm" link2="LShp" reason="Never"/>
   <disable_collisions link1="LForearm" link2="LShr" reason="Never"/>
   <disable_collisions link1="LForearm" link2="LSoftHand" reason="Never"/>

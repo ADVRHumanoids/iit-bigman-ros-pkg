@@ -58,6 +58,8 @@
   <disable_collisions link1="RHipMot" link2="imu_link2" reason="Never"/>
   <disable_collisions link1="RLowLeg" link2="RThighLowLeg" reason="Adjacent"/>
   <disable_collisions link1="RLowLeg" link2="RThighUpLeg" reason="Never"/>
+  <disable_collisions link1="RLowLeg" link2="imu_link" reason="Never"/>
+  <disable_collisions link1="RLowLeg" link2="imu_link2" reason="Never"/>
   <disable_collisions link1="RThighLowLeg" link2="RThighUpLeg" reason="Adjacent"/>
   <disable_collisions link1="RThighLowLeg" link2="imu_link" reason="Never"/>
   <disable_collisions link1="RThighLowLeg" link2="imu_link2" reason="Never"/>

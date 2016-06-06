@@ -3,7 +3,6 @@
   <disable_collisions link1="DWL" link2="DWS" reason="Adjacent"/>
   <disable_collisions link1="DWL" link2="DWYTorso" reason="Default"/>
   <disable_collisions link1="DWL" link2="LElb" reason="Never"/>
-  <disable_collisions link1="DWL" link2="LForearm" reason="Never"/>
   <disable_collisions link1="DWL" link2="LShp" reason="Never"/>
   <disable_collisions link1="DWL" link2="LShr" reason="Never"/>
   <disable_collisions link1="DWL" link2="LShy" reason="Never"/>
@@ -81,7 +80,6 @@
   <disable_collisions link1="LShy" link2="LSoftHand" reason="Never"/>
   <disable_collisions link1="LShy" link2="LWrMot2" reason="Never"/>
   <disable_collisions link1="LShy" link2="LWrMot3" reason="Never"/>
-  <disable_collisions link1="LShy" link2="head_imu_link" reason="Never"/>
   <disable_collisions link1="LSoftHand" link2="LWrMot2" reason="Always"/>
   <disable_collisions link1="LSoftHand" link2="LWrMot3" reason="Adjacent"/>
   <disable_collisions link1="LWrMot2" link2="LWrMot3" reason="Adjacent"/>
