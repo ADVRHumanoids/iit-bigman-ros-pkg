@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--robot xmlns:xacro="http://ros.org/wiki/xacro" name="bigman"-->
-<robot xmlns:xacro="http://ros.org/wiki/xacro" name="atlas">
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="bigman">
   <!--
   ROS urdf definition of the BIGMAN humanoid robot by Istituto Italiano di Tecnologia
   
