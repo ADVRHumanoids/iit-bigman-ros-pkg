@@ -9,7 +9,7 @@
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="multisense_sl_robot_state_publisher" output="screen">
     <remap from="robot_description" to="multisense_description" />
     <param name="publish_frequency" type="double" value="50.0" />
-    <remap from="joint_states" to="/multisense_sl/joint_states" />
+    <remap from="joint_states" to="/multisense/joint_states" />
   </node>
 
   <!-- TF Buffer Server -->
