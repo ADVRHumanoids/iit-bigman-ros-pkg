@@ -77,7 +77,7 @@
        <xacro:if value="${BIGMAN_HEAD}">
                 <joint name="neck_joint" type="fixed">
                      <parent link="NeckPitch"/>
-                     <child link="${multisense_namespace}head_multisense"/>
+                     <child link="multisense/head"/>
                      <origin xyz="0.08765 0 0.06475" rpy="0 0 0" /> 
                  </joint>
 
