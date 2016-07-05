@@ -69,7 +69,7 @@
 <joint name="NeckPitchj" type="revolute"> 
     <parent link="NeckYaw"/>
     <child link="NeckPitch"/>
-    <origin xyz="0 0 0.1155" rpy="0 0 0" />
+    <origin xyz="0 0 0.117" rpy="0 0 0" />
     <axis xyz="0 1 0" />
     <!--limit velocity="6.283" effort="120" lower="${(-30.0)*toRad}" upper="${(70.0)*toRad}" /-->
     <limit velocity="6.283" effort="120" lower="${(-15.0)*toRad}" upper="${(60.0)*toRad}" />
