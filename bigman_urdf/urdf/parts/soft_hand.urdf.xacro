@@ -3,6 +3,9 @@
 
 <xacro:if value="${BIGMAN_FIXED_HANDS}">
 
+<xacro:property name="PI" value="3.14159265359" />
+<xacro:property name="PI_2" value="1.57079632679" />
+
 <xacro:property name="a" value="0.1" />
 <xacro:property name="b" value="0.06" />
 <xacro:property name="c" value="0.14" />
@@ -11,6 +14,7 @@
 
 <!-- LINKS -->
 <link name="RSoftHand"/>
+<link name="TCP_R"/>
 
 <link name="RSoftHandLink">
     <inertial>
@@ -42,6 +46,7 @@
 <link name="r_hand_lower_left_link"/>
 
   <link name="LSoftHand"/>
+  <link name="TCP_L"/>
 
   <link name="LSoftHandLink">
     <inertial>
@@ -143,6 +148,18 @@
         <parent link="LSoftHand"/>
         <child link="l_hand_lower_left_link"/>
         <origin xyz="-0.05 0.0 0.1" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="TCP_Ljoint" type="fixed">
+        <parent link="LSoftHand"/>
+        <child link="TCP_L"/>
+        <origin xyz="0.0 0.0 0.0" rpy="${PI_2} ${PI} 0"/>
+  </joint>
+
+  <joint name="TCP_Rjoint" type="fixed">
+        <parent link="RSoftHand"/>
+        <child link="TCP_R"/>
+        <origin xyz="0.0 0.0 0.0" rpy="-${PI_2} 0 0"/>
   </joint>
 
 </xacro:if>
