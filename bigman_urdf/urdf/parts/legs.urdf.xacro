@@ -275,7 +275,7 @@
         <xacro:if value="${BIGMAN_NEW_FEET}">
           <origin xyz="-0.00653584 0.00479384 -0.10180375" rpy="0 0 0"/>
           <mass value="3.42638110"/>
-          <inertia ixx="0.01032886"  ixy="-0.00016407"  ixz="-0.00201294" iyy="0.02854025" iyz="0.00046315" izz="0.02799499" />
+          <inertia ixx="0.01032886"  ixy="0.00016407"  ixz="-0.00201294" iyy="0.02854025" iyz="-0.00046315" izz="0.02799499" />
         </xacro:if>
         <xacro:unless value="${BIGMAN_NEW_FEET}">
           <origin xyz="0.01282904 0.00463694 -0.10109499" rpy="0 0 0"/>
