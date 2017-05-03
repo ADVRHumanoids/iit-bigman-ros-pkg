@@ -7,6 +7,27 @@
 <!--
 ####################################################
 ##
+##  BIGMAN_YARP
+##  if "true" the bigman robot is controlled via YARP
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_YARP" value="false" />
+
+<!--
+####################################################
+##
+##  BIGMAN_XBOT
+##  if "true" the bigman robot is controlled via
+##  XBotCore Suite
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_XBOT" value="true" />
+
+<!--
+####################################################
+##
 ##  BIGMAN_UPPER_BODY
 ##  if "true" the kinematic chains of the arms and torso 
 ##  will be used to generate the model

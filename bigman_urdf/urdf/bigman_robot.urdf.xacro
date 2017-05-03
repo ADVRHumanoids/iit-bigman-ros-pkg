@@ -11,8 +11,8 @@
   -->
 
   <!-- Uncomment this to have the robot rigidly connected to the world -->
-<!--
-  <link name="world"/>
+
+<!--  <link name="world"/>
   
    <joint name="fixed" type="fixed">
     <parent link="world"/>
@@ -45,14 +45,25 @@
   <origin xyz="0.0 0.0 1.12" rpy="0 0 0" />
 
   <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/microstrain_3dmgx2_imu.gazebo.xacro" />
+
 </xacro:if>
 
   <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/force_torque.gazebo.xacro" />
 
   <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/bigman.gazebo.xacro" />
+  
+  <!-- XBOTCORE PLUGINS for GAZEBO SIMULATION -->
+  <xacro:if value="${BIGMAN_XBOT}">
+    <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/xbot_control.gazebo.xacro" />
+  </xacro:if>
 
 <!-- YARP PLUGINS for GAZEBO SIMULATION -->
-  <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/yarp_control.gazebo.xacro" />
+  <xacro:if value="${BIGMAN_YARP}">
+    <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/yarp_control.gazebo.xacro" />
+  </xacro:if>
+  
+
+  
   <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/bigman_materials.gazebo.xacro" />
   
 </robot>

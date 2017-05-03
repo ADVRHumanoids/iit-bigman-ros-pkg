@@ -20,9 +20,12 @@ and we will add a revolute joint between foot_flange and sensor and a fixed join
 			<visualize>true</visualize>
 			<update_rate>1000</update_rate>
                      <pose>0 0 -0.0565 0 0 0</pose>
-			<plugin name="RForearmPlate_FT_plugin" filename="libgazebo_yarp_forcetorque.so">
-				<yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_right_arm_ft.ini</yarpConfigurationFile>
-			</plugin>
+                     
+                        <xacro:if value="${BIGMAN_YARP}">
+			  <plugin name="RForearmPlate_FT_plugin" filename="libgazebo_yarp_forcetorque.so">
+			  	<yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_right_arm_ft.ini</yarpConfigurationFile>
+			  </plugin>
+                        </xacro:if>
 		</sensor>
 	</gazebo>
 
@@ -36,9 +39,11 @@ and we will add a revolute joint between foot_flange and sensor and a fixed join
 			<visualize>true</visualize>
 			<update_rate>1000</update_rate>
                      <pose>0 0 -0.0565 0 0 0</pose>
+                     <xacro:if value="${BIGMAN_YARP}">
 			<plugin name="LForearmPlate_FT_plugin" filename="libgazebo_yarp_forcetorque.so">
 				<yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_left_arm_ft.ini</yarpConfigurationFile>
 			</plugin>
+                     </xacro:if>
 		</sensor>
 	</gazebo>
 </xacro:if>
@@ -54,9 +59,11 @@ and we will add a revolute joint between foot_flange and sensor and a fixed join
 			<visualize>true</visualize>
 			<update_rate>1000</update_rate>
 			<pose>0.005 0 -0.107 0 0 0</pose>
-			<plugin name="LAnkSag_FT_plugin" filename="libgazebo_yarp_forcetorque.so">
+                        <xacro:if value="${BIGMAN_YARP}">
+			  <plugin name="LAnkSag_FT_plugin" filename="libgazebo_yarp_forcetorque.so">
 				<yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_left_leg_ft.ini</yarpConfigurationFile>
-			</plugin>
+			  </plugin>
+                        </xacro:if>
 		</sensor>
 	</gazebo>
 
@@ -70,9 +77,11 @@ and we will add a revolute joint between foot_flange and sensor and a fixed join
 			<visualize>true</visualize>
 			<update_rate>1000</update_rate>
 			<pose>0.005 0 -0.107 0 0 0</pose>
-			<plugin name="RAnkSag_FT_plugin" filename="libgazebo_yarp_forcetorque.so">
+                        <xacro:if value="${BIGMAN_YARP}">
+			  <plugin name="RAnkSag_FT_plugin" filename="libgazebo_yarp_forcetorque.so">
 				<yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_right_leg_ft.ini</yarpConfigurationFile>
-	        	</plugin>
+	        	  </plugin>
+                        </xacro:if>
 		</sensor>
 	</gazebo>
 </xacro:if>

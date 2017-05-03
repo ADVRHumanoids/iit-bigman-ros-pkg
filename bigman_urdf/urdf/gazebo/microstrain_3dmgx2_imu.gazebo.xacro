@@ -36,9 +36,11 @@
           </noise>
           -->
          </imu>
-         <plugin name="bigman_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
-           <yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_inertial.ini</yarpConfigurationFile>
-         </plugin>
+         <xacro:if value="${BIGMAN_YARP}">
+           <plugin name="bigman_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+             <yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_inertial.ini</yarpConfigurationFile>
+           </plugin>
+         </xacro:if>
         </sensor>
        </gazebo>
 
@@ -67,9 +69,11 @@
           </noise>
           -->
          </imu>
-         <plugin name="bigman_yarp_gazebo_plugin_IMU2" filename="libgazebo_yarp_imu.so">
-           <yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_inertial2.ini</yarpConfigurationFile>
-         </plugin>
+         <xacro:if value="${BIGMAN_YARP}">
+           <plugin name="bigman_yarp_gazebo_plugin_IMU2" filename="libgazebo_yarp_imu.so">
+             <yarpConfigurationFile>model://bigman_urdf/conf/bigman/bigman_gazebo_inertial2.ini</yarpConfigurationFile>
+           </plugin>
+         </xacro:if>
         </sensor>
        </gazebo>
 
