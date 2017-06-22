@@ -1,21 +1,3 @@
-HOW TO RUN A SIMULATION WITH MULTISENSE
-=======================================
-
-First of all checkout the branch "multisense_sim", goes in the build folder and make the package.
-
-1. In two separate terminals run a yarpserver and a roscore. 
-2. In a  third terminal run the command:
-    ```
-    gazeboros
-    ```
-    If the command is missing upload your walkman superbuild main folder.
-3. Once gazebo is loaded drag and drop the IIT Bigman model.
-4. In a fourth terminal goes in walkman/drc/iit-bigman-ros-pkg/bigman_gazebo/launch/ and run:
-    ```
-    roslaunch bigman_multisense.launch
-    ```
-Enjoy.
-
 How to cite this work:
 ======================
 Please support ```iit-bigman-ros-pkg``` development by referencing it in your works/publications/projects with:
