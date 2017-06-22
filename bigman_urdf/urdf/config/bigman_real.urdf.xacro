@@ -83,7 +83,7 @@
 ##
 ####################################################
 --> 
-<xacro:property name="BIGMAN_FIXED_MULTISENSE" value="true" />
+<xacro:property name="BIGMAN_FIXED_MULTISENSE" value="false" />
 
 <!--
 ####################################################
@@ -98,7 +98,7 @@
 ##
 ####################################################
 --> 
-<xacro:property name="BIGMAN_HEAD" value="false" />
+<xacro:property name="BIGMAN_HEAD" value="true" />
 
 <!--
 ####################################################
@@ -109,7 +109,7 @@
 ##
 ####################################################
 --> 
-<xacro:property name="BIGMAN_ADD_PROTECTIONS" value="true" />
+<xacro:property name="BIGMAN_ADD_PROTECTIONS" value="false" />
 
 <!--
 ####################################################

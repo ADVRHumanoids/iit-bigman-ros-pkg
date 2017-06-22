@@ -164,6 +164,12 @@
         <box size="0.01 0.01 0.01"/>
       </geometry>
     </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
   </link>
 
   <joint name="head_imu_joint" type="fixed">
