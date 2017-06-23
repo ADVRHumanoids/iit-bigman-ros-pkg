@@ -1,3 +1,7 @@
+How to run the multisense plugin:
+=================================
+First runs GAZEBO witht the ros plugins and drag-and-drop inside the world a WALK-MAN model that contains the multisense. Then, inside the ```bigman_gazebo/launch``` folder roslaunch ```bigman_multisense.launch```.
+
 How to cite this work:
 ======================
 Please support ```iit-bigman-ros-pkg``` development by referencing it in your works/publications/projects with:
