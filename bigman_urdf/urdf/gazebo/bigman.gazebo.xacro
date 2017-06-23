@@ -182,6 +182,17 @@
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
    </gazebo>
+   <!-- The reference tag has to be the link that will be present in gazebo while the
+   collision tag will be the collision under the link present in the sdf -->
+   <xacro:if value="${BIGMAN_MAGNETIC_ATTACH_ROS}">
+    <gazebo reference="RWrMot3">
+     <sensor name='RWrMot3_contact_sensor' type='contact'>
+      <contact>
+       <collision>RWrMot3_fixed_joint_lump__RSoftHandLink_collision_1</collision>
+      </contact>
+     </sensor>
+    </gazebo>
+   </xacro:if>
     <xacro:unless value="${BIGMAN_FIXED_HANDS}">
       <gazebo reference="r_handj">
         <implicitSpringDamper>1</implicitSpringDamper>
@@ -218,6 +229,17 @@
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
    </gazebo>
+   <!-- The reference tag has to be the link that will be present in gazebo while the
+   collision tag will be the collision under the link present in the sdf -->
+   <xacro:if value="${BIGMAN_MAGNETIC_ATTACH_ROS}">
+    <gazebo reference="LWrMot3">
+     <sensor name='LWrMot3_contact_sensor' type='contact'>
+      <contact>
+       <collision>LWrMot3_fixed_joint_lump__LSoftHandLink_collision_1</collision>
+      </contact>
+     </sensor>
+    </gazebo>
+   </xacro:if>
     <xacro:unless value="${BIGMAN_FIXED_HANDS}">
       <gazebo reference="l_handj">
         <implicitSpringDamper>1</implicitSpringDamper>
@@ -225,5 +247,8 @@
       </gazebo>
     </xacro:unless>
 </xacro:if>
+
+
+
 
 </robot>

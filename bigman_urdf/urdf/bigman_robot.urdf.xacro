@@ -61,6 +61,11 @@
   <xacro:if value="${BIGMAN_YARP}">
     <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/yarp_control.gazebo.xacro" />
   </xacro:if>
+
+ 
+  <xacro:if value="${BIGMAN_MAGNETIC_ATTACH_ROS}">
+    <xacro:include filename="$(find bigman_urdf)/urdf/gazebo/magnetic_attach_ros.gazebo.xacro" />
+  </xacro:if>
   
 
   
