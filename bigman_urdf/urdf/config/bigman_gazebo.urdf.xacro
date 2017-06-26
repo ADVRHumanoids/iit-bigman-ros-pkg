@@ -70,7 +70,7 @@
 ##
 ####################################################
 --> 
-<xacro:property name="BIGMAN_FIXED_HANDS" value="false" />
+<xacro:property name="BIGMAN_FIXED_HANDS" value="true" />
 
 <!--
 ####################################################
