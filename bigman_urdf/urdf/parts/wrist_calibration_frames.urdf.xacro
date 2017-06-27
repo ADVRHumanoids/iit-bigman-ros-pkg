@@ -37,5 +37,33 @@
 <!-- L_WRIST CALIBRATION FRAMES -->
 
 <!-- WAIST CALIBRATION FRAMES -->
+<joint name="pelvis_calib_joint_base" type="fixed">
+    <parent link="Waist"/>
+    <child link="pelvis_calibration_link_base"/>
+    <origin xyz="${100.0*mmTom} ${0.0*mmTom} ${-43.0*mmTom}" rpy="0 0 0" />
+</joint>
+
+<link name="pelvis_calibration_link_base"/>
+<link name="pelvis_calibration_link_A"/>
+<link name="pelvis_calibration_link_B"/>
+<link name="pelvis_calibration_link_C"/>
+
+<joint name="pelvis_calib_joint_A" type="fixed">
+    <parent link="pelvis_calibration_link_base"/>
+    <child link="pelvis_calibration_link_A"/>
+    <origin xyz="${42.3*mmTom} ${0.0*mmTom} ${52.7*mmTom}" rpy="0 0 0" />
+</joint>
+
+<joint name="pelvis_calib_joint_B" type="fixed">
+    <parent link="pelvis_calibration_link_base"/>
+    <child link="pelvis_calibration_link_B"/>
+    <origin xyz="${42.3*mmTom} ${30.0*mmTom} ${-7.3*mmTom}" rpy="0 0 0" />
+</joint>
+
+<joint name="pelvis_calib_joint_C" type="fixed">
+    <parent link="pelvis_calibration_link_base"/>
+    <child link="pelvis_calibration_link_C"/>
+    <origin xyz="${42.3*mmTom} ${-35.3676*mmTom} ${-35.3676*mmTom}" rpy="0 0 0" />
+</joint>
 
 </robot>
