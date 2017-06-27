@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:property name="mmTom" value="0.001" />
+<xacro:property name="M_PI_2" value="1.5707963267948966" />
+
+<!-- R_WRIST CALIBRATION FRAMES -->
+<joint name="r_wrist_calib_joint_base" type="fixed">
+    <parent link="RWrMot3"/>
+    <child link="r_wrist_calibration_link_base"/>
+    <origin xyz="${0.0*mmTom} ${55.0*mmTom} ${-49.5*mmTom}" rpy="0 0 ${M_PI_2}" />
+</joint>
+
+<link name="r_wrist_calibration_link_base"/>
+<link name="r_wrist_calibration_link_A"/>
+<link name="r_wrist_calibration_link_B"/>
+<link name="r_wrist_calibration_link_C"/>
+
+<joint name="r_wrist_calib_joint_A" type="fixed">
+    <parent link="r_wrist_calibration_link_base"/>
+    <child link="r_wrist_calibration_link_A"/>
+    <origin xyz="${11.3*mmTom} ${14.1421*mmTom} ${14.1421*mmTom}" rpy="0 0 0" />
+</joint>
+
+<joint name="r_wrist_calib_joint_B" type="fixed">
+    <parent link="r_wrist_calibration_link_base"/>
+    <child link="r_wrist_calibration_link_B"/>
+    <origin xyz="${11.3*mmTom} ${4.17519*mmTom} ${-29.708*mmTom}" rpy="0 0 0" />
+</joint>
+
+<joint name="r_wrist_calib_joint_C" type="fixed">
+    <parent link="r_wrist_calibration_link_base"/>
+    <child link="r_wrist_calibration_link_C"/>
+    <origin xyz="${11.3*mmTom} ${-44.9965*mmTom} ${0.560229*mmTom}" rpy="0 0 0" />
+</joint>
+
+<!-- L_WRIST CALIBRATION FRAMES -->
+
+<!-- WAIST CALIBRATION FRAMES -->
+
+</robot>

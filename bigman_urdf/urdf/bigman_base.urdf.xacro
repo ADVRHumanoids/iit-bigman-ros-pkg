@@ -133,6 +133,7 @@ The coordinate frame called base_link is rigidly attached to the robot root body
 <xacro:if value="${BIGMAN_UPPER_BODY}">
        <!-- ********************ARMS******************** -->
        <xacro:include filename="$(find bigman_urdf)/urdf/parts/arms.urdf.xacro" />
+       <xacro:include filename="$(find bigman_urdf)/urdf/parts/wrist_calibration_frames.urdf.xacro" />
 </xacro:if>
 
 </robot>
