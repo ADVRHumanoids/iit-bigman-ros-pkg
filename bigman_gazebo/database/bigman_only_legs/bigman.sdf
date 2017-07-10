@@ -557,7 +557,7 @@
         <pose frame=''>0.005 0.0 -0.0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.32 0.06 0.015</size>
+            <size>0.32 0.02 0.02</size>
           </box>
           <!--cylinder>
             <length>0.32</length>
@@ -585,10 +585,13 @@
       <visual name='LFoot_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
-          <mesh>
+          <!--mesh>
             <scale>0.001 -0.001 0.001</scale>
             <uri>model://bigman_urdf/meshes/NewFoot.STL</uri>
-          </mesh>
+          </mesh-->
+          <box>
+            <size>0.32 0.02 0.02</size>
+          </box>
         </geometry>
         <material>
           <script>
@@ -1076,7 +1079,7 @@
         <pose frame=''>0.005 -0.0 -0.0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.32 0.06 0.015</size>
+            <size>0.32 0.02 0.02</size>
           </box>
           <!--cylinder>
             <length>0.32</length>
@@ -1104,10 +1107,13 @@
       <visual name='RFoot_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
-          <mesh>
+          <!--mesh>
             <scale>0.001 0.001 0.001</scale>
             <uri>model://bigman_urdf/meshes/NewFoot.STL</uri>
-          </mesh>
+          </mesh-->
+          <box>
+            <size>0.32 0.02 0.02</size>
+          </box>
         </geometry>
         <material>
           <script>
