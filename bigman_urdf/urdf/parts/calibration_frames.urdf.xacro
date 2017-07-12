@@ -36,6 +36,35 @@
 
 <!-- L_WRIST CALIBRATION FRAMES -->
 
+<joint name="l_wrist_calib_joint_base" type="fixed">
+    <parent link="LWrMot3"/>
+    <child link="l_wrist_calibration_link_base"/>
+    <origin xyz="${0.0*mmTom} ${-55.0*mmTom} ${-49.5*mmTom}" rpy="0 0 ${-M_PI_2}" />
+</joint>
+
+<link name="l_wrist_calibration_link_base"/>
+<link name="l_wrist_calibration_link_A"/>
+<link name="l_wrist_calibration_link_B"/>
+<link name="l_wrist_calibration_link_C"/>
+
+<joint name="l_wrist_calib_joint_A" type="fixed">
+    <parent link="l_wrist_calibration_link_base"/>
+    <child link="l_wrist_calibration_link_A"/>
+    <origin xyz="${11.3*mmTom} ${21.2132*mmTom} ${21.2132*mmTom}" rpy="0 0 0" />
+</joint>
+
+<joint name="l_wrist_calib_joint_B" type="fixed">
+    <parent link="l_wrist_calibration_link_base"/>
+    <child link="l_wrist_calibration_link_B"/>
+    <origin xyz="${11.3*mmTom} ${11.5702*mmTom} ${-13.7888*mmTom}" rpy="0 0 0" />
+</joint>
+
+<joint name="l_wrist_calib_joint_C" type="fixed">
+    <parent link="l_wrist_calibration_link_base"/>
+    <child link="l_wrist_calibration_link_C"/>
+    <origin xyz="${11.3*mmTom} ${-39.5075*mmTom} ${-6.25738*mmTom}" rpy="0 0 0" />
+</joint>
+
 <!-- WAIST CALIBRATION FRAMES -->
 <joint name="pelvis_calib_joint_base" type="fixed">
     <parent link="Waist"/>
