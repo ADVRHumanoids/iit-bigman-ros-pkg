@@ -161,6 +161,18 @@
 <!--
 ####################################################
 ##
+##  BIGMAN_FLOATING_BASE
+##  if "true" virtual kinematic chains is attached between 
+##  "world" and "base_link"
+##  
+##
+####################################################
+--> 
+<xacro:property name="BIGMAN_FLOATING_BASE" value="true" />
+
+<!--
+####################################################
+##
 ##  BIGMAN_MAGNETIC_ATTACH_ROS
 ##  if "true" the magnetic_attach_ros plugin is used
 ##  for the hands

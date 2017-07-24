@@ -23,6 +23,17 @@
 <!-- ************ BIGMAN BASE ************** -->
 <xacro:include filename="$(find bigman_urdf)/urdf/bigman_base.urdf.xacro"/>
 
+<xacro:if value="${BIGMAN_FLOATING_BASE}">
+<!-- ************ BIGMAN FLOATING BASE ************** -->
+<link name="world"/>
+  <joint name="reference" type="floating">
+    <origin xyz="0.0 0.0 0.0"/>
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+</xacro:if>
+
+
 <xacro:if value="${BIGMAN_LEGS}">
 	<!-- ***** LEGS F/T SENSOR REF FRAMES *******-->
 	<link name="l_leg_ft"/>
