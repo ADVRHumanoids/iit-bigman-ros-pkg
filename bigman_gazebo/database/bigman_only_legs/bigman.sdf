@@ -1155,7 +1155,7 @@
     </joint>
     <static>0</static>
     <plugin name='xbot_plugin_handler' filename='libGazeboXBotPlugin.so'>
-      <path_to_config_file>configs/ADVR_shared/bigman/configs/config_walkman.yaml</path_to_config_file>
+      <path_to_config_file>configs/ADVR_shared/bigman/configs/config_walkman_lower_body.yaml</path_to_config_file>
     </plugin>
     <pose frame=''>0 0 1.12 0 -0 0</pose>
   </model>
