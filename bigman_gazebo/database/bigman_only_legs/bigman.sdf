@@ -408,11 +408,12 @@
         </surface>
       </collision-->
       <visual name='LLowLeg_visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0.08 -0.06 0.08 -1.57 -0 1.57</pose>
         <geometry>
           <mesh>
-            <scale>0.001 -0.001 0.001</scale>
-            <uri>model://bigman_urdf/meshes/KneePitchCalf.STL</uri>
+            <!--scale>0.001 -0.001 0.001</scale-->
+            <!--uri>model://bigman_urdf/meshes/KneePitchCalf.STL</uri-->
+            <uri>model://bigman_urdf/meshes/lower_leg.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -492,10 +493,13 @@
       <visual name='LFootmot_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
-          <mesh>
+          <!--mesh>
             <scale>0.001 -0.001 0.001</scale>
             <uri>model://bigman_urdf/meshes/AnklePitch.STL</uri>
-          </mesh>
+          </mesh-->
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
         </geometry>
         <material>
           <script>
@@ -930,11 +934,19 @@
         </surface>
       </collision-->
       <visual name='RLowLeg_visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <!--pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
             <uri>model://bigman_urdf/meshes/KneePitchCalf.STL</uri>
+          </mesh>
+        </geometry-->
+        <pose frame=''>0.08 -0.06 0.08 -1.57 -0 1.57</pose>
+        <geometry>
+          <mesh>
+            <!--scale>0.001 -0.001 0.001</scale-->
+            <!--uri>model://bigman_urdf/meshes/KneePitchCalf.STL</uri-->
+            <uri>model://bigman_urdf/meshes/lower_leg.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -1014,10 +1026,13 @@
       <visual name='RFootmot_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
-          <mesh>
+          <!--mesh>
             <scale>0.001 0.001 0.001</scale>
             <uri>model://bigman_urdf/meshes/AnklePitch.STL</uri>
-          </mesh>
+          </mesh-->
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
         </geometry>
         <material>
           <script>
