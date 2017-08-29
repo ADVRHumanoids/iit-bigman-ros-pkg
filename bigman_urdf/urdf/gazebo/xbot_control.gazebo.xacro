@@ -4,7 +4,7 @@
 
 <gazebo>
     <plugin name="xbot_plugin_handler" filename="libGazeboXBotPlugin.so">
-        <path_to_config_file>configs/ADVR_shared/bigman/configs/config_walkman_floating_base.yaml</path_to_config_file>
+        <path_to_config_file>configs/WALKMAN_shared/bigman/configs/config_walkman.yaml</path_to_config_file>
     </plugin>
 </gazebo>
 
