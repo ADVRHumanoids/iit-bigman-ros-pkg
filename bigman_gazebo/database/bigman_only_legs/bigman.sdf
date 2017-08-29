@@ -1,3 +1,4 @@
+<?xml version='1.0' ?>
 <sdf version='1.6'>
   <model name='bigman'>
     <link name='base_link'>
@@ -380,7 +381,7 @@
           <izz>0.0208541</izz>
         </inertia>
       </inertial>
-      <collision name='LLowLeg_collision'>
+      <!--collision name='LLowLeg_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -405,7 +406,7 @@
             </ode>
           </friction>
         </surface>
-      </collision>
+      </collision-->
       <visual name='LLowLeg_visual'>
         <pose frame=''>0.08 -0.06 0.08 -1.57 -0 1.57</pose>
         <geometry>
@@ -472,7 +473,7 @@
           <izz>0.0133919</izz>
         </inertia>
       </inertial>
-      <collision name='LFootmot_collision'>
+      <!--collision name='LFootmot_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -488,7 +489,7 @@
             <ode/>
           </friction>
         </surface>
-      </collision>
+      </collision-->
       <visual name='LFootmot_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
@@ -557,11 +558,15 @@
         </inertia>
       </inertial>
       <collision name='LFoot_collision'>
-        <pose frame=''>0.005 0.01 -0.1359 0 -0 0</pose>
+        <pose frame=''>0.005 0.0 -0.0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.32 0.16 0.015</size>
+            <size>0.32 0.02 0.02</size>
           </box>
+          <!--cylinder>
+            <length>0.32</length>
+            <radius>0.03</radius>
+          </cylinder-->
         </geometry>
         <surface>
           <contact>
@@ -584,10 +589,13 @@
       <visual name='LFoot_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
-          <mesh>
+          <!--mesh>
             <scale>0.001 -0.001 0.001</scale>
             <uri>model://bigman_urdf/meshes/NewFoot.STL</uri>
-          </mesh>
+          </mesh-->
+          <box>
+            <size>0.32 0.02 0.02</size>
+          </box>
         </geometry>
         <material>
           <script>
@@ -899,7 +907,7 @@
           <izz>0.0208541</izz>
         </inertia>
       </inertial>
-      <collision name='RLowLeg_collision'>
+      <!--collision name='RLowLeg_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -924,7 +932,7 @@
             </ode>
           </friction>
         </surface>
-      </collision>
+      </collision-->
       <visual name='RLowLeg_visual'>
         <!--pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
@@ -998,7 +1006,7 @@
           <izz>0.0133919</izz>
         </inertia>
       </inertial>
-      <collision name='RFootmot_collision'>
+      <!--collision name='RFootmot_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -1014,7 +1022,7 @@
             <ode/>
           </friction>
         </surface>
-      </collision>
+      </collision-->
       <visual name='RFootmot_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
@@ -1083,11 +1091,15 @@
         </inertia>
       </inertial>
       <collision name='RFoot_collision'>
-        <pose frame=''>0.005 -0.01 -0.1359 0 -0 0</pose>
+        <pose frame=''>0.005 -0.0 -0.0 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.32 0.16 0.015</size>
+            <size>0.32 0.02 0.02</size>
           </box>
+          <!--cylinder>
+            <length>0.32</length>
+            <radius>0.03</radius>
+          </cylinder-->
         </geometry>
         <surface>
           <contact>
@@ -1110,10 +1122,13 @@
       <visual name='RFoot_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
-          <mesh>
+          <!--mesh>
             <scale>0.001 0.001 0.001</scale>
             <uri>model://bigman_urdf/meshes/NewFoot.STL</uri>
-          </mesh>
+          </mesh-->
+          <box>
+            <size>0.32 0.02 0.02</size>
+          </box>
         </geometry>
         <material>
           <script>
