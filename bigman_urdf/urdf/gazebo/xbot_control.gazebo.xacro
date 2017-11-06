@@ -4,7 +4,12 @@
 
 <gazebo>
     <plugin name="xbot_plugin_handler" filename="libGazeboXBotPlugin.so">
+    <xacro:if value="${BIGMAN_FIXED_MULTISENSE}">
         <path_to_config_file>configs/ADVR_shared/bigman/configs/config_walkman_floating_base.yaml</path_to_config_file>
+    </xacro:if>
+    <xacro:unless value="${BIGMAN_FIXED_MULTISENSE}">
+        <path_to_config_file>configs/ADVR_shared/bigman/configs/config_walkman_real.yaml</path_to_config_file>
+    </xacro:unless>
     </plugin>
 </gazebo>
 
