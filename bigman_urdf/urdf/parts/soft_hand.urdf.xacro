@@ -62,6 +62,7 @@
    </collision>
 </link>
 
+<!--
 <link name="r_hand_upper_right_link"/>
 
 <link name="r_hand_lower_right_link"/>
@@ -69,6 +70,7 @@
 <link name="r_hand_upper_left_link"/>
 
 <link name="r_hand_lower_left_link"/>
+-->
 
   <link name="LSoftHand"/>
   <link name="TCP_L"/>
@@ -115,6 +117,7 @@
    </collision>
 </link>
 
+<!--
 <link name="l_hand_upper_right_link"/>
 
 <link name="l_hand_lower_right_link"/>
@@ -122,6 +125,7 @@
 <link name="l_hand_upper_left_link"/>
 
 <link name="l_hand_lower_left_link"/>
+-->
 
 <!-- JOINTS -->
   <!--joint name="r_handj" type="fixed">
@@ -129,19 +133,24 @@
         <child link="RSoftHandLink"/>
         <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint-->
-
   <joint name="r_handj" type="fixed">
         <parent link="RWrMot3"/>
         <child link="RSoftHandLink"/>
         <origin xyz="0 0 ${-69.5*mmTom}" rpy="0 0 0"/>
   </joint>
   
-  <joint name="r_handj2" type="fixed">
+  <!--joint name="r_handj2" type="fixed">
         <parent link="RSoftHandLink"/>
         <child link="RSoftHand"/>
         <origin xyz="0 0.0305 -0.21" rpy="0 0 0"/>
+  </joint-->
+  <joint name="r_handj2" type="fixed">
+        <parent link="RSoftHandLink"/>
+        <child link="RSoftHand"/>
+        <origin xyz="${16.*mmTom}0 0.0 ${-125.5*mmTom}" rpy="0 0 0"/>
   </joint>
 
+<!--
   <joint name="r_handj3" type="fixed">
         <parent link="RSoftHand"/>
         <child link="r_hand_upper_right_link"/>
@@ -165,25 +174,31 @@
         <child link="r_hand_lower_left_link"/>
         <origin xyz="-0.05 0.0 0.1" rpy="0 0 0"/>
   </joint>
+-->
 
   <!--joint name="l_handj" type="fixed">
         <parent link="LWrMot3"/>
         <child link="LSoftHandLink"/>
         <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint-->
-
   <joint name="l_handj" type="fixed">
         <parent link="LWrMot3"/>
         <child link="LSoftHandLink"/>
         <origin xyz="0 0 ${-69.5*mmTom}" rpy="0 0 0"/>
   </joint>
 
-  <joint name="l_handj2" type="fixed">
+  <!--joint name="l_handj2" type="fixed">
         <parent link="LSoftHandLink"/>
         <child link="LSoftHand"/>
         <origin xyz="0 -0.0305 -0.21" rpy="0 0 0"/>
+  </joint-->
+  <joint name="l_handj2" type="fixed">
+        <parent link="LSoftHandLink"/>
+        <child link="LSoftHand"/>
+        <origin xyz="${16.*mmTom}0 0.0 ${-125.5*mmTom}" rpy="0 0 0"/>
   </joint>
 
+<!--
   <joint name="l_handj3" type="fixed">
         <parent link="LSoftHand"/>
         <child link="l_hand_upper_right_link"/>
@@ -207,6 +222,7 @@
         <child link="l_hand_lower_left_link"/>
         <origin xyz="-0.05 0.0 0.1" rpy="0 0 0"/>
   </joint>
+-->
 
   <joint name="TCP_Ljoint" type="fixed">
         <parent link="LSoftHand"/>
