@@ -20,3 +20,5 @@ Please support ```iit-bigman-ros-pkg``` development by referencing it in your wo
   url="http://dx.doi.org/10.1007/978-3-319-13823-7_29"
 }
 ```
+
+Original WalkMan!

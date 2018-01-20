@@ -1,0 +1,1162 @@
+<sdf version='1.6'>
+  <model name='bigman'>
+    <link name='base_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.031284 -0.000223 0.344145 0 -0 0</pose>
+        <mass>36.5939</mass>
+        <inertia>
+          <ixx>2.2758</ixx>
+          <ixy>0.000209989</ixy>
+          <ixz>0.0457464</ixz>
+          <iyy>2.27916</iyy>
+          <iyz>-0.00242302</iyz>
+          <izz>0.288924</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_fixed_joint_lump__Waist_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/simple/Waist.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__PelvisWeightBench_collision_1'>
+        <pose frame=''>-0.035 0 0.075 0 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/simple/PelvisWeightBench.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__ExtraWeight_collision_2'>
+        <pose frame=''>-0.035 0 0.465 0 -0 1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.14</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='base_link_fixed_joint_lump__Waist_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/Waist.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__PelvisWeightBench_visual_1'>
+        <pose frame=''>-0.035 0 0.075 0 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/PelvisWeightBench.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__ExtraWeight_visual_2'>
+        <pose frame=''>-0.035 0 0.465 0 -0 1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.14</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__imu_link_visual_3'>
+        <pose frame=''>0.0535 0 0.0601 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__imu_link2_visual_4'>
+        <pose frame=''>0.0135 0 0.0601 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <velocity_decay/>
+      <sensor name='imu_link' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <visualize>1</visualize>
+        <topic>__default_topic__</topic>
+        <imu>
+          <angular_velocity/>
+          <linear_acceleration/>
+        </imu>
+        <pose frame=''>0.0535 0 0.0601 0 -0 0</pose>
+      </sensor>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <sensor name='imu_link2' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>1000</update_rate>
+        <visualize>1</visualize>
+        <topic>__default_topic__</topic>
+        <imu>
+          <angular_velocity/>
+          <linear_acceleration/>
+        </imu>
+        <pose frame=''>0.0135 0 0.0601 0 -0 0</pose>
+      </sensor>
+    </link>
+    <link name='LHipMot'>
+      <pose frame=''>0.1059 0.06 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.103482 0.109198 -0.064924 0 -0 0</pose>
+        <mass>3.79582</mass>
+        <inertia>
+          <ixx>0.015639</ixx>
+          <ixy>-0.00185047</ixy>
+          <ixz>0.00239078</ixz>
+          <iyy>0.0235197</iyy>
+          <iyz>0.00233032</iyz>
+          <izz>0.0209536</izz>
+        </inertia>
+      </inertial>
+      <collision name='LHipMot_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/simple/HipRoll.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='LHipMot_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/HipRoll.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='LHipLat' type='revolute'>
+      <child>LHipMot</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.697778</lower>
+          <upper>0.87222</upper>
+          <effort>400</effort>
+          <velocity>6.283</velocity>
+        </limit>
+        <dynamics>
+          <damping>3</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='LThighUpLeg'>
+      <pose frame=''>0.017 0.181032 -0.217872 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.005293 0.022562 0.00567 0 -0 0</pose>
+        <mass>3.24021</mass>
+        <inertia>
+          <ixx>0.0101021</ixx>
+          <ixy>-0.000108585</ixy>
+          <ixz>0.000252914</ixz>
+          <iyy>0.0067147</iyy>
+          <iyz>-8.34471e-05</iyz>
+          <izz>0.0104851</izz>
+        </inertia>
+      </inertial>
+      <collision name='LThighUpLeg_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/simple/HipYaw.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='LThighUpLeg_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/HipYaw.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='LHipYaw' type='revolute'>
+      <child>LThighUpLeg</child>
+      <parent>LHipMot</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.872222</lower>
+          <upper>1.57</upper>
+          <effort>140</effort>
+          <velocity>6.283</velocity>
+        </limit>
+        <dynamics>
+          <damping>3</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='LThighLowLeg'>
+      <pose frame=''>0.017 0.181032 -0.217872 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.037746 0.02854 -0.193101 0 -0 0</pose>
+        <mass>5.09507</mass>
+        <inertia>
+          <ixx>0.0516079</ixx>
+          <ixy>-0.00222535</ixy>
+          <ixz>0.00245298</ixz>
+          <iyy>0.0443492</iyy>
+          <iyz>0.00410069</iyz>
+          <izz>0.0233745</izz>
+        </inertia>
+      </inertial>
+      <collision name='LThighLowLeg_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/simple/HipPitch.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='LThighLowLeg_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/HipPitch.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='LHipSag' type='revolute'>
+      <child>LThighLowLeg</child>
+      <parent>LThighUpLeg</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-2.09333</lower>
+          <upper>1.04667</upper>
+          <effort>400</effort>
+          <velocity>6.283</velocity>
+        </limit>
+        <dynamics>
+          <damping>3</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='LLowLeg'>
+      <pose frame=''>0.017 0.181032 -0.573872 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.005083 -0.003773 -0.072605 0 -0 0</pose>
+        <mass>5.64953</mass>
+        <inertia>
+          <ixx>0.105355</ixx>
+          <ixy>0.000581992</ixy>
+          <ixz>0.00167436</ixz>
+          <iyy>0.0978578</iyy>
+          <iyz>0.00337702</iyz>
+          <izz>0.0208541</izz>
+        </inertia>
+      </inertial>
+      <collision name='LLowLeg_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/simple/KneePitchCalf.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='LLowLeg_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/KneePitchCalf.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='LKneeSag' type='revolute'>
+      <child>LLowLeg</child>
+      <parent>LThighLowLeg</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>2.44222</upper>
+          <effort>400</effort>
+          <velocity>6.283</velocity>
+        </limit>
+        <dynamics>
+          <damping>3</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='LFootmot'>
+      <pose frame=''>0.017 0.181032 -0.973872 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.022024 -0.002568 0.000946 0 -0 0</pose>
+        <mass>3.28442</mass>
+        <inertia>
+          <ixx>0.00755507</ixx>
+          <ixy>-0.000674883</ixy>
+          <ixz>5.83329e-05</ixz>
+          <iyy>0.0112412</iyy>
+          <iyz>0.000145521</iyz>
+          <izz>0.0133919</izz>
+        </inertia>
+      </inertial>
+      <collision name='LFootmot_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/simple/AnklePitch.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='LFootmot_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/AnklePitch.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='LAnkSag' type='revolute'>
+      <child>LFootmot</child>
+      <parent>LLowLeg</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.39556</lower>
+          <upper>0.697778</upper>
+          <effort>330</effort>
+          <velocity>6.283</velocity>
+        </limit>
+        <dynamics>
+          <damping>3</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='LFoot'>
+      <pose frame=''>0.017 0.181032 -0.973872 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.006536 0.004794 -0.101804 0 -0 0</pose>
+        <mass>3.42638</mass>
+        <inertia>
+          <ixx>0.0103289</ixx>
+          <ixy>0.00016407</ixy>
+          <ixz>-0.00201294</ixz>
+          <iyy>0.0285402</iyy>
+          <iyz>-0.00046315</iyz>
+          <izz>0.027995</izz>
+        </inertia>
+      </inertial>
+      <collision name='LFoot_collision'>
+        <pose frame=''>0.005 0.01 -0.1359 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.32 0.16 0.015</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='LFoot_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 -0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/NewFoot.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='LAnkLat' type='revolute'>
+      <child>LFoot</child>
+      <parent>LFootmot</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785</lower>
+          <upper>0.785</upper>
+          <effort>210</effort>
+          <velocity>6.283</velocity>
+        </limit>
+        <dynamics>
+          <damping>3</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+        <provide_feedback>1</provide_feedback>
+      </physics>
+      <sensor name='l_leg_ft' type='force_torque'>
+        <force_torque>
+          <frame>sensor</frame>
+          <measure_direction>child_to_parent</measure_direction>
+        </force_torque>
+        <always_on>1</always_on>
+        <visualize>1</visualize>
+        <update_rate>1000</update_rate>
+        <pose frame=''>0.005 0 -0.107 0 -0 0</pose>
+      </sensor>
+    </joint>
+    <link name='RHipMot'>
+      <pose frame=''>0.1059 -0.06 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.103482 -0.109198 -0.064924 0 -0 0</pose>
+        <mass>3.79582</mass>
+        <inertia>
+          <ixx>0.015639</ixx>
+          <ixy>0.00185047</ixy>
+          <ixz>0.00239078</ixz>
+          <iyy>0.0235197</iyy>
+          <iyz>-0.00233032</iyz>
+          <izz>0.0209536</izz>
+        </inertia>
+      </inertial>
+      <collision name='RHipMot_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/simple/HipRoll.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='RHipMot_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/HipRoll.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='RHipLat' type='revolute'>
+      <child>RHipMot</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.87222</lower>
+          <upper>0.697778</upper>
+          <effort>400</effort>
+          <velocity>6.283</velocity>
+        </limit>
+        <dynamics>
+          <damping>3</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='RThighUpLeg'>
+      <pose frame=''>0.017 -0.181032 -0.217872 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.005293 -0.022562 0.00567 0 -0 0</pose>
+        <mass>3.24021</mass>
+        <inertia>
+          <ixx>0.0101021</ixx>
+          <ixy>0.000108585</ixy>
+          <ixz>0.000252914</ixz>
+          <iyy>0.0067147</iyy>
+          <iyz>8.34471e-05</iyz>
+          <izz>0.0104851</izz>
+        </inertia>
+      </inertial>
+      <collision name='RThighUpLeg_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/simple/HipYaw.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='RThighUpLeg_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/HipYaw.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='RHipYaw' type='revolute'>
+      <child>RThighUpLeg</child>
+      <parent>RHipMot</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>0.872222</upper>
+          <effort>140</effort>
+          <velocity>6.283</velocity>
+        </limit>
+        <dynamics>
+          <damping>3</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='RThighLowLeg'>
+      <pose frame=''>0.017 -0.181032 -0.217872 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.037746 -0.02854 -0.193101 0 -0 0</pose>
+        <mass>5.09507</mass>
+        <inertia>
+          <ixx>0.0516079</ixx>
+          <ixy>0.00222535</ixy>
+          <ixz>0.00245298</ixz>
+          <iyy>0.0443492</iyy>
+          <iyz>-0.00410069</iyz>
+          <izz>0.0233745</izz>
+        </inertia>
+      </inertial>
+      <collision name='RThighLowLeg_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/simple/HipPitch.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='RThighLowLeg_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/HipPitch.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='RHipSag' type='revolute'>
+      <child>RThighLowLeg</child>
+      <parent>RThighUpLeg</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-2.09333</lower>
+          <upper>1.04667</upper>
+          <effort>400</effort>
+          <velocity>6.283</velocity>
+        </limit>
+        <dynamics>
+          <damping>3</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='RLowLeg'>
+      <pose frame=''>0.017 -0.181032 -0.573872 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.005083 0.003773 -0.072605 0 -0 0</pose>
+        <mass>5.64953</mass>
+        <inertia>
+          <ixx>0.105355</ixx>
+          <ixy>-0.000581992</ixy>
+          <ixz>0.00167436</ixz>
+          <iyy>0.0978578</iyy>
+          <iyz>-0.00337702</iyz>
+          <izz>0.0208541</izz>
+        </inertia>
+      </inertial>
+      <collision name='RLowLeg_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/simple/KneePitchCalf.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='RLowLeg_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/KneePitchCalf.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='RKneeSag' type='revolute'>
+      <child>RLowLeg</child>
+      <parent>RThighLowLeg</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>2.44222</upper>
+          <effort>400</effort>
+          <velocity>6.283</velocity>
+        </limit>
+        <dynamics>
+          <damping>3</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='RFootmot'>
+      <pose frame=''>0.017 -0.181032 -0.973872 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.022024 0.002568 0.000946 0 -0 0</pose>
+        <mass>3.28442</mass>
+        <inertia>
+          <ixx>0.00755507</ixx>
+          <ixy>0.000674883</ixy>
+          <ixz>5.83329e-05</ixz>
+          <iyy>0.0112412</iyy>
+          <iyz>-0.000145521</iyz>
+          <izz>0.0133919</izz>
+        </inertia>
+      </inertial>
+      <collision name='RFootmot_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/simple/AnklePitch.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='RFootmot_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/AnklePitch.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='RAnkSag' type='revolute'>
+      <child>RFootmot</child>
+      <parent>RLowLeg</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.39556</lower>
+          <upper>0.697778</upper>
+          <effort>330</effort>
+          <velocity>6.283</velocity>
+        </limit>
+        <dynamics>
+          <damping>3</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='RFoot'>
+      <pose frame=''>0.017 -0.181032 -0.973872 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.006536 -0.004794 -0.101804 0 -0 0</pose>
+        <mass>3.42638</mass>
+        <inertia>
+          <ixx>0.0103289</ixx>
+          <ixy>-0.00016407</ixy>
+          <ixz>-0.00201294</ixz>
+          <iyy>0.0285402</iyy>
+          <iyz>0.00046315</iyz>
+          <izz>0.027995</izz>
+        </inertia>
+      </inertial>
+      <collision name='RFoot_collision'>
+        <pose frame=''>0.005 -0.01 -0.1359 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.32 0.16 0.015</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>1 0 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='RFoot_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://bigman_urdf/meshes/NewFoot.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='RAnkLat' type='revolute'>
+      <child>RFoot</child>
+      <parent>RFootmot</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.785</lower>
+          <upper>0.785</upper>
+          <effort>210</effort>
+          <velocity>6.283</velocity>
+        </limit>
+        <dynamics>
+          <damping>3</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+        <provide_feedback>1</provide_feedback>
+      </physics>
+      <sensor name='r_leg_ft' type='force_torque'>
+        <force_torque>
+          <frame>sensor</frame>
+          <measure_direction>child_to_parent</measure_direction>
+        </force_torque>
+        <always_on>1</always_on>
+        <visualize>1</visualize>
+        <update_rate>1000</update_rate>
+        <pose frame=''>0.005 0 -0.107 0 -0 0</pose>
+      </sensor>
+    </joint>
+    <static>0</static>
+    <plugin name='xbot_plugin_handler' filename='libGazeboXBotPlugin.so'>
+      <path_to_config_file>configs/ADVR_shared/bigman/configs/config_walkman_floating_base.yaml</path_to_config_file>
+    </plugin>
+    <pose frame=''>0 0 1.12 0 -0 0</pose>
+  </model>
+</sdf>
